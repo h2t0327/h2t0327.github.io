@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="文字溢出省略文本对齐垂直居中margin合并文本超出溢出以及如何添加省略号一行文本默认情况下12345678910111213141516171819202122232425&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt;JS Bin&amp;lt;/ti">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文字溢出省略文本对齐垂直居中margin合并">
+<meta property="og:url" content="http://yoursite.com/2018/05/19/文字溢出省略文本对齐垂直居中/index.html">
+<meta property="og:site_name" content="不穿辣条吃秋裤">
+<meta property="og:description" content="文字溢出省略文本对齐垂直居中margin合并文本超出溢出以及如何添加省略号一行文本默认情况下12345678910111213141516171819202122232425&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt;JS Bin&amp;lt;/ti">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgfunzpr7j306h02jt8i.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgfxlji7zj309s01djr6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgg18sblhj305l01a0ru.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgg504w73j304r032glg.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frggd20paij304x03dt8k.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frggggrzvkj307j02ojr6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgpt4sz6gj30e80ozaai.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgmolf25bj30k30bbmxn.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgmwwqo4ej30kt0btt98.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgn7hvoclj30ec05gmwy.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgndw6rl6j30eq074dfn.jpg">
+<meta property="og:updated_time" content="2018-09-29T13:59:08.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文字溢出省略文本对齐垂直居中margin合并">
+<meta name="twitter:description" content="文字溢出省略文本对齐垂直居中margin合并文本超出溢出以及如何添加省略号一行文本默认情况下12345678910111213141516171819202122232425&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;  &amp;lt;title&amp;gt;JS Bin&amp;lt;/ti">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frgfunzpr7j306h02jt8i.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/19/文字溢出省略文本对齐垂直居中/"/>
+
+
+
+
+
+  <title>文字溢出省略文本对齐垂直居中margin合并 | 不穿辣条吃秋裤</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不穿辣条吃秋裤</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Leonhuang Blogs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/文字溢出省略文本对齐垂直居中/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leonhuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不穿辣条吃秋裤">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">文字溢出省略文本对齐垂直居中margin合并</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T23:00:00+08:00">
+                2018-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="文字溢出省略文本对齐垂直居中margin合并"><a href="#文字溢出省略文本对齐垂直居中margin合并" class="headerlink" title="文字溢出省略文本对齐垂直居中margin合并"></a>文字溢出省略文本对齐垂直居中margin合并</h1><h2 id="文本超出溢出以及如何添加省略号"><a href="#文本超出溢出以及如何添加省略号" class="headerlink" title="文本超出溢出以及如何添加省略号"></a>文本超出溢出以及如何添加省略号</h2><h3 id="一行文本"><a href="#一行文本" class="headerlink" title="一行文本"></a>一行文本</h3><h4 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    div&#123;</span><br><span class="line">     width:100px;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">      </span><br><span class="line">     /* white-space:nowrap; */   /*不换行，超出div宽度的文字溢出*/</span><br><span class="line">     /* overflow:hidden; */         /* 超出宽度部分自动隐藏 */</span><br><span class="line">     /* text-overflow:ellipsis; */   /*超出部分变成省略号*/</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii nihaoninnnn你好</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgfunzpr7j306h02jt8i.jpg" alt=""></p>
+<ul>
+<li>第一行没有换行是因为浏览器把它看成一个英文单词</li>
+<li>所以从现象可以看出默认超出宽度是会换行的</li>
+</ul>
+<h4 id="不换行，超出div宽度的文字溢出"><a href="#不换行，超出div宽度的文字溢出" class="headerlink" title="不换行，超出div宽度的文字溢出"></a>不换行，超出div宽度的文字溢出</h4><p>恢复<code>white-space:nowrap;</code> 这个属性<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgfxlji7zj309s01djr6.jpg" alt=""></p>
+<h4 id="超出部分隐藏，超出部分变省略号"><a href="#超出部分隐藏，超出部分变省略号" class="headerlink" title="超出部分隐藏，超出部分变省略号"></a>超出部分隐藏，超出部分变省略号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">overflow:hidden;</span><br><span class="line">text-overflow:ellipsis;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgg18sblhj305l01a0ru.jpg" alt=""></p>
+<h3 id="多行文本"><a href="#多行文本" class="headerlink" title="多行文本"></a>多行文本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">     width:100px;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">      </span><br><span class="line">     display: -webkit-box;</span><br><span class="line">  -webkit-line-clamp: 3;   /*最多显示三行文本，超出就变省略号*/</span><br><span class="line">  -webkit-box-orient: vertical;  </span><br><span class="line">   overflow:hidden;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii nihaoninnnn你好范德萨发热管杜莎夫人</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgg504w73j304r032glg.jpg" alt=""></p>
+<h2 id="多行文本两端对齐"><a href="#多行文本两端对齐" class="headerlink" title="多行文本两端对齐"></a>多行文本两端对齐</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    span&#123;</span><br><span class="line">  display:inline-block;</span><br><span class="line">  width:4em;</span><br><span class="line">  text-align:justify;   /*文本换行对齐*/</span><br><span class="line">  font-size:20px;</span><br><span class="line">  line-height:20px;</span><br><span class="line">&#125;</span><br><span class="line">span::after&#123;</span><br><span class="line">  content:&apos;&apos;;</span><br><span class="line">  display:inline-block;</span><br><span class="line">  width:100%;</span><br><span class="line">&#125;  </span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">  &lt;span&gt;姓名&lt;/span&gt; &lt;br&gt;</span><br><span class="line">  &lt;span&gt;联系方式&lt;/span&gt; &lt;br&gt;</span><br><span class="line">  &lt;span&gt;炸弹人&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frggd20paij304x03dt8k.jpg" alt=""></p>
+<h2 id="文字垂直居中"><a href="#文字垂直居中" class="headerlink" title="文字垂直居中"></a>文字垂直居中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">   div&#123;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">    line-height:30px;</span><br><span class="line">    padding:5px 0</span><br><span class="line">&#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">文字垂直居中</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frggggrzvkj307j02ojr6.jpg" alt=""></p>
+<ul>
+<li>遵循一条原则  能不用height 就别用 ，用padding撑起想要的高度</li>
+</ul>
+<h2 id="容器垂直居中"><a href="#容器垂直居中" class="headerlink" title="容器垂直居中"></a>容器垂直居中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    body&#123;</span><br><span class="line">      box-sizing:border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .dad&#123;</span><br><span class="line">      border: 2px solid blue;</span><br><span class="line">      height: 100vh;</span><br><span class="line">      display: flex;</span><br><span class="line">      justify-content: center;</span><br><span class="line">      align-items: center;</span><br><span class="line">    &#125;</span><br><span class="line">    .son&#123;</span><br><span class="line">      border:3px solid red;</span><br><span class="line">      width: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;dad&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;</span><br><span class="line">      fdksfdlmks sdfefdsfdsfwef</span><br><span class="line">      fdfwdfsefrf</span><br><span class="line">      dfrefdreg</span><br><span class="line">      fefdsgrdsfs</span><br><span class="line">      fdefregr</span><br><span class="line">      dgersd</span><br><span class="line">      gre</span><br><span class="line">      dfwe</span><br><span class="line">      fd</span><br><span class="line">      fe</span><br><span class="line">      dfd</span><br><span class="line">      erfrgrgfdsrgf</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgpt4sz6gj30e80ozaai.jpg" alt=""></p>
+<ul>
+<li>新时代前端记住这种用flex 布局来垂直居中，就好了</li>
+</ul>
+<h2 id="margin合并"><a href="#margin合并" class="headerlink" title="margin合并"></a>margin合并</h2><h3 id="两个div之间的margin合并"><a href="#两个div之间的margin合并" class="headerlink" title="两个div之间的margin合并"></a>两个div之间的margin合并</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">      box-sizing:border-box;</span><br><span class="line">    &#125;</span><br><span class="line">   .div1&#123;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">     height:100px;</span><br><span class="line">     margin:10px 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .div2&#123;</span><br><span class="line">      height:100px;</span><br><span class="line">      border:1px solid green;</span><br><span class="line">      margin:10px 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=div1&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=div2&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgmolf25bj30k30bbmxn.jpg" alt=""></p>
+<ul>
+<li>两个div 分别给了10px的margin</li>
+<li>两个div之间的间距按照直觉应该是20px</li>
+<li>通过开发者工具我们可以看到它们之间只有10px</li>
+<li>这就说明他们的margin合并了</li>
+</ul>
+<h3 id="父子div的margin合并"><a href="#父子div的margin合并" class="headerlink" title="父子div的margin合并"></a>父子div的margin合并</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">      box-sizing:border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    body&#123;</span><br><span class="line">      border: 1px solid blue;</span><br><span class="line">    &#125;</span><br><span class="line">   .dad&#123;</span><br><span class="line">     outline: 1px solid red;</span><br><span class="line">     margin:10px 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .son&#123;</span><br><span class="line">      height:100px;</span><br><span class="line">      border:1px solid green;</span><br><span class="line">      margin:20px 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=dad&gt;</span><br><span class="line">    &lt;div class=son&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgmwwqo4ej30kt0btt98.jpg" alt=""></p>
+<ul>
+<li>父元素margin为10px 子元素margin为20px </li>
+<li>正常的想法应该是子元素在父元素中离父元素边框有20px的间距，而父元素离body的边框有10px的间距</li>
+<li>通过开发者工具我们可以看到子元素的margin超出了父元素边框并且离body间距是20px</li>
+<li>这就说明子元素与父元素的margin合并了</li>
+<li>注意这里父元素的边框线用的是outline</li>
+</ul>
+<h3 id="那么为什么呢？"><a href="#那么为什么呢？" class="headerlink" title="那么为什么呢？"></a>那么为什么呢？</h3><h4 id="将父元素的边框设置为border，或者给父元素加一padding"><a href="#将父元素的边框设置为border，或者给父元素加一padding" class="headerlink" title="将父元素的边框设置为border，或者给父元素加一padding"></a>将父元素的边框设置为border，或者给父元素加一padding</h4><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgn7hvoclj30ec05gmwy.jpg" alt=""></p>
+<ul>
+<li>就会发现神奇的好了</li>
+</ul>
+<h4 id="在两个div之间再加一个div-设置border或者padding"><a href="#在两个div之间再加一个div-设置border或者padding" class="headerlink" title="在两个div之间再加一个div 设置border或者padding"></a>在两个div之间再加一个div 设置border或者padding</h4><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgndw6rl6j30eq074dfn.jpg" alt=""></p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
+<li>因此总结一下就是</li>
+<li>两个元素的margin合并是因为中间没有阻挡它们的属性就会合并在一起</li>
+<li>比如说border就是一堵墙，堵在两个margin之间就不会合并了</li>
+<li>或者说margin碰到关于border/padding这种元素，就是距离这个元素的margin有多少</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/04/排序-插入-计数-基数/" rel="next" title="Js插入排序">
+                <i class="fa fa-chevron-left"></i> Js插入排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/23/flex/" rel="prev" title="Flex布局">
+                Flex布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Leonhuang</p>
+              <p class="site-description motion-element" itemprop="description">赶超时间，岁月无憾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文字溢出省略文本对齐垂直居中margin合并"><span class="nav-number">1.</span> <span class="nav-text">文字溢出省略文本对齐垂直居中margin合并</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本超出溢出以及如何添加省略号"><span class="nav-number">1.1.</span> <span class="nav-text">文本超出溢出以及如何添加省略号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一行文本"><span class="nav-number">1.1.1.</span> <span class="nav-text">一行文本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认情况下"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">默认情况下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不换行，超出div宽度的文字溢出"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">不换行，超出div宽度的文字溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超出部分隐藏，超出部分变省略号"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">超出部分隐藏，超出部分变省略号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">1.1.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多行文本两端对齐"><span class="nav-number">1.2.</span> <span class="nav-text">多行文本两端对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字垂直居中"><span class="nav-number">1.3.</span> <span class="nav-text">文字垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器垂直居中"><span class="nav-number">1.4.</span> <span class="nav-text">容器垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin合并"><span class="nav-number">1.5.</span> <span class="nav-text">margin合并</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个div之间的margin合并"><span class="nav-number">1.5.1.</span> <span class="nav-text">两个div之间的margin合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父子div的margin合并"><span class="nav-number">1.5.2.</span> <span class="nav-text">父子div的margin合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么为什么呢？"><span class="nav-number">1.5.3.</span> <span class="nav-text">那么为什么呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将父元素的边框设置为border，或者给父元素加一padding"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">将父元素的边框设置为border，或者给父元素加一padding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在两个div之间再加一个div-设置border或者padding"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">在两个div之间再加一个div 设置border或者padding</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">1.5.4.</span> <span class="nav-text">结论</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leonhuang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

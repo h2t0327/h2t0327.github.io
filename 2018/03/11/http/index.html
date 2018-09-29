@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="URL  请求  响应  URL  http协议 curl," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTTPURLURL 俗称网址 ， 也就是统一资源定位符/定位地址 URL 的组成https://www.baidu.com/s?wd=hello&amp;amp;rsv_spt=1#1 https 为超文本传输协议，两个电脑之间传输内容的协议 。也就是说前面的http 或者 https指的是协议 www.baidu.com 域名  /s 路径， 这个路径非计算机中文件路径。 https://www.ba">
+<meta name="keywords" content="URL  请求  响应  URL  http协议 curl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/http/index.html">
+<meta property="og:site_name" content="不穿辣条吃秋裤">
+<meta property="og:description" content="HTTPURLURL 俗称网址 ， 也就是统一资源定位符/定位地址 URL 的组成https://www.baidu.com/s?wd=hello&amp;amp;rsv_spt=1#1 https 为超文本传输协议，两个电脑之间传输内容的协议 。也就是说前面的http 或者 https指的是协议 www.baidu.com 域名  /s 路径， 这个路径非计算机中文件路径。 https://www.ba">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://video.jirengu.com/FsfB2P_WlfvCBOfU2vUARSL0AmCg">
+<meta property="og:image" content="http://video.jirengu.com/FlXCfBPkgLIkBd4ceo1wubiB-K9k">
+<meta property="og:image" content="http://video.jirengu.com/FqFw99ah9wk45yKcfF5TKwrqIwI5">
+<meta property="og:updated_time" content="2018-09-29T13:59:08.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP">
+<meta name="twitter:description" content="HTTPURLURL 俗称网址 ， 也就是统一资源定位符/定位地址 URL 的组成https://www.baidu.com/s?wd=hello&amp;amp;rsv_spt=1#1 https 为超文本传输协议，两个电脑之间传输内容的协议 。也就是说前面的http 或者 https指的是协议 www.baidu.com 域名  /s 路径， 这个路径非计算机中文件路径。 https://www.ba">
+<meta name="twitter:image" content="http://video.jirengu.com/FsfB2P_WlfvCBOfU2vUARSL0AmCg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/11/http/"/>
+
+
+
+
+
+  <title>HTTP | 不穿辣条吃秋裤</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不穿辣条吃秋裤</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Leonhuang Blogs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/http/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leonhuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不穿辣条吃秋裤">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTTP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T23:45:50+08:00">
+                2018-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p><code>URL</code> 俗称网址 ， 也就是统一资源<code>定位</code>符/<code>定位</code>地址</p>
+<h3 id="URL-的组成"><a href="#URL-的组成" class="headerlink" title="URL 的组成"></a>URL 的组成</h3><p><a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1</a></p>
+<p><code>https</code> 为超文本传输协议，两个电脑之间传输内容的协议 。也就是说前面的<code>http</code> 或者 <code>https</code>指的是协议</p>
+<p><code>www.baidu.com</code> 域名 </p>
+<p><code>/s</code> 路径， 这个路径非计算机中文件路径。 <code>https://www.baidu.com</code> 这个网址默认会有一个 <code>/</code>的路径</p>
+<p><code>wd=hello&amp;rsv_spt=1</code> 查询参数 ，可以点击 <a href="https://www.baidu.com/s?wd=hi&amp;rsv_spt=1#1" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hi&amp;rsv_spt=1#1</a> 会发现变成了在百度hi的内容</p>
+<p><code>#1</code> 锚点 ， 将网站#1 变为 #3 ，点击 <a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#3" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#3</a> 会发现直接显示在第一行的是该搜索项网页的第三个链接 ，多次修改#后面的数字就会明白了</p>
+<p><code>:80</code> 其实这个网址还有一个端口号，http协议的服务端口号就是对应的80。<a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1:80" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1:80</a> 这个网址的效果和 <a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1是一样的。" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1是一样的。</a></p>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><blockquote>
+<p>网域名称系统（DNS，Domain Name System，有时也简称为域名）是因特网的一项核心服务，它作为可以将域名和IP<br>地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。</p>
+</blockquote>
+<blockquote>
+<p>例如，<a href="http://www.wikipedia.org是一个域名，和IP地址208.80.152.2相对应。DNS就像是一个自动的电话号码簿，我们可以" target="_blank" rel="noopener">www.wikipedia.org是一个域名，和IP地址208.80.152.2相对应。DNS就像是一个自动的电话号码簿，我们可以</a><br>直接拨打wikipedia的名字来代替电话号码（IP地址）。我们直接调用网站的名字以后，DNS就会将便于人类使用的名字<br>（如<a href="http://www.wikipedia.org）转化成便于机器识别的IP地址（如208.80.152.2）。[1]" target="_blank" rel="noopener">www.wikipedia.org）转化成便于机器识别的IP地址（如208.80.152.2）。[1]</a></p>
+</blockquote>
+<ul>
+<li>简单理解就是，DNS 可以把 域名 转换为IP地址 </li>
+</ul>
+<h3 id="两种查看域名对应IP地址的方法"><a href="#两种查看域名对应IP地址的方法" class="headerlink" title="两种查看域名对应IP地址的方法"></a>两种查看域名对应IP地址的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nslookup baidu.com</span><br><span class="line">ping baidu.com</span><br></pre></td></tr></table></figure>
+<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><h3 id="请求百度页面"><a href="#请求百度页面" class="headerlink" title="请求百度页面"></a>请求百度页面</h3><p><img src="//video.jirengu.com/FsfB2P_WlfvCBOfU2vUARSL0AmCg" alt="请求"><br>访问百度网站   ，我们点击第一个，然后点Request  右边的view<br><img src="//video.jirengu.com/FlXCfBPkgLIkBd4ceo1wubiB-K9k" alt="图片"></p>
+<p>请求的格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure></p>
+<p>###分析请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.1                        动词 路径 协议/版本</span><br><span class="line">Host: www.baidu.com               key1</span><br><span class="line">Connection: keep-alive             key2</span><br><span class="line">Cache-Control: max-age=0      key3</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）</li>
+<li>第三部分永远都是一个回车（\n）</li>
+<li>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等<br> i. GET就是获取的意思<br>ii. POST 就是上传的意思， 上传信息会有一个content-length ： 上传的数据长度 ，然后第四部分会有上传信息的内容<br>iii. </li>
+<li>这里的路径包括「查询参数」，但不包括「锚点」</li>
+<li>如果你没有写路径，那么路径默认为 /</li>
+<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
+<li>如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</li>
+</ol>
+<h2 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h2><h3 id="有请求就有响应，下面是百度的响应"><a href="#有请求就有响应，下面是百度的响应" class="headerlink" title="有请求就有响应，下面是百度的响应"></a>有请求就有响应，下面是百度的响应</h3><p><img src="//video.jirengu.com/FqFw99ah9wk45yKcfF5TKwrqIwI5" alt="查看 Response Headers，点击「view source」，点击「view source]"></p>
+<ul>
+<li>GET 请求和 POST 请求对应的响应可以一样，也可以不一样</li>
+<li>响应的第四部分可以很长很长很长</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Bdpagetype: 2</span><br><span class="line">Bdqid: 0x8f2fe8e100013131</span><br><span class="line">Bduserid: 941701595</span><br><span class="line">Cache-Control: private</span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Content-Type: text/html;charset=utf-8</span><br><span class="line">Date: Mon, 12 Mar 2018 14:49:48 GMT</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>响应的格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 协议/版本号 状态码 状态解释</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Content-Length: 17931</span><br><span class="line">2 Content-Type: text/html</span><br><span class="line">3</span><br><span class="line">4 要下载的内容</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>状态码要背，是服务器对浏览器说的话 ,每个记到6就好了 ，想多记可以搜HTTP状态码，看维基百科<ul>
+<li>1xx 不常用<blockquote>
+<p>这一类型的状态码，代表请求已被接受，需要继续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束。由于HTTP/1.0协议中没有定义任何1xx状态码，所以除非在某些试验条件下，服务器禁止向此类客户端发送1xx响应。[4] 这些状态码代表的响应都是信息性的，标示客户应该采取的其他行动。</p>
+</blockquote>
+</li>
+<li>2xx 表示成功<blockquote>
+<p>200 OK<br>请求已成功，请求所希望的响应头或数据体将随此响应返回。<br>201 Created<br>请求已经被实现，而且有一个新的资源已经依据请求的需要而创建，且其URI已经随Location头信息返回。<br>202 Accepted<br>服务器已接受请求，但尚未处理。<br>203 Non-Authoritative Information（自HTTP / 1.1起<br>服务器是一个转换代理服务器（transforming proxy，例如网络加速器），以200 OK状态码为起源，但回应了原始响应的修改版本。<br>204 No Content<br>服务器成功处理了请求，没有返回任何内容<br>205 Reset Content<br>服务器成功处理了请求，但没有返回任何内容。与204响应不同，此响应要求请求者重置文档视图。<br>206 Partial Content<br>服务器已经成功处理了部分GET请求。</p>
+</blockquote>
+</li>
+<li>3xx 表示滚吧<blockquote>
+<p>300 Multiple Choices<br>被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。<br>301 Moved Permanently:<br>被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个URI之一。<br>302 Found<br>要求客户端执行临时重定向 ,服务器临时换了个地址<br>303 See Other<br>对应当前请求的响应可以在另一个 URI上被找到，当响应于POST（或PUT / DELETE）接收到响应时，客户端应该假定服务器已经收到数据，并且应该使用单独的GET消息发出重定向。<br>304 Not Modified<br>表示资源未被修改，因为请求头指 定的版本If-Modified-Since或If-None-Match。在这种情况下，由于客户端仍然具有以前下载的副本，因此不需要重新传输资源。<br>305 Use Proxy<br>被请求的资源必须通过指定的代理才能被访问。<br>306 Switch Proxy<br>在最新版的规范中，306状态码已经不再被使用。</p>
+</blockquote>
+</li>
+<li>4xx 表示你丫错了<blockquote>
+<p>400 Bad Request<br>由于明显的客户端错误（例如，格式错误的请求语法，太大的大小，无效的请求消息或欺骗性路由请求），服务器不能或不会处理该请求。<br>401 Unauthorized<br>类似于403 Forbidden，401语义即“未认证”，即用户没有必要的凭据。[32]该状态码表示当前请求需要用户验证。<br>402 Payment Required<br>该状态码是为了将来可能的需求而预留的。<br>403 Forbidden<br>服务器已经理解请求，但是拒绝执行它。<br>404 Not Found<br>请求失败，请求所希望得到的资源未被在服务器上发现，但允许用户的后续请求。<br>405 Method Not Allowed<br>请求行中指定的请求方法不能被用于请求相应的资源。<br>406 Not Acceptable<br>请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体，该请求不可接受。</p>
+</blockquote>
+</li>
+<li>5xx 表示好吧，我错了<blockquote>
+<p>500 Internal Server Error<br>通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。没有给出具体错误信息。<br>501 Not Implemented<br>服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。<br>502 Bad Gateway<br>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。<br>503 Service Unavailable<br>由于临时的服务器维护或者过载，服务器当前无法处理请求。<br>504 Gateway Timeout<br>作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器（URI标识出的服务器，例如HTTP、FTP、LDAP）或者辅助服务器（例如DNS）收到响应。<br>505 HTTP Version Not Supported<br>服务器不支持，或者拒绝支持在请求中使用的HTTP版本。<br>506 Variant Also Negotiates（RFC 2295）<br>由《透明内容协商协议》（RFC 2295）扩展，代表服务器存在内部配置错误，[64]被请求的协商变元资源被配置为在透明内容协商中使用自己，因此在一个协商处理中不是一个合适的重点。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>状态解释没什么用</li>
+<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
+<li>第 2 部分中的 Content-Type 遵循 MIME 规范</li>
+<li><ul>
+<li>查看 Response 或者 Preview，你会看到响应的第 4 部分</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/URL-请求-响应-URL-http协议-curl/" rel="tag"># URL  请求  响应  URL  http协议 curl</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/10/脚本/" rel="next" title="脚本">
+                <i class="fa fa-chevron-left"></i> 脚本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/13/HTTP要素：IP 与 端口/" rel="prev" title="HTTP访问要素:IP与端口">
+                HTTP访问要素:IP与端口 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Leonhuang</p>
+              <p class="site-description motion-element" itemprop="description">赶超时间，岁月无憾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">1.1.</span> <span class="nav-text">URL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-的组成"><span class="nav-number">1.1.1.</span> <span class="nav-text">URL 的组成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS"><span class="nav-number">1.2.</span> <span class="nav-text">DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两种查看域名对应IP地址的方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">两种查看域名对应IP地址的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求"><span class="nav-number">1.3.</span> <span class="nav-text">请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#请求百度页面"><span class="nav-number">1.3.1.</span> <span class="nav-text">请求百度页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应"><span class="nav-number">1.4.</span> <span class="nav-text">响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有请求就有响应，下面是百度的响应"><span class="nav-number">1.4.1.</span> <span class="nav-text">有请求就有响应，下面是百度的响应</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leonhuang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="基础排序冒泡法," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Js冒泡排序&amp;amp;选择排序冒泡排序原理 两相邻的数依次比较 若从小到大排列两两比较时前一个数比后一个数大互换位置 相互比较完一轮最大的数就会到最后面，并且不再参与比较 循环比较 直到比较完成  冒泡排序步骤 确定外层循环次数   数组的长度 确定内层循环的次数  每确定冒泡一个数内层循环减少一次 数组长度 减 外层循环的index  相邻两数相比较  前一个数比后一个数大 互换两数位置  冒泡">
+<meta name="keywords" content="基础排序冒泡法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js冒泡排序&amp;选择排序">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/Js冒泡排序选择排序/index.html">
+<meta property="og:site_name" content="不穿辣条吃秋裤">
+<meta property="og:description" content="Js冒泡排序&amp;amp;选择排序冒泡排序原理 两相邻的数依次比较 若从小到大排列两两比较时前一个数比后一个数大互换位置 相互比较完一轮最大的数就会到最后面，并且不再参与比较 循环比较 直到比较完成  冒泡排序步骤 确定外层循环次数   数组的长度 确定内层循环的次数  每确定冒泡一个数内层循环减少一次 数组长度 减 外层循环的index  相邻两数相比较  前一个数比后一个数大 互换两数位置  冒泡">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1fqy8ra7e3cg30d706vn7w.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1fqy96u2mbgg30gg06n7aa.jpg">
+<meta property="og:updated_time" content="2018-09-29T13:59:08.961Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Js冒泡排序&amp;选择排序">
+<meta name="twitter:description" content="Js冒泡排序&amp;amp;选择排序冒泡排序原理 两相邻的数依次比较 若从小到大排列两两比较时前一个数比后一个数大互换位置 相互比较完一轮最大的数就会到最后面，并且不再参与比较 循环比较 直到比较完成  冒泡排序步骤 确定外层循环次数   数组的长度 确定内层循环的次数  每确定冒泡一个数内层循环减少一次 数组长度 减 外层循环的index  相邻两数相比较  前一个数比后一个数大 互换两数位置  冒泡">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1fqy8ra7e3cg30d706vn7w.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/03/Js冒泡排序选择排序/"/>
+
+
+
+
+
+  <title>Js冒泡排序&选择排序 | 不穿辣条吃秋裤</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不穿辣条吃秋裤</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Leonhuang Blogs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/Js冒泡排序选择排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leonhuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不穿辣条吃秋裤">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Js冒泡排序&选择排序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T23:00:00+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Js冒泡排序-amp-选择排序"><a href="#Js冒泡排序-amp-选择排序" class="headerlink" title="Js冒泡排序&amp;选择排序"></a>Js冒泡排序&amp;选择排序</h1><h2 id="冒泡排序原理"><a href="#冒泡排序原理" class="headerlink" title="冒泡排序原理"></a>冒泡排序原理</h2><ul>
+<li>两相邻的数依次比较</li>
+<li>若从小到大排列两两比较时前一个数比后一个数大互换位置</li>
+<li>相互比较完一轮最大的数就会到最后面，并且不再参与比较</li>
+<li>循环比较 直到比较完成<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqy8ra7e3cg30d706vn7w.jpg" alt=""></li>
+</ul>
+<h2 id="冒泡排序步骤"><a href="#冒泡排序步骤" class="headerlink" title="冒泡排序步骤"></a>冒泡排序步骤</h2><ol>
+<li>确定外层循环次数   数组的长度</li>
+<li>确定内层循环的次数  每确定冒泡一个数内层循环减少一次 数组长度 减 外层循环的index </li>
+<li>相邻两数相比较  前一个数比后一个数大 互换两数位置</li>
+</ol>
+<h2 id="冒泡排序代码实现"><a href="#冒泡排序代码实现" class="headerlink" title="冒泡排序代码实现"></a>冒泡排序代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = [36,26,27,2,4,19,50,48];</span><br><span class="line">var temp;</span><br><span class="line"></span><br><span class="line">for(var i= 0; i &lt;  a.length; i++)</span><br><span class="line">for(var j = 0; j &lt; a.length-i; j++)&#123;</span><br><span class="line">    if(a[j] &gt;  a[j+1])&#123;</span><br><span class="line">        temp = a[j];</span><br><span class="line">        a[j] = a[j+1];</span><br><span class="line">        a[j+1] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
+<h2 id="选择排序原理"><a href="#选择排序原理" class="headerlink" title="选择排序原理"></a>选择排序原理</h2><ul>
+<li>找未排序的元素中最小的数</li>
+<li>将最小数与起始位置互换</li>
+<li>直到排序完成<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqy96u2mbgg30gg06n7aa.jpg" alt=""></li>
+</ul>
+<h2 id="选择排序步骤"><a href="#选择排序步骤" class="headerlink" title="选择排序步骤"></a>选择排序步骤</h2><ol>
+<li>确定外层循环次数 index为每一次寻找最小值的起始位置 直到数组长度</li>
+<li>内层循环每次都是由起始位置 +1 直到数组长度</li>
+<li>假设每一次的起始位置为最小数 碰到更小的用更小的和后面的数继续做比较</li>
+<li>保存最小数的索引</li>
+<li>内层循环结束后最小数与起始位置互换</li>
+</ol>
+<h2 id="选择排序代码实现"><a href="#选择排序代码实现" class="headerlink" title="选择排序代码实现"></a>选择排序代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var a = [4,12,13,4,3,42,33,4,43,44];</span><br><span class="line">var temp;</span><br><span class="line">var minIndex;</span><br><span class="line"></span><br><span class="line">for(var i = 0; i &lt; a.length; i ++)&#123;</span><br><span class="line">    minIndex = i;</span><br><span class="line">    for(var j = i + 1; j &lt; a.length; j++)&#123;</span><br><span class="line">        if(a[minIndex] &gt; a[j])&#123;</span><br><span class="line">            minIndex = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    temp = a[minIndex];</span><br><span class="line">    a[minIndex] = a[i];</span><br><span class="line">    a[i] = temp;</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/基础排序冒泡法/" rel="tag"># 基础排序冒泡法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/27/css的position值/" rel="next" title="css的position值">
+                <i class="fa fa-chevron-left"></i> css的position值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/04/排序-插入-计数-基数/" rel="prev" title="Js插入排序">
+                Js插入排序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Leonhuang</p>
+              <p class="site-description motion-element" itemprop="description">赶超时间，岁月无憾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Js冒泡排序-amp-选择排序"><span class="nav-number">1.</span> <span class="nav-text">Js冒泡排序&amp;选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序原理"><span class="nav-number">1.1.</span> <span class="nav-text">冒泡排序原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序步骤"><span class="nav-number">1.2.</span> <span class="nav-text">冒泡排序步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">冒泡排序代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序原理"><span class="nav-number">1.4.</span> <span class="nav-text">选择排序原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序步骤"><span class="nav-number">1.5.</span> <span class="nav-text">选择排序步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序代码实现"><span class="nav-number">1.6.</span> <span class="nav-text">选择排序代码实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leonhuang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
