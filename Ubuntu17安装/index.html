@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="W3C MDN HTML Tag 空Tag 可替换Tag," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="不穿辣条吃秋裤" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Ubuntu17.10 友善6410 PC端QT开发环境搭建下载QTQT各版本官方下载大全这里我们下载最新的安装文件qt-opensource-linux-x64-5.10.1.run这个.run文件既包含了SDK也包含了IDE：QtCreator 安装交叉编译工具Step1将光盘 Linux 目录中的 arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz 复制到 Ubu">
+<meta name="keywords" content="W3C MDN HTML Tag 空Tag 可替换Tag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu17.10 友善6410 PC端QT开发环境搭建">
+<meta property="og:url" content="https://hongtao-huang.github.io/Ubuntu17安装/index.html">
+<meta property="og:site_name" content="不穿辣条吃秋裤">
+<meta property="og:description" content="Ubuntu17.10 友善6410 PC端QT开发环境搭建下载QTQT各版本官方下载大全这里我们下载最新的安装文件qt-opensource-linux-x64-5.10.1.run这个.run文件既包含了SDK也包含了IDE：QtCreator 安装交叉编译工具Step1将光盘 Linux 目录中的 arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz 复制到 Ubu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-29T13:59:08.961Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu17.10 友善6410 PC端QT开发环境搭建">
+<meta name="twitter:description" content="Ubuntu17.10 友善6410 PC端QT开发环境搭建下载QTQT各版本官方下载大全这里我们下载最新的安装文件qt-opensource-linux-x64-5.10.1.run这个.run文件既包含了SDK也包含了IDE：QtCreator 安装交叉编译工具Step1将光盘 Linux 目录中的 arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz 复制到 Ubu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'R905N4AKMG',
+      apiKey: '55832ac56512bfec969676c8b5c0dacf',
+      indexName: 'HexoSearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"找到约${hits}条结果（用时${time}ms）"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hongtao-huang.github.io/Ubuntu17安装/"/>
+
+
+
+
+
+  <title>Ubuntu17.10 友善6410 PC端QT开发环境搭建 | 不穿辣条吃秋裤</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126693960-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cb55dd04cbb27ee24fb9711282daed04";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不穿辣条吃秋裤</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">LeonHuang Blogs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/Ubuntu17安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeonHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不穿辣条吃秋裤">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ubuntu17.10 友善6410 PC端QT开发环境搭建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T18:10:00+08:00">
+                2018-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Embedded/" itemprop="url" rel="index">
+                    <span itemprop="name">Embedded</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Ubuntu17安装/" class="leancloud_visitors" data-flag-title="Ubuntu17.10 友善6410 PC端QT开发环境搭建">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ubuntu17-10-友善6410-PC端QT开发环境搭建"><a href="#Ubuntu17-10-友善6410-PC端QT开发环境搭建" class="headerlink" title="Ubuntu17.10 友善6410 PC端QT开发环境搭建"></a>Ubuntu17.10 友善6410 PC端QT开发环境搭建</h1><h2 id="下载QT"><a href="#下载QT" class="headerlink" title="下载QT"></a>下载QT</h2><p><a href="http://download.qt.io/archive/qt/" target="_blank" rel="noopener">QT各版本官方下载大全</a><br>这里我们下载最新的安装文件<br><code>qt-opensource-linux-x64-5.10.1.run</code><br>这个.run文件既包含了SDK也包含了IDE：QtCreator</p>
+<h2 id="安装交叉编译工具"><a href="#安装交叉编译工具" class="headerlink" title="安装交叉编译工具"></a>安装交叉编译工具</h2><h3 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h3><p>将光盘 Linux 目录中的 arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz 复制到 Ubuntu某个<br>目录下如 tmp/（没有的话可以在自己的用户目录上创建）,然后进入到该目录,执行解压命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">tar xvzf arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz –C /</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>注意:C 后面有个空格,并且 C 是大写的,它是英文单词“Change”的第一个字母,在此是改变目录的意思。</li>
+<li>执行该命令,将把 arm-linux- gcc 安装到/opt/FriendlyARM/toolschain/4.5.1 目录。</li>
+</ul>
+<h3 id="Step2"><a href="#Step2" class="headerlink" title="Step2"></a>Step2</h3><p><code>#vim /root/.bashrc</code><br>编 辑 <code>/root/.bashrc</code> 文 件 , 注 意 “ bashrc ” 前 面 有 一 个 “ . ”, 修 改 最 后 一 行 为<br><code>export PATH=$PATH:/opt/FriendlyARM/toolschain/4.5.1/bin</code>,注意路径一定要写对,否则将不会有效。<br>重启 ，其实注销就行 。你随意<br>在命令行 输入<br><code>arm-linux-gcc –v</code>,会出现一堆信息，最下面一行为<code>gcc version 4.5.1 (ctng-1.8.1-FA)</code>,这说明交叉编译环境已经成功安装。</p>
+<h2 id="编译与安装QtE-4-8-5"><a href="#编译与安装QtE-4-8-5" class="headerlink" title="编译与安装QtE-4.8.5"></a>编译与安装QtE-4.8.5</h2><h3 id="解压QtE-4-8-5"><a href="#解压QtE-4-8-5" class="headerlink" title="解压QtE-4.8.5"></a>解压QtE-4.8.5</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">首先创建工作目录/opt/FriendlyARM/tinyc110/linux</span><br><span class="line">在命令行执行</span><br><span class="line">mkdir –p /opt/FriendlyARM/tinyc110/linux</span><br><span class="line">cd /opt/FriendlyARM/tinyc110/linux</span><br><span class="line">tar xvzf /tmp/linux/arm-qte-4.8.5-20101105.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="编译与安装"><a href="#编译与安装" class="headerlink" title="编译与安装"></a>编译与安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/FriendlyARM/mini210/linux/arm-qte-4.8.5</span><br><span class="line">./build.sh</span><br><span class="line">此处等待完成， 要很长时间 ，耐心一点</span><br><span class="line">./mktarget       这一步其实可以省略，执行此文件会提取出必要的 QtE-4.8.5 库文</span><br><span class="line">件 和 可 执 行 二 进 制 示 例 , 并 打 包 为 </span><br><span class="line">target-qte-4.8.5-to-devboard.tgz </span><br><span class="line">target-qte-4.8.5-to-hostpc.tgz</span><br><span class="line">如果省略,也可以直接使用我们编译好的二进制包,它们放在光盘的 Linux 目录下,名称</span><br><span class="line">target-qte-4.8.5-to-devboard.tgz </span><br><span class="line">target-qte-4.8.5-to-hostpc.tgz</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>其中 <code>target-qte-4.8.5-to-devboard.tgz</code> 是用于部署在开发板上的版 本,为了节省空间该版本删<br>除了开发工具只保留运行程序所需的库文件,而 <code>target-qte-4.8.5-to-hostpc.tgz</code> 则是用于安装在 PC<br>上,用来开发和编译程序的版本,带有 qmake 等 Qt 工具以及编译所需的头文件等,可用于配置<br>Qt Creator 开发工具。</p>
+</li>
+<li><p>安装 QtE-4.8.5 到 PC 上的方法如下:<br>把 <code>target-qte-4.8.5-to-hostpc.tgz</code> 在 PC 的根目录下解压即可,如下命令<br><code>tar xvzf target-qte-4.8.5-to-hostpc.tgz –C /</code></p>
+</li>
+<li><p>QtE-4.8.5 会安装到目录 <code>/usr/local/Trolltech/QtEmbedded-4.8.5-arm/</code> 下,它里面包含了运行<br>所需要的所有库文件和可执行程序。</p>
+</li>
+<li><p>qmake路径配置 ：<br><code>cd /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/</code><br><code>vim default.conf</code> 将第一行路径替换为QTE485路径 <code>/usr/local/Trolltech/QtEmbedded-4.8.5-arm/lib</code></p>
+</li>
+</ul>
+<h2 id="安装QT"><a href="#安装QT" class="headerlink" title="安装QT"></a>安装QT</h2><h3 id="Step1-1"><a href="#Step1-1" class="headerlink" title="Step1"></a>Step1</h3><p>进入下载好QT的目录， 一般在下载目录中 。给安装文件运行权限：<br><code>chmod u+x qt-opensource-linux-x64-5.10.1.run</code></p>
+<h3 id="Step2-1"><a href="#Step2-1" class="headerlink" title="Step2"></a>Step2</h3><p>运行 <code>./qt-opensource-linux-x64-5.10.1.run</code><br>一路向下，注意   那个<code>5.10.1</code>要勾选，3.6个G的样子</p>
+<h3 id="Step3"><a href="#Step3" class="headerlink" title="Step3"></a>Step3</h3><p>QT5.10.1 安装按成后会自带QTcreator ， 打开QTcreator</p>
+<ul>
+<li>在菜单栏处找到<code>工具（Tools）</code> -&gt; <code>选项（options）</code> 打开options窗口 ，点击<code>构建和运行</code>   </li>
+<li>点击<code>QT Versions</code> ，看auto （自动）栏是否检测到<code>QT 5.10.1 GCC 64bit</code> 以及<code>QT 4.8.5 in PATH(QtEmbedded-4.8.5-arm)</code> 如果没有检测到4.8.5 那么手动添加 路径为：<code>/usr/local/Trolltech/QtEmbedded-4.8.5-arm/bin/qmake</code></li>
+<li>点击<code>编译器（compilers）</code> -&gt; <code>添加（add）</code> -&gt; <code>GCC</code> -&gt; <code>C++</code>  下方出现弹窗 ， 将一条名称改为<code>ARMGCC</code> ， 第二条路径为<code>/opt/FriendlyARM/toolschain/4.5.1/bin/arm-linux-gcc</code> ，最后点击<code>应用（apply）</code> </li>
+<li>点击<code>构建套件（kit）</code>  ，修改名称为ARM ， 然后将才编译器 c++ ： 更换成 <code>ARMGCC</code>  ，最后点击<code>应用（apply）</code> </li>
+</ul>
+<blockquote>
+<p>最后这就表示安装并且配置完成了， 可以开心的玩起来了。</p>
+</blockquote>
+<h2 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h2><p>新建工程 ， 选择编译环境时把<code>ARM</code> 和 <code>Desktop</code> 都勾选起来 ，这样的话 ，我们就可以在PC上调试好， 放到开发板中运行了  。</p>
+<ul>
+<li>编译的时候可以在左边绿色三角上方选择编译器 ，  选择Desktop可以在PC上调试 ， 选择ARM 会生成开发板需要的执行文件 。 运行之后都会在项目所在的目录生成一个目录。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="LeonHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="LeonHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/W3C-MDN-HTML-Tag-空Tag-可替换Tag/" rel="tag"># W3C MDN HTML Tag 空Tag 可替换Tag</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HTML/" rel="next" title="HTML">
+                <i class="fa fa-chevron-left"></i> HTML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/html-语义化/" rel="prev" title="HTML语义化">
+                HTML语义化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="LeonHuang" />
+            
+              <p class="site-author-name" itemprop="name">LeonHuang</p>
+              <p class="site-description motion-element" itemprop="description">赶超时间，岁月无憾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HongTao-Huang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hht51770@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu17-10-友善6410-PC端QT开发环境搭建"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu17.10 友善6410 PC端QT开发环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载QT"><span class="nav-number">1.1.</span> <span class="nav-text">下载QT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装交叉编译工具"><span class="nav-number">1.2.</span> <span class="nav-text">安装交叉编译工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1"><span class="nav-number">1.2.1.</span> <span class="nav-text">Step1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2"><span class="nav-number">1.2.2.</span> <span class="nav-text">Step2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译与安装QtE-4-8-5"><span class="nav-number">1.3.</span> <span class="nav-text">编译与安装QtE-4.8.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解压QtE-4-8-5"><span class="nav-number">1.3.1.</span> <span class="nav-text">解压QtE-4.8.5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译与安装"><span class="nav-number">1.3.2.</span> <span class="nav-text">编译与安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装QT"><span class="nav-number">1.4.</span> <span class="nav-text">安装QT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">Step1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">Step2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3"><span class="nav-number">1.4.3.</span> <span class="nav-text">Step3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建工程"><span class="nav-number">1.5.</span> <span class="nav-text">新建工程</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeonHuang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66040674";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274952800&web_id=1274952800" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  <script src="/js/src/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '33a7be7c63a73c5fa373',
+      clientSecret: 'f7dcde6db311afaca4a67c661c3ef11208a0c152',
+      repo: 'hongtao-huang.github.io',
+      owner: 'HongTao-Huang',
+      admin: ['HongTao-Huang'],
+      id: md5(location.pathname),
+      distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+  </script>
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("pAsOK1fX2TQMsDz0GxEVwMoI-gzGzoHsz", "74gtn44iChrivKJtfmjf6bRX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

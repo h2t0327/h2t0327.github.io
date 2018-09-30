@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="gitbush github alias," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="不穿辣条吃秋裤" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="命令行学习与github学习总结命令行的总结哪些系统提供了命令行？ windows 命令提示符 和 git bush Linux （ubuntu）终端 unix （macos）终端  目前前端技术使用命令行的框架及工具  Gulp    webpack    SASS     node.js     vue     react    angular    这就是我们不得不学习命令行的原因    基">
+<meta name="keywords" content="gitbush github alias">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令行学习与github学习总结">
+<meta property="og:url" content="https://hongtao-huang.github.io/命令行总结/index.html">
+<meta property="og:site_name" content="不穿辣条吃秋裤">
+<meta property="og:description" content="命令行学习与github学习总结命令行的总结哪些系统提供了命令行？ windows 命令提示符 和 git bush Linux （ubuntu）终端 unix （macos）终端  目前前端技术使用命令行的框架及工具  Gulp    webpack    SASS     node.js     vue     react    angular    这就是我们不得不学习命令行的原因    基">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-29T13:59:08.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="命令行学习与github学习总结">
+<meta name="twitter:description" content="命令行学习与github学习总结命令行的总结哪些系统提供了命令行？ windows 命令提示符 和 git bush Linux （ubuntu）终端 unix （macos）终端  目前前端技术使用命令行的框架及工具  Gulp    webpack    SASS     node.js     vue     react    angular    这就是我们不得不学习命令行的原因    基">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'R905N4AKMG',
+      apiKey: '55832ac56512bfec969676c8b5c0dacf',
+      indexName: 'HexoSearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"找到约${hits}条结果（用时${time}ms）"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hongtao-huang.github.io/命令行总结/"/>
+
+
+
+
+
+  <title>命令行学习与github学习总结 | 不穿辣条吃秋裤</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126693960-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cb55dd04cbb27ee24fb9711282daed04";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不穿辣条吃秋裤</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">LeonHuang Blogs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/命令行总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeonHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不穿辣条吃秋裤">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">命令行学习与github学习总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T18:37:50+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/命令行总结/" class="leancloud_visitors" data-flag-title="命令行学习与github学习总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="命令行学习与github学习总结"><a href="#命令行学习与github学习总结" class="headerlink" title="命令行学习与github学习总结"></a>命令行学习与github学习总结</h1><h2 id="命令行的总结"><a href="#命令行的总结" class="headerlink" title="命令行的总结"></a>命令行的总结</h2><h3 id="哪些系统提供了命令行？"><a href="#哪些系统提供了命令行？" class="headerlink" title="哪些系统提供了命令行？"></a>哪些系统提供了命令行？</h3><ol>
+<li>windows 命令提示符 和 git bush</li>
+<li>Linux （ubuntu）终端</li>
+<li>unix （macos）终端</li>
+</ol>
+<h3 id="目前前端技术使用命令行的框架及工具"><a href="#目前前端技术使用命令行的框架及工具" class="headerlink" title="目前前端技术使用命令行的框架及工具"></a>目前前端技术使用命令行的框架及工具</h3><ul>
+<li><ul>
+<li>Gulp</li>
+</ul>
+</li>
+<li><ul>
+<li>webpack</li>
+</ul>
+</li>
+<li><ul>
+<li>SASS </li>
+</ul>
+</li>
+<li><ul>
+<li>node.js </li>
+</ul>
+</li>
+<li><ul>
+<li>vue </li>
+</ul>
+</li>
+<li><ul>
+<li>react</li>
+</ul>
+</li>
+<li><ul>
+<li>angular</li>
+</ul>
+</li>
+<li><ul>
+<li>这就是我们不得不学习命令行的原因</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>文件夹就是    目录</li>
+<li>~ ： 用户目录  </li>
+<li>/ :  代表整个硬盘的意思   ， 后面出现就是分界线的意思</li>
+<li>. :  表示当前目录</li>
+<li>.. ： 表示父目录</li>
+<li>$ : 提示可以输入命令</li>
+</ul>
+<h3 id="常用命令使用方法"><a href="#常用命令使用方法" class="headerlink" title="常用命令使用方法"></a>常用命令使用方法</h3><p><code>cd</code> 进入一个目录   cd ../ 回 上一个目录<br><code>pwd</code> 显示当前目录<br><code>mkdir</code>  创建目录  mkdir demo-1<br><code>mkdir -p</code>  目录路径 mkdir -p demo-1/demo-2/demo-3    如果有特殊字符   需要加引号 “demo-1/demo-2/demo-3”<br><code>whoami</code>  用户名   ，我是谁</p>
+<p><code>ls  xxx</code>  查看路径<br><code>ls</code>  查看当前目录的所有没有隐藏的文件<br><code>ls -a</code> 查看所有文件<br><code>ls -l</code> 查看更多信息<br><code>ls -al</code> 查看所有文件更多信息   </p>
+<p><code>echo  &quot;hello&quot; &gt; 1.txt</code>  重定向至1.txt    hello     会创建文件<br><code>echo  &quot;0.0&quot; &gt;&gt; 1.txt</code>  追加内容至       hello  0.0<br><code>echo  &quot;123&quot; &gt;! 1.txt</code>  强制重定向至（windows不支持   会创建一个！文件）    123</p>
+<p><code>touch</code> 也可以创建文件   但是不能指定内容    会更新文件创建的时间</p>
+<p><code>cp</code>  复制文件<br><code>cp -r</code>  复制目录  </p>
+<p><code>mv</code>  重命名或移动文件 </p>
+<p><code>rm</code> 删除文件<br><code>rm -rf</code> 强制删除目录</p>
+<p><code>tree</code> 查看目录结构   （windows不支持）</p>
+<p><code>ln-s</code> 建立软链接   （windows 不支持）</p>
+<p><code>curl-l https://code.jquery.com/jquery-3.3.1.min.js &gt; jq.html</code>    下载文件</p>
+<p><code>wget -p -H -e robots=off  https://www.baidu.com/</code>   拷贝一个网页  （windows不支持）</p>
+<p><code>df -kh</code> 查看磁盘占用<br><code>du -sh</code> 当前目录大小<br><code>du -h</code> 各文件大小  </p>
+<p><code>cat</code> 查看文件内容</p>
+<h2 id="ginhub学习总结"><a href="#ginhub学习总结" class="headerlink" title="ginhub学习总结"></a>ginhub学习总结</h2><h3 id="推荐一个详细讲解配置GitHub的网站"><a href="#推荐一个详细讲解配置GitHub的网站" class="headerlink" title="推荐一个详细讲解配置GitHub的网站"></a>推荐一个详细讲解配置GitHub的网站</h3><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" target="_blank" rel="noopener">廖雪峰-git</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 你的英文名</span><br><span class="line">git config --global user.email 你的邮箱</span><br><span class="line">git config --global push.default matching</span><br><span class="line">git config --global core.quotepath false</span><br><span class="line">git config --global core.editor &quot;vim&quot;</span><br></pre></td></tr></table></figure>
+<p>这五句话 ， 依次运行。  不执行的话 ，你会被打爆的  。 嘿嘿嘿</p>
+<h3 id="本地仓库操作命令"><a href="#本地仓库操作命令" class="headerlink" title="本地仓库操作命令"></a>本地仓库操作命令</h3><ol>
+<li><code>git init</code>，初始化本地仓库 .git</li>
+<li><code>git status -sb</code>，显示当前所有文件的状态</li>
+<li><code>git add</code> 文件路径，用来将变动加到暂存区</li>
+<li><code>git commit -m</code> “信息”，用来正式提交变动，提交至 .git 仓库</li>
+<li>如果有新的变动，我们只需要依次执行 <code>git add xxx</code> 和 <code>git commit -m &#39;xxx&#39;</code> 两个命令即可。别看本教程废话那么多，其实就这一句有用！先 add 再 commit，行了，你学会 git 了。</li>
+<li><code>git log</code> 查看变更历史</li>
+</ol>
+<h3 id="本地库上传GitHub"><a href="#本地库上传GitHub" class="headerlink" title="本地库上传GitHub"></a>本地库上传GitHub</h3><h4 id="当你在GitHub上创建一个空仓库时，-就会出现上传命令项"><a href="#当你在GitHub上创建一个空仓库时，-就会出现上传命令项" class="headerlink" title="当你在GitHub上创建一个空仓库时， 就会出现上传命令项"></a>当你在GitHub上创建一个空仓库时， 就会出现上传命令项</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# lll&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:HongTao-Huang/lll.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>推荐使用ssh 方式的git仓库链接<h4 id="仓库变更"><a href="#仓库变更" class="headerlink" title="仓库变更"></a>仓库变更</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add.</span><br><span class="line">git commit -m &quot;&quot;</span><br><span class="line">git pull    //   先执行，比较安全</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="下载仓库"><a href="#下载仓库" class="headerlink" title="下载仓库"></a>下载仓库</h3><p><code>git clone git@github.com:xxxx，下载仓库</code></p>
+<h3 id="其他一些有用的命令"><a href="#其他一些有用的命令" class="headerlink" title="其他一些有用的命令"></a>其他一些有用的命令</h3><p><code>git remote add origin git@github.com:xxxxxxx.git</code> 将本地仓库与远程仓库关联<br><code>git remote set-url origin git@github.com:xxxxx.git</code> 上一步手抖了，可以用这个命令来挽回<br><code>git branch</code> 新建分支<br><code>git merge</code> 合并分支<br><code>git stash</code> 通灵术<br><code>git stash pop</code> 反转通灵术<br><code>git revert</code> 后悔了<br><code>git reset</code> 另一种后悔了<br><code>git diff</code> 查看详细变化</p>
+<h2 id="最后最重要的我觉得最棒的就是可以把GitHub命令缩写的一个功能"><a href="#最后最重要的我觉得最棒的就是可以把GitHub命令缩写的一个功能" class="headerlink" title="最后最重要的我觉得最棒的就是可以把GitHub命令缩写的一个功能"></a>最后最重要的我觉得最棒的就是可以把GitHub命令缩写的一个功能</h2><h3 id="bashrc-功能很强大的一个功能"><a href="#bashrc-功能很强大的一个功能" class="headerlink" title="~/.bashrc  功能很强大的一个功能"></a>~/.bashrc  功能很强大的一个功能</h3><ol>
+<li>首先 <code>touch ~/.bashrc</code> 创建一下这个文件</li>
+<li><code>start ~/.bashrc</code> 选用编辑器编辑这个文件，内容为 <code>echo &#39;Hi&#39;</code></li>
+<li>你也可以用命令行编辑文件 <code>echo &quot;echo &#39;hi&#39;&quot; &gt;&gt; ~/.bashrc</code></li>
+<li>关闭退出 Git Bash，然后打开 Git Bash，是不是看到了 Hi，这说明每次进入 Git Bash，就会优先运行 ~/.bashrc 里面的命令</li>
+<li>重新编辑 ~/.bashrc，内容改为 <code>cd ~/Desktop</code>，重启 Git Bash，有没有发现默认就进入桌面目录了？<br>你可以用 ~/.bashrc 在进入 Git Bash 前执行任何命令，十分方便。</li>
+</ol>
+<h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><p>在 ~/.bashrc 里新增一行 <code>alias f=&quot;echo &#39;frank is awesome&#39;&quot;</code>，等于号两边不能有空格，你最好一个字都不要错。<br>运行 <code>source ~/.bashrc</code>，作用是执行 ~/.bashrc<br>运行 f，就会看到 <code>frank is awesome</code><br>也就是说，现在 f 就是 echo ‘frank is awesome’ 的缩写了，利用这个技巧，我们可以把很多常见的命令缩写一下，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">cd d/ttman/Desktop</span><br><span class="line">alias la=&apos;ls -a&apos;</span><br><span class="line">alias ll=&apos;ls -l&apos;</span><br><span class="line">alias gss=&apos;git status -sb&apos;</span><br><span class="line">alias ga=&apos;git add&apos;</span><br><span class="line">alias ga.=&apos;git add .&apos;</span><br><span class="line">alias gc=&apos;git commit&apos;</span><br><span class="line">alias gcm=&apos;git commit -m&apos;</span><br><span class="line">alias hg=&apos;hexo generate&apos;</span><br><span class="line">alias hd=&apos;hexo deploy&apos;</span><br><span class="line">alias hs=&apos;hexo server&apos;</span><br><span class="line">alias hn=&apos;hexo new&apos;</span><br><span class="line"></span><br><span class="line">export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="LeonHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="LeonHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gitbush-github-alias/" rel="tag"># gitbush github alias</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/如何搭建一个博客系统/" rel="next" title="如何搭建一个博客系统">
+                <i class="fa fa-chevron-left"></i> 如何搭建一个博客系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/脚本/" rel="prev" title="脚本">
+                脚本 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="LeonHuang" />
+            
+              <p class="site-author-name" itemprop="name">LeonHuang</p>
+              <p class="site-description motion-element" itemprop="description">赶超时间，岁月无憾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HongTao-Huang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hht51770@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行学习与github学习总结"><span class="nav-number">1.</span> <span class="nav-text">命令行学习与github学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行的总结"><span class="nav-number">1.1.</span> <span class="nav-text">命令行的总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哪些系统提供了命令行？"><span class="nav-number">1.1.1.</span> <span class="nav-text">哪些系统提供了命令行？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前前端技术使用命令行的框架及工具"><span class="nav-number">1.1.2.</span> <span class="nav-text">目前前端技术使用命令行的框架及工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.3.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令使用方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">常用命令使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ginhub学习总结"><span class="nav-number">1.2.</span> <span class="nav-text">ginhub学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐一个详细讲解配置GitHub的网站"><span class="nav-number">1.2.1.</span> <span class="nav-text">推荐一个详细讲解配置GitHub的网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地仓库操作命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">本地仓库操作命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地库上传GitHub"><span class="nav-number">1.2.3.</span> <span class="nav-text">本地库上传GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#当你在GitHub上创建一个空仓库时，-就会出现上传命令项"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">当你在GitHub上创建一个空仓库时， 就会出现上传命令项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#仓库变更"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">仓库变更</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载仓库"><span class="nav-number">1.2.4.</span> <span class="nav-text">下载仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他一些有用的命令"><span class="nav-number">1.2.5.</span> <span class="nav-text">其他一些有用的命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后最重要的我觉得最棒的就是可以把GitHub命令缩写的一个功能"><span class="nav-number">1.3.</span> <span class="nav-text">最后最重要的我觉得最棒的就是可以把GitHub命令缩写的一个功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bashrc-功能很强大的一个功能"><span class="nav-number">1.3.1.</span> <span class="nav-text">~/.bashrc  功能很强大的一个功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias"><span class="nav-number">1.3.2.</span> <span class="nav-text">alias</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeonHuang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66040674";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274952800&web_id=1274952800" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  <script src="/js/src/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '33a7be7c63a73c5fa373',
+      clientSecret: 'f7dcde6db311afaca4a67c661c3ef11208a0c152',
+      repo: 'hongtao-huang.github.io',
+      owner: 'HongTao-Huang',
+      admin: ['HongTao-Huang'],
+      id: md5(location.pathname),
+      distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+  </script>
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("pAsOK1fX2TQMsDz0GxEVwMoI-gzGzoHsz", "74gtn44iChrivKJtfmjf6bRX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
