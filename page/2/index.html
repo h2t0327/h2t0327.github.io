@@ -470,44 +470,18 @@
       
         
           
-            <h1 id="CSS-元素宽高是由什么决定的"><a href="#CSS-元素宽高是由什么决定的" class="headerlink" title="CSS-元素宽高是由什么决定的"></a>CSS-元素宽高是由什么决定的</h1><blockquote>
-<p> 任何元素都可以是块级元素 或 行内元素<br> 因为每个元素都可以设置成行内元素或块级元素   </p>
-</blockquote>
-<h2 id="行内元素表现形式"><a href="#行内元素表现形式" class="headerlink" title="行内元素表现形式"></a>行内元素表现形式</h2><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb3v2gjhvj309e01eq2q.jpg" alt=""><br>代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>行内元素就是在一行中显示，如果后面跟着的还是行内元素，就继续跟在后面显示，当一行不够显示时自动换行</li>
-</ul>
-<h2 id="块级元素表现形式"><a href="#块级元素表现形式" class="headerlink" title="块级元素表现形式"></a>块级元素表现形式</h2><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb423gjnaj309u02igld.jpg" alt=""><br>代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border: 1px solid red;&quot;&gt;123&lt;/div&gt;</span><br><span class="line">  &lt;div style=&quot;border: 1px solid red;&quot;&gt;123&lt;/div&gt;</span><br><span class="line">  &lt;div style=&quot;border: 1px solid red;&quot;&gt;123&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>块级元素不管后面跟着的是什么元素，都会另起一行。也就是说块级元素会独占一行。<h2 id="元素的高度由什么决定的"><a href="#元素的高度由什么决定的" class="headerlink" title="元素的高度由什么决定的"></a>元素的高度由什么决定的</h2><h3 id="span-行内元素高度由什么决定的"><a href="#span-行内元素高度由什么决定的" class="headerlink" title="span 行内元素高度由什么决定的"></a>span 行内元素高度由什么决定的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    div&#123;</span><br><span class="line">      border: 1px solid blue;</span><br><span class="line">    &#125;</span><br><span class="line">    span&#123;</span><br><span class="line">      border: 1px solid red;</span><br><span class="line">      font-size: 72px;</span><br><span class="line">    &#125;</span><br><span class="line">    .s1&#123;</span><br><span class="line">       font-family: sans-serif;  </span><br><span class="line">    &#125;</span><br><span class="line">    .s2&#123;</span><br><span class="line">       font-family: monospace;</span><br><span class="line">    &#125;</span><br><span class="line">    .s3&#123;</span><br><span class="line">      font-family:serif ;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">  &lt;span class=&quot;s1&quot;&gt;ABC&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;s2&quot;&gt;ABC&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;s3&quot;&gt;ABC&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb4g6bbdmj30fr02yt8r.jpg" alt=""></p>
-<ul>
-<li>可以看到， 我给每个span 都设置了一个字体， 而中间字体的高度明显高于两边的字体 。</li>
-<li>每一种字体的设计师不一样， 每一种字体的设计师都会对自己设置出来的字体的默认行高不一样</li>
-<li>所以，行内元素内容为字的元素的行高是由 字体的默认行高决定的。  </li>
-<li>比较详细的解说可以看看这篇知乎文章<a href="https://zhuanlan.zhihu.com/p/27381252" target="_blank" rel="noopener">字号与行高</a></li>
-</ul>
-<h3 id="div-块级元素高度由什么决定的"><a href="#div-块级元素高度由什么决定的" class="headerlink" title="div 块级元素高度由什么决定的"></a>div 块级元素高度由什么决定的</h3><ul>
-<li>从上面的程序代码可以看到， span是由一个div包裹的 。 div的告诉是中间最高的span的高度。</li>
-<li>也就是说块级元素的高度是由它的内容决定的，而且是所有内容中最高的内容决定的。</li>
-</ul>
-<h2 id="元素的宽度是由什么决定的"><a href="#元素的宽度是由什么决定的" class="headerlink" title="元素的宽度是由什么决定的"></a>元素的宽度是由什么决定的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    div&#123;</span><br><span class="line">      border: 1px solid blue;</span><br><span class="line">      font-size: 72px;</span><br><span class="line">    &#125;</span><br><span class="line">    span&#123;</span><br><span class="line">      border: 1px solid red;</span><br><span class="line">      font-size: 72px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;span&gt;12345678&lt;/span&gt;</span><br><span class="line">    &lt;div&gt;12345678&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb50ogjyyj30g805jwep.jpg" alt=""></p>
-<ul>
-<li>行内元素的宽度是由它的内容决定的，行内元素不能设置宽高</li>
-<li><p>块级元素当没有设置宽度是默认100%宽 ，所以才会到最右边。当设置了宽度是就是固定的宽度 ， 下面我们把宽度设置为200px；<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb5600a8aj30fc04q3yp.jpg" alt=""></p>
-</li>
-<li><p>看div的蓝色边框 ， 宽度就是固定的200px;</p>
-</li>
-<li><p>如果把div设置成行内元素，  它的宽度是怎样的呢,设置属性display:inline<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb5itt1v9j30fu04vdg0.jpg" alt=""></p>
-</li>
-<li><p>div的宽度会收缩</p>
-</li>
-</ul>
+          CSS-元素宽高是由什么决定的
+ 任何元素都可以是块级元素 或 行内元素 因为每个元素都可以设置成行内元素或块级元素   
 
-          
+行内元素表现形式代码123456789&lt;span&gt;hello! &lt;/span&gt;&lt;span&gt;hello! &lt;/span&gt;&lt;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/css宽高的决定/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -658,50 +632,22 @@
       
         
           
-            <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="引入css的4种方法"><a href="#引入css的4种方法" class="headerlink" title="引入css的4种方法"></a>引入css的4种方法</h2><ol>
-<li>style 属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;height:100px;background-color: red;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<div style="height:100px;background-color: red;"></div>
+          CSS引入css的4种方法
+style 属性1&lt;div style=&quot;height:100px;background-color: red;&quot;&gt;&lt;/div&gt;
 
-<ol>
-<li>style 标签<br>在head标签内容中添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line"> div&#123;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: red;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<div style="height:100px;background-color: red;"></div>
 
-<ol>
-<li><p>link 标签引入<br>i 创建一个a.css文件 ，并添加内容</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line"> height: 100px;</span><br><span class="line"> background-color: red;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p> ii 在head中添加 </p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;a.css&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li>import<br> 该方法是在一个css文件中引入另一个css文件，语法为 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import url(&quot;b.css&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<pre><code>（以下观点属个人理解）
-</code></pre><h2 id="水平布局"><a href="#水平布局" class="headerlink" title="水平布局"></a>水平布局</h2><h3 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    a&#123;</span><br><span class="line">      text-decoration:none;</span><br><span class="line">    &#125;</span><br><span class="line">    ul&#123;</span><br><span class="line">      list-style-type: none;</span><br><span class="line">    &#125;</span><br><span class="line">    ul&gt;li&#123;</span><br><span class="line">      float:left;</span><br><span class="line">      margin:20px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;HOME&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ABOUT&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;CONTACT&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2018/04/09/5acb3337aa951.png" alt="导航栏.png"></p>
-<p>在导航条下面加一个div<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">      width: 100px;</span><br><span class="line">      height: 100px;</span><br><span class="line">      background-color: grey;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="未清除浮动效果"><a href="#未清除浮动效果" class="headerlink" title="未清除浮动效果"></a>未清除浮动效果</h3><p><img src="https://i.loli.net/2018/04/10/5acc1bb8afc89.png" alt="未清楚浮动.png"></p>
-<h3 id="清楚浮动效果"><a href="#清楚浮动效果" class="headerlink" title="清楚浮动效果"></a>清楚浮动效果</h3><p><img src="https://i.loli.net/2018/04/10/5acc207970cc2.png" alt="2018-04-10 10-24-12 的屏幕截图.png"></p>
-<ul>
-<li>所以在给元素添加float后都有可能带来一些问题 ，所以我们需要清除浮动带来的影响。</li>
-<li>清除浮动的办法有很多种，我们只用以下一种方法<br>i 给浮动元素的父元素的类  加  <code>clearfix</code><br>ii <code>clearfix</code> 的css代码具体实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">     content:&apos;&apos;;</span><br><span class="line">     display:block;</span><br><span class="line">     clear:both;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="垂直布局"><a href="#垂直布局" class="headerlink" title="垂直布局"></a>垂直布局</h2><h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><p> 整个网页就是在做一个垂直布局 ， 而水平布局就是在整体的纵向垂直布局上做一块内容的横向水平布局</p>
-<h3 id="各块的垂直布局"><a href="#各块的垂直布局" class="headerlink" title="各块的垂直布局"></a>各块的垂直布局</h3><p><img src="https://i.loli.net/2018/04/10/5acc25c1a9055.png" alt="2018-04-10 10-45-56 的屏幕截图.png"></p>
-<ul>
-<li>可以看到导航栏部分和所有div做整体的垂直布局</li>
-<li>而导航栏这一块里面又做了水平布局</li>
-<li>所以  我觉得浏览器的布局就是整体在做垂直布局，但是又有水平布局组合的复杂布局</li>
-</ul>
-<h2 id="实用且好用的工具推荐"><a href="#实用且好用的工具推荐" class="headerlink" title="实用且好用的工具推荐"></a>实用且好用的工具推荐</h2><p><a href="https://c.m.163.com/news/a/DDJFF6P905118DFD.html?spss=newsapp&amp;fromhistory=1" target="_blank" rel="noopener">工具推荐</a></p>
 
-          
+
+
+style 标签在head标签内容中添加12345678910111213141516&
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/css-Learn1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -852,67 +798,17 @@
       
         
           
-            <h1 id="定时切换全屏多窗口（linux-QT5）"><a href="#定时切换全屏多窗口（linux-QT5）" class="headerlink" title="定时切换全屏多窗口（linux-QT5）"></a>定时切换全屏多窗口（linux-QT5）</h1><h2 id="新建多窗口"><a href="#新建多窗口" class="headerlink" title="新建多窗口"></a>新建多窗口</h2><ol>
-<li>新建一个主工程 ，类名为Widget ， 基类为QWidget （主窗口）</li>
-<li>添加新文件， 选择QT ，选择QT设计师界面类，  选择Dialog whitout Buttons （如此随便新建几个，这里我新建了两个  这里是对话窗口 或者  子窗口）</li>
-</ol>
-<h2 id="窗口全屏"><a href="#窗口全屏" class="headerlink" title="窗口全屏"></a>窗口全屏</h2><ol>
-<li>widget 主窗口只需要使用 <code>showFullScreen()</code> 函数</li>
-<li>dialog 对话窗口需要使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dialog2.setWindowFlags(Qt::Window);</span><br><span class="line">dialog2.showFullScreen();</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dialog2.setWindowFlags(Qt::Dialog);</span><br><span class="line">dialog2.showFullScreen();</span><br></pre></td></tr></table></figure></p>
-<p>这两种方法是将窗口类型升为顶级（主）窗口模式，然后调用<code>dialog2.showFullScreen();</code>函数将子函数全屏显示。</p>
-<ol>
-<li>感兴趣的可以看一下 <a href="https://www.bbsmax.com/A/RnJWY1wYdq/" target="_blank" rel="noopener">关于窗口全屏显示</a></li>
-</ol>
-<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>这里是看的QT 快速入门系列教程第十篇：<br><a href="https://wizardforcel.gitbooks.io/qt-beginning/content/13.html" target="_blank" rel="noopener">QT定时器的两种方式</a></p>
-<h2 id="关于关闭窗口相关函数"><a href="#关于关闭窗口相关函数" class="headerlink" title="关于关闭窗口相关函数"></a>关于关闭窗口相关函数</h2><p><a href="http://blog.csdn.net/xqhrs232/article/details/78211614" target="_blank" rel="noopener">关闭应用程序和窗口的函数</a></p>
-<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><h3 id="widget-h文件中"><a href="#widget-h文件中" class="headerlink" title="widget.h文件中"></a><code>widget.h</code>文件中</h3><ol>
-<li><p>调用头文件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;dialog1.h&quot;</span><br><span class="line">#include &quot;dialog2.h&quot;   //子窗口文件名字的头文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>private slots:</code> 下添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void dialog1Show();</span><br><span class="line">void dialog2Show();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>private:</code> 下添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dialog1 dialog1;</span><br><span class="line">Dialog2 dialog2;</span><br><span class="line">int id1 , num=0; //id1 为定时器溢出变量 ，num 为切换窗口变量</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加定时器事件函数声明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">protected:</span><br><span class="line">void timerEvent(QTimerEvent *);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="widget-cpp文件中"><a href="#widget-cpp文件中" class="headerlink" title="widget.cpp文件中"></a><code>widget.cpp</code>文件中</h3><ol>
-<li><p>构造函数中添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">showFullScreen(); // 为了运行时就可以全屏</span><br><span class="line">id1 = startTimer(5000);  // 开启一个5秒定时器，返回其ID</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>定义定时器事件处理函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void Widget::timerEvent(QTimerEvent *event)</span><br><span class="line">&#123;</span><br><span class="line">   if (event-&gt;timerId() == id1) &#123;       // 判断是哪个定时器</span><br><span class="line">       if(num == 0)&#123;        // num=0 的时候调用第一个子窗口显示</span><br><span class="line">            dialog1Show();</span><br><span class="line">       &#125;</span><br><span class="line">       else if(num == 1)&#123;   // num=1 的时候调用第二个子窗口显示</span><br><span class="line">           dialog2Show();</span><br><span class="line">       &#125;</span><br><span class="line">       else if(num == 2)&#123;    //num=2 的时候关闭第二个窗口显示，设置主窗口为全屏显示，然后显示主窗口</span><br><span class="line">           dialog2.close();</span><br><span class="line">           showFullScreen();</span><br><span class="line">           this-&gt;show();</span><br><span class="line">       &#125;</span><br><span class="line">       num++;</span><br><span class="line">       num %= 3;       // 5秒进来一次  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>定义第一个子窗口显示函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void Widget::dialog1Show()&#123;</span><br><span class="line"></span><br><span class="line">    this-&gt;hide();</span><br><span class="line">    dialog1.setWindowFlags(Qt::Dialog);</span><br><span class="line">//    dialog1.setWindowFlags(Qt::Window);</span><br><span class="line">    dialog1.showFullScreen();</span><br><span class="line">    dialog1.show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>定义第二个子窗口显示函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void Widget::dialog2Show()&#123;</span><br><span class="line">    dialog1.close();</span><br><span class="line">    dialog2.setWindowFlags(Qt::Dialog);</span><br><span class="line">//    dialog2.setWindowFlags(Qt::Window);</span><br><span class="line">    dialog2.showFullScreen();</span><br><span class="line">    dialog2.show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>至此整个全屏定时切换窗口程序就完成了</li>
-</ul>
-<h2 id="简化，合并函数"><a href="#简化，合并函数" class="headerlink" title="简化，合并函数"></a>简化，合并函数</h2><ul>
-<li>这里是把最后这部分显示函数合并为一个函数</li>
-</ul>
-<h3 id="widget-h-中修改"><a href="#widget-h-中修改" class="headerlink" title="widget.h 中修改"></a>widget.h 中修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">private slots:</span><br><span class="line">void dialogShow(char cnt);</span><br></pre></td></tr></table></figure>
-<h3 id="widget-cpp中修改"><a href="#widget-cpp中修改" class="headerlink" title="widget.cpp中修改"></a>widget.cpp中修改</h3><ol>
-<li><p>定义 定时器事件处理函数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void Widget::timerEvent(QTimerEvent *event)</span><br><span class="line">&#123;</span><br><span class="line">   if (event-&gt;timerId() == id1) &#123;       // 判断是哪个定时器</span><br><span class="line">       dialogShow(num);</span><br><span class="line">       num++;</span><br><span class="line">       num %= 3;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>定义显示函数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void Widget::dialogShow(char cnt)&#123;</span><br><span class="line">    if(cnt == 0)&#123;</span><br><span class="line">        this-&gt;hide();</span><br><span class="line">        dialog1.setWindowFlags(Qt::Dialog);</span><br><span class="line">    //    dialog1.setWindowFlags(Qt::Window);</span><br><span class="line">        dialog1.showFullScreen();</span><br><span class="line">        dialog1.show();</span><br><span class="line">    &#125;else if(cnt == 1)&#123;</span><br><span class="line">        dialog1.close();</span><br><span class="line">        dialog2.setWindowFlags(Qt::Dialog);</span><br><span class="line">    //    dialog2.setWindowFlags(Qt::Window);</span><br><span class="line">        dialog2.showFullScreen();</span><br><span class="line">        dialog2.show();</span><br><span class="line">    &#125;else if (cnt == 2) &#123;</span><br><span class="line">        dialog2.close();</span><br><span class="line">        showFullScreen();</span><br><span class="line">        this-&gt;show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
+          定时切换全屏多窗口（linux-QT5）新建多窗口
+新建一个主工程 ，类名为Widget ， 基类为QWidget （主窗口）
+添加新文件， 选择QT ，选择QT设计师界面类，  选择Dialog whitout Buttons （如此随便新建几个，这里我新建了两个  这里是对话窗口 或者  子窗口
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/定时切换窗口/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1063,26 +959,20 @@
       
         
           
-            <h1 id="linux-QT5-6410-串口"><a href="#linux-QT5-6410-串口" class="headerlink" title="linux-QT5-6410-串口"></a>linux-QT5-6410-串口</h1><p>在Linux下我们只能使用查询Polling方式。</p>
-<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><ul>
-<li>新建项目 ，创建dialog，QT桌面项目</li>
-</ul>
-<h2 id="pro文件中添加："><a href="#pro文件中添加：" class="headerlink" title="pro文件中添加："></a>pro文件中添加：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QT       += serialport</span><br></pre></td></tr></table></figure>
-<h2 id="dialoh-h中添加"><a href="#dialoh-h中添加" class="headerlink" title="dialoh.h中添加"></a>dialoh.h中添加</h2><h3 id="添加头文件"><a href="#添加头文件" class="headerlink" title="添加头文件"></a>添加头文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;QtSerialPort/QSerialPort&gt;</span><br><span class="line">#include &lt;QtSerialPort/QSerialPortInfo&gt;   </span><br><span class="line">//以上两个头文件在QT5以下版本需要使用第三方文件，如 qextserialbase.cpp和qextserialbase.h 以及posix_qextserialport.cpp和posix_qextserialport.h</span><br><span class="line">#include &lt;QTimer&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="private下添加"><a href="#private下添加" class="headerlink" title="private下添加"></a>private下添加</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QSerialPort *myCom;</span><br><span class="line">QTimer *readTimer;</span><br></pre></td></tr></table></figure>
-<h3 id="添加私有槽函数"><a href="#添加私有槽函数" class="headerlink" title="添加私有槽函数"></a>添加私有槽函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">private slots:</span><br><span class="line">void on_pushButton_clicked(); //”发送数据”按钮槽函数</span><br><span class="line">void readMyCom(); //读取串口</span><br></pre></td></tr></table></figure>
-<h2 id="dialog-cpp中添加"><a href="#dialog-cpp中添加" class="headerlink" title="dialog.cpp中添加"></a>dialog.cpp中添加</h2><h3 id="构造函数下添加"><a href="#构造函数下添加" class="headerlink" title="构造函数下添加"></a>构造函数下添加</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">myCom = new QSerialPort();  </span><br><span class="line">myCom-&gt;setPortName(&quot;/dev/ttyS0&quot;);  </span><br><span class="line">myCom-&gt;open(QIODevice::ReadWrite);  </span><br><span class="line">myCom-&gt;setBaudRate(QSerialPort::Baud115200);  </span><br><span class="line">myCom-&gt;setBaudRate(QSerialPort::Data8);  </span><br><span class="line">myCom-&gt;setParity(QSerialPort::NoParity);  </span><br><span class="line">myCom-&gt;setStopBits(QSerialPort::OneStop);   </span><br><span class="line">myCom-&gt;setFlowControl(QSerialPort::NoFlowControl);</span><br><span class="line">readTimer = new QTimer(this);</span><br><span class="line">readTimer-&gt;start(100);</span><br><span class="line">connect(readTimer,SIGNAL(timeout()),this,SLOT(readMyCom()));</span><br></pre></td></tr></table></figure>
-<h3 id="构造函数外添加两个私有槽函数的实体"><a href="#构造函数外添加两个私有槽函数的实体" class="headerlink" title="构造函数外添加两个私有槽函数的实体"></a>构造函数外添加两个私有槽函数的实体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void Widget::readMyCom() //读取串口数据并显示出来</span><br><span class="line">&#123;</span><br><span class="line">    QByteArray temp = myCom-&gt;readAll(); //读取串口缓冲区的所有数据给临时变量temp</span><br><span class="line">   ui-&gt;textBrowser-&gt;insertPlainText(temp); //将串口的数据显示在窗口的文本浏览器中</span><br><span class="line">&#125;</span><br><span class="line">void Widget::on_pushButton_clicked() //发送数据</span><br><span class="line">&#123;</span><br><span class="line">    myCom-&gt;write(ui-&gt;lineEdit-&gt;text().toAscii()); //以ASCII码形式将数据写入串口</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="修改UI界面"><a href="#修改UI界面" class="headerlink" title="修改UI界面"></a>修改UI界面</h2><ul>
-<li>加入一个textBrowser的文本框</li>
-<li>加入一个 lineEdit的输入框</li>
-<li>加入一个pushbutoon的发送按钮</li>
-</ul>
-<blockquote>
-<p>到这里一个基本的串口工程就建立完成了！！！</p>
-</blockquote>
+          linux-QT5-6410-串口在Linux下我们只能使用查询Polling方式。
+新建项目
+新建项目 ，创建dialog，QT桌面项目
 
-          
+pro文件中添加：1QT       += serialport
+dialoh.h中添加添加头文件1234#include &lt;QtSerialPort/
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/6410串口/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1233,60 +1123,17 @@
       
         
           
-            <h1 id="HTML-语义化-iframe-a-form的使用"><a href="#HTML-语义化-iframe-a-form的使用" class="headerlink" title="HTML-语义化-(iframe-a-form的使用)"></a>HTML-语义化-(iframe-a-form的使用)</h1><h2 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h2><p>参考资料：<br><a href="http://justineo.github.io/slideshows/semantic-html/" target="_blank" rel="noopener">semantic-html</a><br><a href="http://www.oschina.net/translate/about-html-semantics-front-end-architecture" target="_blank" rel="noopener">关于语义化 HTML 以及前端架构的一点思考</a><br><a href="http://www.zhihu.com/question/20455165" target="_blank" rel="noopener">如何理解 web 语义化</a></p>
-<blockquote>
-<p>语义化的含义就是用正确的标签做正确的事情，html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p>
-</blockquote>
-<p>列举几个常见的标签：<br>标题从大到小： h1 , h2 , h3 , h4 , h5 , h6<br>超链接： a<br>段落： p<br>无序列表： ul&gt;li<br>有序列表： ol&gt;li<br>自定义列表： dl&gt;{dt , dd}<br><a href="http://www.runoob.com/tags/tag-header.html" target="_blank" rel="noopener"><code>&lt;header&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main" target="_blank" rel="noopener"><code>&lt;main&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section" target="_blank" rel="noopener"><code>&lt;section&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer" target="_blank" rel="noopener"><code>&lt;footer&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article" target="_blank" rel="noopener"><code>&lt;article&gt;</code></a></p>
-<h2 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>跳转页面。 发起 HTTP GET 请求</p>
-<h3 id="target-属性"><a href="#target-属性" class="headerlink" title="target 属性"></a>target 属性</h3><ul>
-<li>_blank 在新页面打开网页</li>
-<li>_self 在当前页面打开网页  </li>
-<li>_parent 在父页面打开网页  ， 这种要在当前页面被嵌套在一个iframe网页中容易体现出来</li>
-<li>_top 在最外围页面打开网页 ， 这种要在当前页面被嵌套在多个iframe网页中容易体现出来</li>
-</ul>
-<h3 id="download"><a href="#download" class="headerlink" title="download"></a>download</h3><ul>
-<li>表示下载href所对应的网页</li>
-</ul>
-<h2 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h2><p>默认宽高为300 * 150大小</p>
-<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><ul>
-<li>可以在一个网页嵌套一个网页<br>例如：<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpg8heal7qj309508sdfv.jpg" alt=""></li>
-</ul>
-<h3 id="与-a标签"><a href="#与-a标签" class="headerlink" title="与 a标签"></a>与 a标签</h3><p>看图：<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpgqn7mfjuj309i084gm1.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe name=xxx src=&quot;http://baidu.com&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">    &lt;a href=&quot;http://qq.com&quot; target=&quot;xxx&quot;&gt;QQ&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;我是iframe外面的P标签&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
-<p>QQ为 a 标签链接  ，它的target 属性等于 <code>xxx</code>,点击QQ 就会在iframe 中打开<code>qq.com</code>的网页<br>iframe 标签中本来打开的网页时<code>baidu.com</code> ，iframe 有一个属性时<code>name</code> ，<code>name</code>属性等于 a标签的target属性的值，所以点击a标签的时候就会在iframe中打开a标签中的URL。</p>
-<h2 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h2><p>跳转页面。 发起 HTTP POST 请求<br>常用属性</p>
-<ul>
-<li>action ：  规定当提交表单时向何处发送表单数据。值为：URL</li>
-<li>method ：  规定用于发送表单数据的 HTTP 方法。值只能是： GET 或 POST请求</li>
-<li>target ：  规定在何处打开 action URL。值为：<br>i. _blank<br>ii. _self<br>iii. _parent<br>iv. _top<br>和 标签是一样的。  </li>
-<li><code>&lt;form&gt;</code> 元素包含一个或多个如下的表单元素：   <code>&lt;input&gt;
-&lt;textarea&gt;
-&lt;button&gt;
-&lt;select&gt;
-&lt;option&gt;
-&lt;optgroup&gt;
-&lt;fieldset&gt;
-&lt;label&gt;</code>  </li>
-</ul>
-<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p>type属性:</p>
-<ol>
-<li>text： 简单文本输入</li>
-<li>password： 加密文本输入</li>
-<li>radio： 单选框 ，相同的name ，为一组单选框</li>
-<li>chekbox： 复选框 ， 相同的name ，为一组复选框</li>
-<li>reset： 重置按钮 ，value为按钮名字，重置之前所有的输入</li>
-<li>submit：提交按钮 ，value为按钮名字 ，将输入的内容提交至 form 标签的 action属性对应的URL中</li>
-<li>button： 普通按钮 ，value为按钮名字<ul>
-<li>注意： 要想输入的内容能提交 ， 需要加一个name属性</li>
-</ul>
-</li>
-</ol>
-<p>require属性： 加了这个属性就表示，输入框中必须有输入</p>
-<p>lable : lable for id , lable标签for 中值  ，对应lable想关联的标签的id 值。</p>
-<p>textarea: 文本输入框</p>
-<p>select ： 下拉菜单 ， option为选项</p>
+          HTML-语义化-(iframe-a-form的使用)语义化参考资料：semantic-html关于语义化 HTML 以及前端架构的一点思考如何理解 web 语义化
 
-          
+语义化的含义就是用正确的标签做正确的事情，html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/html-语义化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1437,43 +1284,16 @@
       
         
           
-            <h1 id="Ubuntu17-10-友善6410-PC端QT开发环境搭建"><a href="#Ubuntu17-10-友善6410-PC端QT开发环境搭建" class="headerlink" title="Ubuntu17.10 友善6410 PC端QT开发环境搭建"></a>Ubuntu17.10 友善6410 PC端QT开发环境搭建</h1><h2 id="下载QT"><a href="#下载QT" class="headerlink" title="下载QT"></a>下载QT</h2><p><a href="http://download.qt.io/archive/qt/" target="_blank" rel="noopener">QT各版本官方下载大全</a><br>这里我们下载最新的安装文件<br><code>qt-opensource-linux-x64-5.10.1.run</code><br>这个.run文件既包含了SDK也包含了IDE：QtCreator</p>
-<h2 id="安装交叉编译工具"><a href="#安装交叉编译工具" class="headerlink" title="安装交叉编译工具"></a>安装交叉编译工具</h2><h3 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h3><p>将光盘 Linux 目录中的 arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz 复制到 Ubuntu某个<br>目录下如 tmp/（没有的话可以在自己的用户目录上创建）,然后进入到该目录,执行解压命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">tar xvzf arm-linux-gcc-4.5.1-v6-vfp-20120301.tgz –C /</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>注意:C 后面有个空格,并且 C 是大写的,它是英文单词“Change”的第一个字母,在此是改变目录的意思。</li>
-<li>执行该命令,将把 arm-linux- gcc 安装到/opt/FriendlyARM/toolschain/4.5.1 目录。</li>
-</ul>
-<h3 id="Step2"><a href="#Step2" class="headerlink" title="Step2"></a>Step2</h3><p><code>#vim /root/.bashrc</code><br>编 辑 <code>/root/.bashrc</code> 文 件 , 注 意 “ bashrc ” 前 面 有 一 个 “ . ”, 修 改 最 后 一 行 为<br><code>export PATH=$PATH:/opt/FriendlyARM/toolschain/4.5.1/bin</code>,注意路径一定要写对,否则将不会有效。<br>重启 ，其实注销就行 。你随意<br>在命令行 输入<br><code>arm-linux-gcc –v</code>,会出现一堆信息，最下面一行为<code>gcc version 4.5.1 (ctng-1.8.1-FA)</code>,这说明交叉编译环境已经成功安装。</p>
-<h2 id="编译与安装QtE-4-8-5"><a href="#编译与安装QtE-4-8-5" class="headerlink" title="编译与安装QtE-4.8.5"></a>编译与安装QtE-4.8.5</h2><h3 id="解压QtE-4-8-5"><a href="#解压QtE-4-8-5" class="headerlink" title="解压QtE-4.8.5"></a>解压QtE-4.8.5</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">首先创建工作目录/opt/FriendlyARM/tinyc110/linux</span><br><span class="line">在命令行执行</span><br><span class="line">mkdir –p /opt/FriendlyARM/tinyc110/linux</span><br><span class="line">cd /opt/FriendlyARM/tinyc110/linux</span><br><span class="line">tar xvzf /tmp/linux/arm-qte-4.8.5-20101105.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="编译与安装"><a href="#编译与安装" class="headerlink" title="编译与安装"></a>编译与安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/FriendlyARM/mini210/linux/arm-qte-4.8.5</span><br><span class="line">./build.sh</span><br><span class="line">此处等待完成， 要很长时间 ，耐心一点</span><br><span class="line">./mktarget       这一步其实可以省略，执行此文件会提取出必要的 QtE-4.8.5 库文</span><br><span class="line">件 和 可 执 行 二 进 制 示 例 , 并 打 包 为 </span><br><span class="line">target-qte-4.8.5-to-devboard.tgz </span><br><span class="line">target-qte-4.8.5-to-hostpc.tgz</span><br><span class="line">如果省略,也可以直接使用我们编译好的二进制包,它们放在光盘的 Linux 目录下,名称</span><br><span class="line">target-qte-4.8.5-to-devboard.tgz </span><br><span class="line">target-qte-4.8.5-to-hostpc.tgz</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>其中 <code>target-qte-4.8.5-to-devboard.tgz</code> 是用于部署在开发板上的版 本,为了节省空间该版本删<br>除了开发工具只保留运行程序所需的库文件,而 <code>target-qte-4.8.5-to-hostpc.tgz</code> 则是用于安装在 PC<br>上,用来开发和编译程序的版本,带有 qmake 等 Qt 工具以及编译所需的头文件等,可用于配置<br>Qt Creator 开发工具。</p>
-</li>
-<li><p>安装 QtE-4.8.5 到 PC 上的方法如下:<br>把 <code>target-qte-4.8.5-to-hostpc.tgz</code> 在 PC 的根目录下解压即可,如下命令<br><code>tar xvzf target-qte-4.8.5-to-hostpc.tgz –C /</code></p>
-</li>
-<li><p>QtE-4.8.5 会安装到目录 <code>/usr/local/Trolltech/QtEmbedded-4.8.5-arm/</code> 下,它里面包含了运行<br>所需要的所有库文件和可执行程序。</p>
-</li>
-<li><p>qmake路径配置 ：<br><code>cd /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/</code><br><code>vim default.conf</code> 将第一行路径替换为QTE485路径 <code>/usr/local/Trolltech/QtEmbedded-4.8.5-arm/lib</code></p>
-</li>
-</ul>
-<h2 id="安装QT"><a href="#安装QT" class="headerlink" title="安装QT"></a>安装QT</h2><h3 id="Step1-1"><a href="#Step1-1" class="headerlink" title="Step1"></a>Step1</h3><p>进入下载好QT的目录， 一般在下载目录中 。给安装文件运行权限：<br><code>chmod u+x qt-opensource-linux-x64-5.10.1.run</code></p>
-<h3 id="Step2-1"><a href="#Step2-1" class="headerlink" title="Step2"></a>Step2</h3><p>运行 <code>./qt-opensource-linux-x64-5.10.1.run</code><br>一路向下，注意   那个<code>5.10.1</code>要勾选，3.6个G的样子</p>
-<h3 id="Step3"><a href="#Step3" class="headerlink" title="Step3"></a>Step3</h3><p>QT5.10.1 安装按成后会自带QTcreator ， 打开QTcreator</p>
-<ul>
-<li>在菜单栏处找到<code>工具（Tools）</code> -&gt; <code>选项（options）</code> 打开options窗口 ，点击<code>构建和运行</code>   </li>
-<li>点击<code>QT Versions</code> ，看auto （自动）栏是否检测到<code>QT 5.10.1 GCC 64bit</code> 以及<code>QT 4.8.5 in PATH(QtEmbedded-4.8.5-arm)</code> 如果没有检测到4.8.5 那么手动添加 路径为：<code>/usr/local/Trolltech/QtEmbedded-4.8.5-arm/bin/qmake</code></li>
-<li>点击<code>编译器（compilers）</code> -&gt; <code>添加（add）</code> -&gt; <code>GCC</code> -&gt; <code>C++</code>  下方出现弹窗 ， 将一条名称改为<code>ARMGCC</code> ， 第二条路径为<code>/opt/FriendlyARM/toolschain/4.5.1/bin/arm-linux-gcc</code> ，最后点击<code>应用（apply）</code> </li>
-<li>点击<code>构建套件（kit）</code>  ，修改名称为ARM ， 然后将才编译器 c++ ： 更换成 <code>ARMGCC</code>  ，最后点击<code>应用（apply）</code> </li>
-</ul>
-<blockquote>
-<p>最后这就表示安装并且配置完成了， 可以开心的玩起来了。</p>
-</blockquote>
-<h2 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h2><p>新建工程 ， 选择编译环境时把<code>ARM</code> 和 <code>Desktop</code> 都勾选起来 ，这样的话 ，我们就可以在PC上调试好， 放到开发板中运行了  。</p>
-<ul>
-<li>编译的时候可以在左边绿色三角上方选择编译器 ，  选择Desktop可以在PC上调试 ， 选择ARM 会生成开发板需要的执行文件 。 运行之后都会在项目所在的目录生成一个目录。</li>
-</ul>
-
-          
+          Ubuntu17.10 友善6410 PC端QT开发环境搭建下载QTQT各版本官方下载大全这里我们下载最新的安装文件qt-opensource-linux-x64-5.10.1.run这个.run文件既包含了SDK也包含了IDE：QtCreator
+安装交叉编译工具Step1将光盘 Linux 目录
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Ubuntu17安装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1624,36 +1444,16 @@
       
         
           
-            <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><blockquote>
-<p>万维网联盟（W3C）由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。<br>该组织试图通过W3C制定的新标准来促进业界成员间的兼容性和协议。不兼容的HTML版本由不同的供应商提供，导致网页显示方式不一致。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件。</p>
-</blockquote>
-<h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><blockquote>
-<p>为解决网络应用中不同平台、技术和开发者带来的不兼容问题，保障网络信息的顺利和完整流通，万维网联盟制定了一系列标准并督促网络应用开发者和内容提供者遵循这些标准。标准的内容包括使用语言的规范，开发中使用的导则和解释引擎的行为等等。W3C也制定了包括XML和CSS等的众多影响深远的标准规范。</p>
-</blockquote>
-<blockquote>
-<p>但是，W3C制定的网络标准似乎并非强制而只是推荐标准。因此部分网站仍然不能完全实现这些标准。特别是使用早期所见即所得网页编辑软件设计的网页往往会包含大量非标准代码。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-  -W3C推荐标准</span><br><span class="line">CSS：层叠样式表</span><br><span class="line">DOM：文档对象模型</span><br><span class="line">HTML：超文本标记语言</span><br><span class="line">RDF：资源描述框架</span><br><span class="line">SMIL：同步多媒体集成语言</span><br><span class="line">SVG：可缩放向量图形</span><br><span class="line">WAI</span><br><span class="line">Widgets</span><br><span class="line">XHTML：可扩展超文本标记语言</span><br><span class="line">XML：可扩展标记语言</span><br></pre></td></tr></table></figure>
-<h2 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h2><ul>
-<li>MDN Web Docs 是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站</li>
-<li>该项目始于2005年，最初由Mozilla公司员工Deb Richardson领导。自2006年以来，文档工作由Eric Shepherd领导</li>
-<li><ul>
-<li>关于前端的一些技术都可以先从MDN中搜索了解，比如一些HTML标签的使用，CSS属性的使用等</li>
-</ul>
-</li>
-</ul>
-<h2 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h2><h3 id="MDN链接"><a href="#MDN链接" class="headerlink" title="MDN链接"></a>MDN链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">HTML All Tags ,MDN</a></p>
-<h2 id="空标签"><a href="#空标签" class="headerlink" title="空标签"></a>空标签</h2><h3 id="什么是空标签？"><a href="#什么是空标签？" class="headerlink" title="什么是空标签？"></a>什么是空标签？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTML，SVG 和 MathML 的规范都详细定义了每个元素能包含的具体内容（define very precisely what each element can contain）。许多组合是没有任何语义含义的，比如一个 &lt;audio&gt; 元素嵌套在一个 &lt;hr&gt; 元素里。</span><br><span class="line">在 HTML 中，通常在一个空元素上使用一个闭标签是无效的。例如， &lt;input type=&quot;text&quot;&gt;&lt;/input&gt; 的闭标签是无效的 HTML。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>理解： 一个没有闭标签(或者说闭标签加了无效) 或者 HTML、SVG、MathML规范中没有定义标签能包含哪些内容的标签就是 空标签。</li>
-</ul>
-<h3 id="HTML中的空标签"><a href="#HTML中的空标签" class="headerlink" title="HTML中的空标签"></a>HTML中的空标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;area&gt;</span><br><span class="line">&lt;base&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;col&gt;</span><br><span class="line">&lt;colgroup&gt; when the span is present</span><br><span class="line">&lt;command&gt;</span><br><span class="line">&lt;embed&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;img&gt;</span><br><span class="line">&lt;input&gt;</span><br><span class="line">&lt;keygen&gt;</span><br><span class="line">&lt;link&gt;</span><br><span class="line">&lt;meta&gt;</span><br><span class="line">&lt;param&gt;</span><br><span class="line">&lt;source&gt;</span><br><span class="line">&lt;track&gt;</span><br><span class="line">&lt;wbr&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="可替换标签？"><a href="#可替换标签？" class="headerlink" title="可替换标签？"></a>可替换标签？</h2><h3 id="什么是可替换标签？"><a href="#什么是可替换标签？" class="headerlink" title="什么是可替换标签？"></a>什么是可替换标签？</h3><blockquote>
-<p>可替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如浏览器会根据&lt;img&gt;标签的src属性的值来读取图片信息并显示出来，而如果查看(x)html代码，则看不到图片的实际内容；又例如根据&lt;input&gt;标签的type属性来决定是显示输入框，还是单选按钮等。</span><br></pre></td></tr></table></figure>
-<h3 id="常见的几个可替换标签"><a href="#常见的几个可替换标签" class="headerlink" title="常见的几个可替换标签"></a>常见的几个可替换标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img&gt;、&lt;input&gt;、&lt;textarea&gt;、&lt;select&gt;、&lt;object&gt;</span><br></pre></td></tr></table></figure>
-          
+          HTMLW3C历史
+万维网联盟（W3C）由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。该组织试图通过W3C制定的新标准来促进业界成员间的兼容性和协议。不兼容的HTML版本由不同的供应商提供，导致网页显示方式不一致。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/HTML/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1804,44 +1604,18 @@
       
         
           
-            <h1 id="node-js-Server"><a href="#node-js-Server" class="headerlink" title="node.js Server"></a>node.js Server</h1><h2 id="脚本建Server"><a href="#脚本建Server" class="headerlink" title="脚本建Server"></a>脚本建Server</h2><h3 id="用什么脚本建服务器"><a href="#用什么脚本建服务器" class="headerlink" title="用什么脚本建服务器"></a>用什么脚本建服务器</h3><ul>
-<li>用脚本就可以提供 HTTP 服务，不管是 Bash 脚本还是 Node.js 脚本都可以。</li>
-<li>由于 Bash 脚本的语法实在是反人类，而且我们今后要学习 JavaScript，所以我们先用 Node.js 脚本试试水吧。</li>
-<li>建成的服务器就是我们的电脑，没钱买服务器，穷逼的我们就用电脑做服务器实验吧，哈哈哈</li>
-</ul>
-<h3 id="创建node-js-Server脚本"><a href="#创建node-js-Server脚本" class="headerlink" title="创建node.js Server脚本"></a>创建node.js Server脚本</h3><ul>
-<li>用bush命令操作，进个自己认为安全好用的目录</li>
-<li>创建文件 <code>touch server.js</code> ,将以下内容加入：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var http = require(&apos;http&apos;)</span><br><span class="line">var fs = require(&apos;fs&apos;)</span><br><span class="line">var url = require(&apos;url&apos;)</span><br><span class="line">var port = process.argv[2]</span><br><span class="line"></span><br><span class="line">if(!port)&#123;</span><br><span class="line">  console.log(&apos;请指定端口号好不啦？\nnode server.js 8888 这样不会吗？&apos;)</span><br><span class="line">  process.exit(1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var server = http.createServer(function(request, response)&#123;</span><br><span class="line">  var parsedUrl = url.parse(request.url, true)</span><br><span class="line">  var path = request.url </span><br><span class="line">  var query = &apos;&apos;</span><br><span class="line">  if(path.indexOf(&apos;?&apos;) &gt;= 0)&#123; query = path.substring(path.indexOf(&apos;?&apos;)) &#125;</span><br><span class="line">  var pathNoQuery = parsedUrl.pathname</span><br><span class="line">  var queryObject = parsedUrl.query</span><br><span class="line">  var method = request.method</span><br><span class="line"></span><br><span class="line">  /******** 从这里开始看，上面不要看 ************/</span><br><span class="line"></span><br><span class="line">  console.log(&apos;HTTP 路径为\n&apos; + path)</span><br><span class="line">  if(path == &apos;/style.css&apos;)&#123;</span><br><span class="line">    response.setHeader(&apos;Content-Type&apos;, &apos;text/css; charset=utf-8&apos;)</span><br><span class="line">    response.write(&apos;body&#123;background-color: #ddd;&#125;h1&#123;color: red;&#125;p&#123;color: green;&#125;&apos;)</span><br><span class="line">    response.end()</span><br><span class="line">  &#125;else if(path == &apos;/main.js&apos;)&#123;</span><br><span class="line">    response.setHeader(&apos;Content-Type&apos;, &apos;text/javascript; charset=utf-8&apos;)</span><br><span class="line">    response.write(&apos;alert(&quot;这是JS执行的&quot;)&apos;)</span><br><span class="line">    response.end()</span><br><span class="line">  &#125;else if(path == &apos;/&apos;)&#123;</span><br><span class="line">    response.setHeader(&apos;Content-Type&apos;, &apos;text/html; charset=utf-8&apos;)</span><br><span class="line">    response.write(&apos;&lt;!DOCTYPE&gt;\n&lt;html&gt;&apos;  + </span><br><span class="line">      &apos;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/style.css&quot;&gt;&apos; +</span><br><span class="line">      &apos;&lt;/head&gt;&lt;body&gt;&apos;  +</span><br><span class="line">      &apos;&lt;h1&gt;你好&lt;/h1&gt;&apos; +</span><br><span class="line">      &apos;&lt;p&gt;这里是你访问到的内容，字体的颜色为你访问到的css添加&lt;/p&gt;&apos;+</span><br><span class="line">      &apos;&lt;script src=&quot;/main.js&quot;&gt;&lt;/script&gt;&apos; +</span><br><span class="line">      &apos;&lt;/body&gt;&lt;/html&gt;&apos;)</span><br><span class="line">    response.end()</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    response.statusCode = 404</span><br><span class="line">    response.end()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /******** 代码结束，下面不要看 ************/</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(port)</span><br><span class="line">console.log(&apos;监听 &apos; + port + &apos; 成功\n请用在空中转体720度然后用电饭煲打开 http://localhost:&apos; + port)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行 <code>node server.js</code> ,如果开始创建文件没有加后缀就运行 <code>node server</code> ,会看到报错<br>  <img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpbmpoffrjj308002aweh.jpg" alt=""><br>  没有监听端口那我们就 <code>node server 8888</code></li>
-<li>成功之后，这个 server 会保持运行(相当于服务器开始运行了，可以接受请求了)，无法退出<ul>
-<li>如果你想「中断」这个 server，按 <kb>Ctrl + <kbd>C</kbd> 即可（C 就是 Cancel 的意思）</kb></li>
-<li>中断后你才能输入其他命令</li>
-<li>我建议你把这个 server 放在那里别动，新开一个 Bash 窗口，完成下面的教程</li>
-</ul>
-</li>
-</ul>
-<h3 id="服务器当前的功能"><a href="#服务器当前的功能" class="headerlink" title="服务器当前的功能"></a>服务器当前的功能</h3><ol>
-<li>这个服务器目前只有一个功能，那就是打印出路径</li>
-<li>发出响应，返回一个页面</li>
-</ol>
-<h3 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h3><ul>
-<li>使用bush 或者 浏览器 向我们这个服务器发起请求 ，那么服务器的地址是什么？  <blockquote>
-<p>服务器的地址当然就是我们的本地地址啦 ，<code>http://127.0.0.1</code> 或者 <code>http://localhost</code> 发起访问： 报错<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpbn1ddvzmj30f70ffdg5.jpg" alt="">    </p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>我们还是忘记了，http 访问 必须 IP + 端口号 ，所以，我们重新访问 <code>http://127.0.0.1:8888</code><br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpbnfc8nsaj30p505haaa.jpg" alt=""></li>
-</ul>
-<h3 id="服务器响应"><a href="#服务器响应" class="headerlink" title="服务器响应"></a>服务器响应</h3><p>可以看到服务器响应给我们了一个页面， 有HTML内容的显示，css样式的加持，JS动态的弹窗</p>
-<ul>
-<li>同时 服务器打印出请求的路径<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpbnj1w33ej30bt03074h.jpg" alt=""></li>
-</ul>
-<h3 id="我们需要知道的"><a href="#我们需要知道的" class="headerlink" title="我们需要知道的"></a>我们需要知道的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(&apos;Content-Type&apos;, &apos;text/css; charset=utf-8&apos;)  //设置响应内容的类型，以及响应内容的编码方式，返回                                                                  //css文件 </span><br><span class="line">response.setHeader(&apos;Content-Type&apos;, &apos;text/javascript; charset=utf-8&apos;) //返回js文件</span><br><span class="line">response.setHeader(&apos;Content-Type&apos;, &apos;text/html; charset=utf-8&apos;)     //返回html文件</span><br><span class="line"> response.statusCode = 404                   //返回状态码</span><br><span class="line">response.write(&apos;Hi&apos;)          //响应内容</span><br><span class="line">response.end()             //响应结束</span><br></pre></td></tr></table></figure>
-          
+          node.js Server脚本建Server用什么脚本建服务器
+用脚本就可以提供 HTTP 服务，不管是 Bash 脚本还是 Node.js 脚本都可以。
+由于 Bash 脚本的语法实在是反人类，而且我们今后要学习 JavaScript，所以我们先用 Node.js 脚本试试水吧。
+建成的服务器就
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/nodejs-Server/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1992,56 +1766,22 @@
       
         
           
-            <h1 id="HTTP访问要素-IP与端口"><a href="#HTTP访问要素-IP与端口" class="headerlink" title="HTTP访问要素:IP与端口"></a>HTTP访问要素:IP与端口</h1><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><ul>
-<li>HTTP 协议的底层其实是由 TCP 协议和 IP 协议（简称 TCP/IP）构建的。</li>
-</ul>
-<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><ul>
-<li>TCP : 传输控制协议（Transmission Control Protocol）<br>本文重点不讲TCP，可以了解下面两条概念：</li>
-</ul>
-<ol>
-<li><a href="https://www.nowcoder.com/questionTerminal/63c8b45c91a544bd8febc1f1ff02e3b5?toCommentId=73766" target="_blank" rel="noopener">TCP 和 UDP 的区别是什么?</a><br>简答：<br>TCP ：可靠 、 面向连接、  相对UDP较慢。<br>UDP ：不可靠、 不面向连接、 相对TCP较快。</li>
-<li><a href="https://github.com/jawil/blog/issues/14" target="_blank" rel="noopener">TCP 的三次握手指的是什么？</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 客户端：我要连接你了，可以吗</span><br><span class="line">2. 服务端：嗯，我准备好了，连接我吧</span><br><span class="line">3. 客户端：那我连接你咯。</span><br><span class="line">4. 开始后面步骤</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><ul>
-<li>IP ： 网络协议（英语：Internet Protocol）  </li>
-</ul>
-<h3 id="内网IP-："><a href="#内网IP-：" class="headerlink" title="内网IP ："></a>内网IP ：</h3><p>假如家里有一台路由器 ，手机电脑IPAD等都连接路由器 ，而路由器给这些设备分配的IP地址就是内网IP地址。<br>一般内网IP格式为192.168.xxx.xxx 。<br>而通常路由器分给自己的内网IP是192.168.1.1 。如果不是就说明这个路由器的设置不是大众化的这种！<br>所以路由分给手机的内网IP<code>可能</code>为192.168.1.2  ，分给电脑的内网IP<code>可能</code>为192.168.1.3  </p>
-<h3 id="外网IP-："><a href="#外网IP-：" class="headerlink" title="外网IP ："></a>外网IP ：</h3><p>如果路由器连上电信的服务器，那么路由器就会有一个外网IP 。<br>外网IP格式 ： 暂时理解为只要不是192.168开头的就都是外网IP ，可能理解有误。<br>如果路由器重启 ，则很有<code>可能</code>被重新分配一个外网IP ，也就是说路由器没有固定的外网IP。</p>
-<h3 id="内外网的访问"><a href="#内外网的访问" class="headerlink" title="内外网的访问"></a>内外网的访问</h3><ol>
-<li>内网可以直接访问外网么？<br>答案是<code>不能</code>，内网IP访问外网必须要通过路由器来中转 ，路由器只有连上了电信服务器，分配有外网IP才能访问外网。  </li>
-<li>路由器的作用是什么，什么是路由？<br>比如说我们手机要访问baidu.com  ，必须先经过路由中转然后路由外网IP对baidu.com 发送请求，百度收到后对路由响应一个网页或者  数据之类的东东。<br>路由器接收到 baidu.com 的页面后，把页面发送给你的电脑或手机。路由器知道如何给这些信息指路，路由器就是一个指路人，这就是「路由」两个字的来历。<br>路，就是「必由之路」中的路。由，就是「必由之路」中的由（由是经过、缘由的意思）。所有的信息都要经过路由器，然后被指向一条它该去的路。<br>也就是说内网和外网就像两个隔绝的空间，无法互通，唯一的联通点就是路由器（因为路由器既有外网 IP 也有内网 IP），所以路由器有时候也被叫做「网关」，这个「关」是「一夫当关，万夫莫开」的「关」。如果路由器到电信的连接中断了，那么内网中所有的设备也就无法上网了。（这很好理解，相当于唯一一条出去的路断了）  </li>
-<li>内网能访问内网么？<br>内网中的设备可以互相访问（比如你可以用电脑或手机进入 <a href="http://192.168.1.1" target="_blank" rel="noopener">http://192.168.1.1</a> 来查看你的路由器），但是不能直接访问外网，内网设备想要访问外网，就必须经过路由器中转。  </li>
-<li>外网能访问外网么？<br>外网中的设备可以互相访问（比如 qq.com 可以把首页发送给你的路由器，你的路由器有外网 IP），但是外网中的设备无法访问你的内网设备（这很好理解，内网是一个封闭的网络，外人进不来，所以实际上 qq.com 无法直接把首页放送给你的电脑和手机</li>
-</ol>
-<h3 id="本地IP"><a href="#本地IP" class="headerlink" title="本地IP"></a>本地IP</h3><p>这是一个特殊的IP ，代表着设备自己的IP。<br>默认情况下，hosts 文件里会有一行127.0.0.1 localhost，意思就是 localhost 指向 127.0.0.1，所以 localhost 也表示设备自己。不信你 <code>ping localhost</code> 试试，会发现实际上是在 <code>ping 127.0.0.1</code></p>
-<h3 id="特殊IP"><a href="#特殊IP" class="headerlink" title="特殊IP"></a>特殊IP</h3><p>IP：0.0.0.0，它不表示任何设备。这个 IP 不同的地方含义不同。</p>
-<h2 id="端口（Port）"><a href="#端口（Port）" class="headerlink" title="端口（Port）"></a>端口（Port）</h2><p>你想要访问一个设备（前提是你使用的是 TCP 或 UDP 协议。还记得吗，HTTP 就使用了 TCP），只指定 IP 是不够的，必须指定端口。<br>端口其实就是一个编号，并不是一种硬件。<br>一个服务器（硬件）不一定只提供一种服务，比如一个服务器既提供 HTTP 服务，又提供 FTP 服务，还提供 SMTP 服务（邮件服务），那么只用一个 IP 是无法告诉服务器你想要使用哪种服务。<br>所以这里有一个重要的原则：一个端口对应一个服务。<br>比如  </p>
-<ol>
-<li>要提供 HTTP 服务你最好使用 80 端口（能不能使用别的端口？可以，不过不建议你违反约定）</li>
-<li>要提供 HTTPS 服务你最好使用 443 端口（能不能使用别的端口？可以，不过不建议你违反约定）</li>
-<li>要提供 FTP 服务你最好使用 21 端口（能不能使用别的端口？可以，不过不建议你违反约定）</li>
-</ol>
-<h3 id="我怎么知道应该使用什么端口？"><a href="#我怎么知道应该使用什么端口？" class="headerlink" title="我怎么知道应该使用什么端口？"></a>我怎么知道应该使用什么端口？</h3><p><a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" target="_blank" rel="noopener">维基百科</a> 把 0 到 1023 号端口对应的服务都告诉你了，点进去看看吧。  </p>
-<h3 id="一共有多少端口？"><a href="#一共有多少端口？" class="headerlink" title="一共有多少端口？"></a>一共有多少端口？</h3><p>每个机器一共有 65535（2的16次方减1）个端口（这是协议规定的）。不过这些端口的使用由一些规定：  </p>
-<ol>
-<li>0 到 1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</li>
-<li>其他端口可以给普通用户使用</li>
-<li>如果一个端口正在提供服务，也就是被占用了，那么就不能再使用这个端口。除非你先停掉正在占用这个端口的服务。以后你们会经常遇到这个问题。</li>
-</ol>
-<h2 id="TCP-IP总结"><a href="#TCP-IP总结" class="headerlink" title="TCP/IP总结"></a>TCP/IP总结</h2><p>上面都是 TCP/IP 相关的知识，如果你记不住，就记住下面这句话：</p>
-<blockquote>
-<p>使用 HTTP 协议访问另一个 IP 时，比如同时提供 IP 和端口号，缺一不可。</p>
-</blockquote>
-<ul>
-<li>那么问题来了</li>
-</ul>
-<p>我访问 <a href="http://qq.com" target="_blank" rel="noopener">http://qq.com</a> 时并没有提供端口号，为什么我依然可以访问</p>
-<blockquote>
-<p>答：因为浏览器帮你加了默认端口号 80。</p>
-</blockquote>
+          HTTP访问要素:IP与端口HTTP
+HTTP 协议的底层其实是由 TCP 协议和 IP 协议（简称 TCP/IP）构建的。
 
-          
+TCP
+TCP : 传输控制协议（Transmission Control Protocol）本文重点不讲TCP，可以了解下面两条概念：
+
+
+TCP 和 UDP 的区别是什
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/HTTP要素：IP 与 端口/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2192,77 +1932,18 @@
       
         
           
-            <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p><code>URL</code> 俗称网址 ， 也就是统一资源<code>定位</code>符/<code>定位</code>地址</p>
-<h3 id="URL-的组成"><a href="#URL-的组成" class="headerlink" title="URL 的组成"></a>URL 的组成</h3><p><a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1</a></p>
-<p><code>https</code> 为超文本传输协议，两个电脑之间传输内容的协议 。也就是说前面的<code>http</code> 或者 <code>https</code>指的是协议</p>
-<p><code>www.baidu.com</code> 域名 </p>
-<p><code>/s</code> 路径， 这个路径非计算机中文件路径。 <code>https://www.baidu.com</code> 这个网址默认会有一个 <code>/</code>的路径</p>
-<p><code>wd=hello&amp;rsv_spt=1</code> 查询参数 ，可以点击 <a href="https://www.baidu.com/s?wd=hi&amp;rsv_spt=1#1" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hi&amp;rsv_spt=1#1</a> 会发现变成了在百度hi的内容</p>
-<p><code>#1</code> 锚点 ， 将网站#1 变为 #3 ，点击 <a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#3" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#3</a> 会发现直接显示在第一行的是该搜索项网页的第三个链接 ，多次修改#后面的数字就会明白了</p>
-<p><code>:80</code> 其实这个网址还有一个端口号，http协议的服务端口号就是对应的80。<a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1:80" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1:80</a> 这个网址的效果和 <a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1是一样的。" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1是一样的。</a></p>
-<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><blockquote>
-<p>网域名称系统（DNS，Domain Name System，有时也简称为域名）是因特网的一项核心服务，它作为可以将域名和IP<br>地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。</p>
-</blockquote>
-<blockquote>
-<p>例如，<a href="http://www.wikipedia.org是一个域名，和IP地址208.80.152.2相对应。DNS就像是一个自动的电话号码簿，我们可以" target="_blank" rel="noopener">www.wikipedia.org是一个域名，和IP地址208.80.152.2相对应。DNS就像是一个自动的电话号码簿，我们可以</a><br>直接拨打wikipedia的名字来代替电话号码（IP地址）。我们直接调用网站的名字以后，DNS就会将便于人类使用的名字<br>（如<a href="http://www.wikipedia.org）转化成便于机器识别的IP地址（如208.80.152.2）。[1]" target="_blank" rel="noopener">www.wikipedia.org）转化成便于机器识别的IP地址（如208.80.152.2）。[1]</a></p>
-</blockquote>
-<ul>
-<li>简单理解就是，DNS 可以把 域名 转换为IP地址 </li>
-</ul>
-<h3 id="两种查看域名对应IP地址的方法"><a href="#两种查看域名对应IP地址的方法" class="headerlink" title="两种查看域名对应IP地址的方法"></a>两种查看域名对应IP地址的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nslookup baidu.com</span><br><span class="line">ping baidu.com</span><br></pre></td></tr></table></figure>
-<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><h3 id="请求百度页面"><a href="#请求百度页面" class="headerlink" title="请求百度页面"></a>请求百度页面</h3><p><img src="//video.jirengu.com/FsfB2P_WlfvCBOfU2vUARSL0AmCg" alt="请求"><br>访问百度网站   ，我们点击第一个，然后点Request  右边的view<br><img src="//video.jirengu.com/FlXCfBPkgLIkBd4ceo1wubiB-K9k" alt="图片"></p>
-<p>请求的格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure></p>
-<p>###分析请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.1                        动词 路径 协议/版本</span><br><span class="line">Host: www.baidu.com               key1</span><br><span class="line">Connection: keep-alive             key2</span><br><span class="line">Cache-Control: max-age=0      key3</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）</li>
-<li>第三部分永远都是一个回车（\n）</li>
-<li>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等<br> i. GET就是获取的意思<br>ii. POST 就是上传的意思， 上传信息会有一个content-length ： 上传的数据长度 ，然后第四部分会有上传信息的内容<br>iii. </li>
-<li>这里的路径包括「查询参数」，但不包括「锚点」</li>
-<li>如果你没有写路径，那么路径默认为 /</li>
-<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
-<li>如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</li>
-</ol>
-<h2 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h2><h3 id="有请求就有响应，下面是百度的响应"><a href="#有请求就有响应，下面是百度的响应" class="headerlink" title="有请求就有响应，下面是百度的响应"></a>有请求就有响应，下面是百度的响应</h3><p><img src="//video.jirengu.com/FqFw99ah9wk45yKcfF5TKwrqIwI5" alt="查看 Response Headers，点击「view source」，点击「view source]"></p>
-<ul>
-<li>GET 请求和 POST 请求对应的响应可以一样，也可以不一样</li>
-<li>响应的第四部分可以很长很长很长</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Bdpagetype: 2</span><br><span class="line">Bdqid: 0x8f2fe8e100013131</span><br><span class="line">Bduserid: 941701595</span><br><span class="line">Cache-Control: private</span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Content-Type: text/html;charset=utf-8</span><br><span class="line">Date: Mon, 12 Mar 2018 14:49:48 GMT</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>响应的格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 协议/版本号 状态码 状态解释</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Content-Length: 17931</span><br><span class="line">2 Content-Type: text/html</span><br><span class="line">3</span><br><span class="line">4 要下载的内容</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>状态码要背，是服务器对浏览器说的话 ,每个记到6就好了 ，想多记可以搜HTTP状态码，看维基百科<ul>
-<li>1xx 不常用<blockquote>
-<p>这一类型的状态码，代表请求已被接受，需要继续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束。由于HTTP/1.0协议中没有定义任何1xx状态码，所以除非在某些试验条件下，服务器禁止向此类客户端发送1xx响应。[4] 这些状态码代表的响应都是信息性的，标示客户应该采取的其他行动。</p>
-</blockquote>
-</li>
-<li>2xx 表示成功<blockquote>
-<p>200 OK<br>请求已成功，请求所希望的响应头或数据体将随此响应返回。<br>201 Created<br>请求已经被实现，而且有一个新的资源已经依据请求的需要而创建，且其URI已经随Location头信息返回。<br>202 Accepted<br>服务器已接受请求，但尚未处理。<br>203 Non-Authoritative Information（自HTTP / 1.1起<br>服务器是一个转换代理服务器（transforming proxy，例如网络加速器），以200 OK状态码为起源，但回应了原始响应的修改版本。<br>204 No Content<br>服务器成功处理了请求，没有返回任何内容<br>205 Reset Content<br>服务器成功处理了请求，但没有返回任何内容。与204响应不同，此响应要求请求者重置文档视图。<br>206 Partial Content<br>服务器已经成功处理了部分GET请求。</p>
-</blockquote>
-</li>
-<li>3xx 表示滚吧<blockquote>
-<p>300 Multiple Choices<br>被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。<br>301 Moved Permanently:<br>被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个URI之一。<br>302 Found<br>要求客户端执行临时重定向 ,服务器临时换了个地址<br>303 See Other<br>对应当前请求的响应可以在另一个 URI上被找到，当响应于POST（或PUT / DELETE）接收到响应时，客户端应该假定服务器已经收到数据，并且应该使用单独的GET消息发出重定向。<br>304 Not Modified<br>表示资源未被修改，因为请求头指 定的版本If-Modified-Since或If-None-Match。在这种情况下，由于客户端仍然具有以前下载的副本，因此不需要重新传输资源。<br>305 Use Proxy<br>被请求的资源必须通过指定的代理才能被访问。<br>306 Switch Proxy<br>在最新版的规范中，306状态码已经不再被使用。</p>
-</blockquote>
-</li>
-<li>4xx 表示你丫错了<blockquote>
-<p>400 Bad Request<br>由于明显的客户端错误（例如，格式错误的请求语法，太大的大小，无效的请求消息或欺骗性路由请求），服务器不能或不会处理该请求。<br>401 Unauthorized<br>类似于403 Forbidden，401语义即“未认证”，即用户没有必要的凭据。[32]该状态码表示当前请求需要用户验证。<br>402 Payment Required<br>该状态码是为了将来可能的需求而预留的。<br>403 Forbidden<br>服务器已经理解请求，但是拒绝执行它。<br>404 Not Found<br>请求失败，请求所希望得到的资源未被在服务器上发现，但允许用户的后续请求。<br>405 Method Not Allowed<br>请求行中指定的请求方法不能被用于请求相应的资源。<br>406 Not Acceptable<br>请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体，该请求不可接受。</p>
-</blockquote>
-</li>
-<li>5xx 表示好吧，我错了<blockquote>
-<p>500 Internal Server Error<br>通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。没有给出具体错误信息。<br>501 Not Implemented<br>服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。<br>502 Bad Gateway<br>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。<br>503 Service Unavailable<br>由于临时的服务器维护或者过载，服务器当前无法处理请求。<br>504 Gateway Timeout<br>作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器（URI标识出的服务器，例如HTTP、FTP、LDAP）或者辅助服务器（例如DNS）收到响应。<br>505 HTTP Version Not Supported<br>服务器不支持，或者拒绝支持在请求中使用的HTTP版本。<br>506 Variant Also Negotiates（RFC 2295）<br>由《透明内容协商协议》（RFC 2295）扩展，代表服务器存在内部配置错误，[64]被请求的协商变元资源被配置为在透明内容协商中使用自己，因此在一个协商处理中不是一个合适的重点。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>状态解释没什么用</li>
-<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
-<li>第 2 部分中的 Content-Type 遵循 MIME 规范</li>
-<li><ul>
-<li>查看 Response 或者 Preview，你会看到响应的第 4 部分</li>
-</ul>
-</li>
-</ul>
-
-          
+          HTTPURLURL 俗称网址 ， 也就是统一资源定位符/定位地址
+URL 的组成https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#1
+https 为超文本传输协议，两个电脑之间传输内容的协议 。也就是说前面的http 或者 https指的是协议
+www.
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/http/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

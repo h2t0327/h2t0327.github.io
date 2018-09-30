@@ -470,37 +470,15 @@
       
         
           
-            <h1 id="深入理解jQuery"><a href="#深入理解jQuery" class="headerlink" title="深入理解jQuery"></a>深入理解jQuery</h1><h2 id="自我封装jQuery代码"><a href="#自我封装jQuery代码" class="headerlink" title="自我封装jQuery代码"></a>自我封装jQuery代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector) &#123;</span><br><span class="line">  let nodes = &#123;&#125;</span><br><span class="line">  if (typeof nodeOrSelector === &apos;string&apos;) &#123;</span><br><span class="line">    let tmp = document.querySelectorAll(nodeOrSelector);</span><br><span class="line">    for(var i =0; i &lt; tmp.length; i++)&#123;</span><br><span class="line">      nodes[i] = tmp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = i;</span><br><span class="line">  &#125; else if (nodeOrSelector instanceof Node) &#123;</span><br><span class="line">    nodes = &#123;</span><br><span class="line">      0: nodeOrSelector,</span><br><span class="line">      length: 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.addClass = function(classs) &#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">      nodes[i].classList.add(classs);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.setText = function(text)&#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">        nodes[i].textContent = text;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return nodes;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;222&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure>
-<h2 id="代码实现过程"><a href="#代码实现过程" class="headerlink" title="代码实现过程"></a>代码实现过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>一般我们的得到的元素都是一个dom对象，而这个对象最终继承的就是Node接口</li>
-<li>所以可以在 Node.prototype 上添加以上 addClass 及setText 方法</li>
-<li>但是Node.prototype 是一个共有对象，每个人写的程序都不一样， 如果大家都在这里面操作添加删除API  ,   就会出现各种问题</li>
-<li>所以我们可以取一个我们自己喜欢的名字来当作我们简便操作dom树，这个构造函数就不会被别人乱修改啦，而jQuery的作者就取名叫jQuery的</li>
-<li>为了更懒更简便的操作，所以让$ = jQuery</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let nodes = &#123;&#125;</span><br><span class="line">  if (typeof nodeOrSelector === &apos;string&apos;) &#123;</span><br><span class="line">    let tmp = document.querySelectorAll(nodeOrSelector);</span><br><span class="line">    for(var i =0; i &lt; tmp.length; i++)&#123;</span><br><span class="line">      nodes[i] = tmp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = i;</span><br><span class="line">  &#125; else if (nodeOrSelector instanceof Node) &#123;</span><br><span class="line">    nodes = &#123;</span><br><span class="line">      0: nodeOrSelector,</span><br><span class="line">      length: 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>因为jQuery 传入的有可能是字符串形式的选择器 或者 节点元素，所以   这段代码实现的功能是</li>
-<li>先创建一个对象</li>
-<li>判断传入的参数是字符串还是dom对象</li>
-<li>如果是字符串就document.querySelectorAll匹配所有符合的选择器的元素，然后改成jQuery形式的对象，也就是我们开始创建的对象，不能直接复制给这个对象，因为匹配得到的对象是NodeList对象，是dom类型对象</li>
-<li>如果是节点元素就直接添加进第一项就好了</li>
-<li>因为jQuery ,$div[0] === div</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nodes.addClass = function(classs) &#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">      nodes[i].classList.add(classs);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.setText = function(text)&#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">        nodes[i].textContent = text;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return nodes;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>最后就是给这个要返回的对象添加API啦</li>
-<li>真正的jQuery的API都是封装在jQuery.prototype中，所有的jQuery对象都共用这些API</li>
-<li>这里的nodes就与两个方法之间产生了闭包， 保护了nodes的私有化</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;222&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure>
-<ul>
-<li>为了更方便的操作 用<code>$</code>代替jQuery  ，<code>var $div = $(&#39;div&#39;)</code> 可以 <code>var $div = jQuery(&#39;div&#39;)</code> 也是一样的</li>
-<li>构造函数返回的对象就包含了两个方法，  我们就可以直接调用啦， </li>
-</ul>
-
-          
+          深入理解jQuery自我封装jQuery代码1234567891011121314151617181920212223242526272829303132window.jQuery = function(nodeOrSelector) &#123;  let nodes = &#123;&#125;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/自我实现jQuery方法深入理解jQuery/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -651,46 +629,25 @@
       
         
           
-            <h1 id="登陆注册与cookie"><a href="#登陆注册与cookie" class="headerlink" title="登陆注册与cookie"></a>登陆注册与cookie</h1><h2 id="登陆注册流程"><a href="#登陆注册流程" class="headerlink" title="登陆注册流程"></a>登陆注册流程</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><h4 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h4><ol>
-<li>提供表单输入</li>
-<li>用户提交 发送post请求</li>
-<li>请求数据带有用户的 注册账号 及 密码等</li>
-<li>可以在前端检查处理用户的注册信息是否有问题</li>
-</ol>
-<h4 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h4><ol>
-<li>设置好路由供请求访问</li>
-<li>处理请求信息，将用户发送的数据提取</li>
-<li>可以在后台检查处理用户的注册信息是否有问题，后响应给前端</li>
-<li>在数据中查找，判断注册用户是否存在 </li>
-<li>将用户的正确的注册信息存储进数据库</li>
-<li>响应注册成功</li>
-</ol>
-<h3 id="登入"><a href="#登入" class="headerlink" title="登入"></a>登入</h3><h4 id="前端-1"><a href="#前端-1" class="headerlink" title="前端"></a>前端</h4><ol>
-<li>提供表单输入</li>
-<li>用户提交 发送post请求</li>
-<li>请求数据带有用户的 登入账号 及 密码等</li>
-</ol>
-<h4 id="后台-1"><a href="#后台-1" class="headerlink" title="后台"></a>后台</h4><ol>
-<li>设置好路由供请求访问</li>
-<li>处理请求信息，将用户发送的数据提取</li>
-<li>检查处理用户登入的信息是否有问题，后响应给前端</li>
-<li>在数据中查找，判断登入用户是否存在并且密码是否正确 </li>
-<li>响应头中set-cookie（设置cookie）</li>
-<li>这时浏览器中会保存这个cookie信息</li>
-<li>响应登入成功</li>
-</ol>
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><ol>
-<li>cookie 是有时效性的</li>
-<li>cookie 是保存在那个使用访问的浏览器中的 ，所以换一个浏览器还是需要重新登录，然后设置cookie</li>
-<li>cookie关闭浏览器就删掉了， 但是可以设置不删掉，或者存留时间</li>
-<li>在cookie没有被删除之前，同源域名的申请每一次都会带上这个cookie</li>
-<li>也就是这个请求的请求头中会自动带上这个cookie</li>
-<li>而访问的页面会根据cookie的值来判断是否登陆</li>
-<li>从而给出不同的页面或者相同的页面不一样的使用权限等</li>
-<li>所以cookie是保存用户登陆信息的东西</li>
-</ol>
+          登陆注册与cookie登陆注册流程注册前端
+提供表单输入
+用户提交 发送post请求
+请求数据带有用户的 注册账号 及 密码等
+可以在前端检查处理用户的注册信息是否有问题
 
-          
+后台
+设置好路由供请求访问
+处理请求信息，将用户发送的数据提取
+可以在后台检查处理用户的注册信息是否有问题，后响应给前端
+在数
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/cookie/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -841,28 +798,15 @@
       
         
           
-            <h1 id="call-apply-bind用法"><a href="#call-apply-bind用法" class="headerlink" title="call,apply,bind用法"></a>call,apply,bind用法</h1><h2 id="call"><a href="#call" class="headerlink" title="call"></a>call</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">   name: &apos;hht&apos;,</span><br><span class="line">   age : 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f(name,age)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  console.log(this.name);</span><br><span class="line">  console.log(this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.call(obj,&apos;mmd&apos;,18);</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fromntpn9mj305i02za9v.jpg" alt=""></p>
-<ul>
-<li>call()方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表).</li>
-<li>call 的第一个参数是指定调用的这个函数的this ，非严格模式下this的值如果是null或者undefine ，那么这个this指向window</li>
-<li>call 第二个以及之后的参数就是我们的arguments的值</li>
-</ul>
-<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">   name: &apos;hht&apos;,</span><br><span class="line">   age : 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f(name,age)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  console.log(this.name);</span><br><span class="line">  console.log(this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.apply(obj,[&apos;mmd&apos;,18]);</span><br><span class="line">f.apply(obj,&#123;0: &apos;mmd&apos;, 1: 18, length: 2&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frompayhl9j304s03u3yb.jpg" alt=""></p>
-<ul>
-<li>call()方法的作用和 apply() 方法类似，只有一个区别，就是 call()方法接受的是若干个参数的列表，而apply()方法接受的是一个包含多个参数的数组, 或伪数组。</li>
-</ul>
-<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">   name: &apos;hht&apos;,</span><br><span class="line">   age : 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f()&#123;</span><br><span class="line">  for(let i = 0; i &lt; 4; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    console.log(arguments[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(this);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var f1Bind = f.bind(obj,&apos;hht&apos;,18);</span><br><span class="line">f1Bind();</span><br><span class="line">f1Bind(1,2);</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fromlqepfyj30au078mx7.jpg" alt=""></p>
-<ul>
-<li>bind 绑定时接受的参数跟 call 一致.</li>
-<li>bind 不会立即调用，它会生成一个新的函数，你想什么时候调就什么时候调。</li>
-<li>bind 绑定好的this不会改变</li>
-<li>bind 绑定时的给的参数会成为这个绑定函数的固定参数，调用这个函数时这几个参数一定会在</li>
-</ul>
-
-          
+          call,apply,bind用法call12345678910111213var obj = &#123;   name: &apos;hht&apos;,   age : 1&#125;function f(name,age)&#123;  this.name = name;  this.age
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/call,apply,bind用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1013,24 +957,18 @@
       
         
           
-            <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function 函数()&#123;</span><br><span class="line">    var 变量  = 1；</span><br><span class="line">    function 内部函数()&#123;</span><br><span class="line">        console.log(变量);</span><br><span class="line">    &#125;</span><br><span class="line">    return 内部函数;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的例子中</p>
-<ul>
-<li>内部函数 + 变量（内部函数能访问到这个变量） =  闭包</li>
-<li>return  内部函数只是为了能使用到这个内部函数 ， 也就是能使用闭包</li>
-<li>函数套函数是为了隐藏一个变量 或者说这就是闭包的作用</li>
-</ul>
-<h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function create()</span><br><span class="line">&#123;</span><br><span class="line">  var n=999;</span><br><span class="line">  return &#123;</span><br><span class="line">    set : function(aaa)&#123;</span><br><span class="line">        n = aaa;</span><br><span class="line">    &#125;,</span><br><span class="line">    get : function()&#123;</span><br><span class="line">        return n;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = create();</span><br><span class="line">var b = create();</span><br><span class="line">a.set(2);</span><br><span class="line">console.log(a.get());</span><br><span class="line">console.log(b.get());</span><br></pre></td></tr></table></figure>
-<ul>
-<li>闭包的作用就是间接的访问一个变量 ，隐藏一个变量</li>
-<li>去掉那个外层函数  变量就会很容易被直接使用并且修改</li>
-<li>n 是一个局部变量 ，在函数外面是使用不到这个变量的</li>
-<li>这时候get 和 set  函数就是 用来间接访问这个变量的访问器</li>
-<li>闭包和变量的作用域有关</li>
-</ul>
-<p>在我们写js代码的时候会很容易就出现闭包， 而不是我们经常有意的去创造闭包<br>引用维基百科：闭包（Closure）是词法闭包（Lexical Closure）的简称，是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。</p>
+          闭包什么是闭包1234567function 函数()&#123;    var 变量  = 1；    function 内部函数()&#123;        console.log(变量);    &#125;    return 内部函数;&#125;
+上面的例子中
 
-          
+内部函数 + 变量（内
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/什么是闭包-闭包的用途/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1181,48 +1119,15 @@
       
         
           
-            <h1 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h1><h2 id="meta-viewport"><a href="#meta-viewport" class="headerlink" title="meta viewport"></a>meta viewport</h2><p> <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;</code><br>viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code><br>目前主流浏览器使用<br>initial-scale属性控制页面最初加载时的缩放等级。maximum-scale、minimum-scale及user-scalable属性控制允许用户以怎样的方式放大或缩小页面。</p>
-<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><h3 id="响应式"><a href="#响应式" class="headerlink" title="响应式"></a>响应式</h3><ul>
-<li>我的理解就是用来辨别屏幕大小从而来使用不同的css样式达到大小屏幕的自适应</li>
-</ul>
-<ul>
-<li><p>例如 iphone5/5s 屏幕宽度为 320 iphone6/7/8 屏幕宽度为 375</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- link元素中的CSS媒体查询 --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 320px)&quot; href=&quot;iphone5.css&quot; /&gt;</span><br><span class="line"> &lt;link rel=&quot;stylesheet&quot; media=&quot;(min-width: 321px) and (max-width: 375px)&quot; href=&quot;iphone678.css&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p>以上例子就是当屏幕最大为320px时 使用iphone.css<br>以上例子就是当屏幕最小321px最大为375px时 使用iphone678.css  </p>
-<p> 也可以在css中给某些元素设置  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!-- 样式表中的CSS媒体查询 --&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">@media (max-width: 320px) &#123;</span><br><span class="line">.nav &#123;</span><br><span class="line">  display: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>而有些公司对于移动端的适配 都是后台开发人员根据屏幕的尺寸来使用 不同的html ， 如写代码啦  </li>
-<li>还有比如淘宝的适配就是不同的设备访问的网站不同  比如电脑访问淘宝就是taobao.com  ,手机访问就是m.taobao.com</li>
-</ul>
-<h2 id="动态REM"><a href="#动态REM" class="headerlink" title="动态REM"></a>动态REM</h2><ul>
-<li>为了在不同的手机页面显示的内容及布局都是一样的 ， 比如说 iphone5 宽度是320px<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frnge6bj39j30ah09d748.jpg" alt=""><br>iphone6 宽度是375px<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frngfzkmpkj30bn09ewef.jpg" alt=""><br>整体的显示效果是一样的，苹果6会显示的大一点。 网页会随着不同的手机而进行等比的放大与缩小，那么动态rem就是用来解决这个 问题的</li>
-</ul>
-<h3 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h3><pre><code>常用的有  
-</code></pre><ul>
-<li>px  就是像素点的意思</li>
-<li>em  一个M的大小 ，或者不是很正确的一个汉字大小 ，相对于当前元素的font-size</li>
-<li>vh  视口高度的1/100，其次，它不像rem那样被广泛支持。</li>
-<li>vw  视口宽度的1/100，其次，它不像rem那样被广泛支持。</li>
-<li>rem root em 根的em  ，一个文档的根是html  ，也就是1rem === html的font-size</li>
-</ul>
-<h3 id="计算rem"><a href="#计算rem" class="headerlink" title="计算rem"></a>计算rem</h3><ul>
-<li><p>利用js获取页面宽度， 设置根元素的font-size  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var pageWidth = window.innerWidth;</span><br><span class="line">    document.write(&apos;&lt;style&gt;html&#123;font-size:&apos;+ pageWidth/10 +&apos;px;&#125;&lt;/style&gt;&apos;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这样的话 1rem 就相当与 页面宽度的 10% ， 就能知道具体设置的宽高是多少</p>
-</li>
-<li><p>但是rem 如果根据设计师的设计搞来写 ， 算rem 会很麻烦 ， 于是就用到了sass 的 px2rem 函数计算</p>
-</li>
-<li><p>windows安装sass 方法<br>i 安装ruby<br><a href="https://rubyinstaller.org/downloads/" target="_blank" rel="noopener">下载ruby</a>  下载最新版本<br>在命令行中输入<code>ruby -v</code>命令来确认是否安装成功：<br>ii 安装sass<br>Sass是Ruby语言写的，安装Sass必须先安装Ruby。假定你已经安装好了Ruby，接着在命令行输入下面的命令：<br><code>gem install sass</code> ，安装完成后，通过<code>sass -v</code>命令来判断是否安装成功</p>
-<p>装好后 可以在scss 文件中写入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$rem: 640;    // 设计稿的宽度</span><br><span class="line">@function px2rem($px) &#123;</span><br><span class="line">  @return ($px / $rem) * 10 + rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">  width: px2rem(320px);  // 算出来的 width: 5rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+          移动端适配meta viewport &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/移动端适配/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1373,45 +1278,19 @@
       
         
           
-            <h1 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h1><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">阮一峰-Flex布局</a><br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">阮一峰-Flex布局实例教程</a></p>
-<h2 id="Flex布局-1"><a href="#Flex布局-1" class="headerlink" title="Flex布局"></a>Flex布局</h2><h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  display: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效</li>
-</ul>
-<h2 id="Flex布局属性"><a href="#Flex布局属性" class="headerlink" title="Flex布局属性"></a>Flex布局属性</h2><ul>
-<li>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</li>
-<li>主轴：水平线 </li>
-<li>交叉轴：垂直线</li>
-</ul>
-<h3 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h3><ul>
-<li>决定主轴的方向 或  交叉轴的方向<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  		 // flex-direction: row;  从左至右</span><br><span class="line">        // flex-direction: row-reverse;  从右至左</span><br><span class="line">        // flex-direction: column;  从上至下</span><br><span class="line">        // flex-direction: column-reverse;  从下至上</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="flex-wrap属性"><a href="#flex-wrap属性" class="headerlink" title="flex-wrap属性"></a>flex-wrap属性</h3><ul>
-<li>决定如何换行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  	  //flex-wrap: nowrap;     不换行</span><br><span class="line">        //flex-wrap: wrap;    换行，第一行在上方（从上往下）</span><br><span class="line">        //flex-wrap: wrap-reverse;  换行，第一行在下方（从下往上）</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="flex-flow属性"><a href="#flex-flow属性" class="headerlink" title="flex-flow属性"></a>flex-flow属性</h3><ul>
-<li><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line"> 	// flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">    // flex-flow: row nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="justify-content属性"><a href="#justify-content属性" class="headerlink" title="justify-content属性"></a>justify-content属性</h3><ul>
-<li>决定了项目的水平对齐方式</li>
-<li>与 主轴的方向有关，以下假设为<code>flex-direction: row;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  // justify-content: flex-start;   左对齐</span><br><span class="line">  // justify-content: flex-end;    右对齐</span><br><span class="line">  // justify-content: center;     居中对齐</span><br><span class="line">  // justify-content: space-between;  两端对齐，项目之间的间隔都相等。</span><br><span class="line">  // justify-content: space-around; 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="align-items属性"><a href="#align-items属性" class="headerlink" title="align-items属性"></a>align-items属性</h3><ul>
-<li>决定了项目的垂直对齐方式</li>
-<li>与交叉轴的方向有关，以下假设为<code>flex-direction: column;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// align-items: flex-start 上对齐</span><br><span class="line">// align-items: flex-end：下对齐</span><br><span class="line">// align-items: center：居中对齐</span><br><span class="line">// align-items: baseline: 项目的第一行文字的基线对齐。</span><br><span class="line">// align-items: stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="align-content属性"><a href="#align-content属性" class="headerlink" title="align-content属性"></a>align-content属性</h3><ul>
-<li>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line"> // align-content: flex-start;  与交叉轴的起点对齐。</span><br><span class="line"> // align-content: flex-end;    与交叉轴的终点对齐。</span><br><span class="line"> // align-content: center;		与交叉轴的中点对齐。</span><br><span class="line"> // align-content: space-between;  与交叉轴两端对齐，轴线之间的间隔平均分布。</span><br><span class="line"> // align-content: space-around;  每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</span><br><span class="line"> // align-content: stretch;  轴线占满整个交叉轴。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">order : 0123...（优先级设置） 项目的排列顺序</span><br><span class="line">flex-grow：0123...（默认为0,不放大） 项目的放大比例，自动按比列分配容器空间</span><br><span class="line">flex-shrink：0123...（默认为1,默认空间不足时可等比缩放，为0不缩）</span><br><span class="line">flex-basis：length | auto 设置项目的主轴空间（main size） ，auto 为项目的本来大小</span><br><span class="line">flex： 前三个的省略写法属性 ，两个快捷值 auto（1  1 auto） none （0 0 auto）</span><br><span class="line">align-self：auto | flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</span><br></pre></td></tr></table></figure>
-          
+          Flex布局阮一峰-Flex布局阮一峰-Flex布局实例教程
+Flex布局块级元素123.box&#123;  display: flex;&#125;
+行内元素123.box&#123;  display: inline-flex;&#125;
+
+注意，设为 Flex 布局以后，子元素的float
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/flex/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1562,59 +1441,15 @@
       
         
           
-            <h1 id="文字溢出省略文本对齐垂直居中margin合并"><a href="#文字溢出省略文本对齐垂直居中margin合并" class="headerlink" title="文字溢出省略文本对齐垂直居中margin合并"></a>文字溢出省略文本对齐垂直居中margin合并</h1><h2 id="文本超出溢出以及如何添加省略号"><a href="#文本超出溢出以及如何添加省略号" class="headerlink" title="文本超出溢出以及如何添加省略号"></a>文本超出溢出以及如何添加省略号</h2><h3 id="一行文本"><a href="#一行文本" class="headerlink" title="一行文本"></a>一行文本</h3><h4 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    div&#123;</span><br><span class="line">     width:100px;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">      </span><br><span class="line">     /* white-space:nowrap; */   /*不换行，超出div宽度的文字溢出*/</span><br><span class="line">     /* overflow:hidden; */         /* 超出宽度部分自动隐藏 */</span><br><span class="line">     /* text-overflow:ellipsis; */   /*超出部分变成省略号*/</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii nihaoninnnn你好</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgfunzpr7j306h02jt8i.jpg" alt=""></p>
-<ul>
-<li>第一行没有换行是因为浏览器把它看成一个英文单词</li>
-<li>所以从现象可以看出默认超出宽度是会换行的</li>
-</ul>
-<h4 id="不换行，超出div宽度的文字溢出"><a href="#不换行，超出div宽度的文字溢出" class="headerlink" title="不换行，超出div宽度的文字溢出"></a>不换行，超出div宽度的文字溢出</h4><p>恢复<code>white-space:nowrap;</code> 这个属性<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgfxlji7zj309s01djr6.jpg" alt=""></p>
-<h4 id="超出部分隐藏，超出部分变省略号"><a href="#超出部分隐藏，超出部分变省略号" class="headerlink" title="超出部分隐藏，超出部分变省略号"></a>超出部分隐藏，超出部分变省略号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">overflow:hidden;</span><br><span class="line">text-overflow:ellipsis;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgg18sblhj305l01a0ru.jpg" alt=""></p>
-<h3 id="多行文本"><a href="#多行文本" class="headerlink" title="多行文本"></a>多行文本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">     width:100px;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">      </span><br><span class="line">     display: -webkit-box;</span><br><span class="line">  -webkit-line-clamp: 3;   /*最多显示三行文本，超出就变省略号*/</span><br><span class="line">  -webkit-box-orient: vertical;  </span><br><span class="line">   overflow:hidden;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii nihaoninnnn你好范德萨发热管杜莎夫人</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgg504w73j304r032glg.jpg" alt=""></p>
-<h2 id="多行文本两端对齐"><a href="#多行文本两端对齐" class="headerlink" title="多行文本两端对齐"></a>多行文本两端对齐</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    span&#123;</span><br><span class="line">  display:inline-block;</span><br><span class="line">  width:4em;</span><br><span class="line">  text-align:justify;   /*文本换行对齐*/</span><br><span class="line">  font-size:20px;</span><br><span class="line">  line-height:20px;</span><br><span class="line">&#125;</span><br><span class="line">span::after&#123;</span><br><span class="line">  content:&apos;&apos;;</span><br><span class="line">  display:inline-block;</span><br><span class="line">  width:100%;</span><br><span class="line">&#125;  </span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">  &lt;span&gt;姓名&lt;/span&gt; &lt;br&gt;</span><br><span class="line">  &lt;span&gt;联系方式&lt;/span&gt; &lt;br&gt;</span><br><span class="line">  &lt;span&gt;炸弹人&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frggd20paij304x03dt8k.jpg" alt=""></p>
-<h2 id="文字垂直居中"><a href="#文字垂直居中" class="headerlink" title="文字垂直居中"></a>文字垂直居中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">   div&#123;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">    line-height:30px;</span><br><span class="line">    padding:5px 0</span><br><span class="line">&#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">文字垂直居中</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frggggrzvkj307j02ojr6.jpg" alt=""></p>
-<ul>
-<li>遵循一条原则  能不用height 就别用 ，用padding撑起想要的高度</li>
-</ul>
-<h2 id="容器垂直居中"><a href="#容器垂直居中" class="headerlink" title="容器垂直居中"></a>容器垂直居中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    body&#123;</span><br><span class="line">      box-sizing:border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .dad&#123;</span><br><span class="line">      border: 2px solid blue;</span><br><span class="line">      height: 100vh;</span><br><span class="line">      display: flex;</span><br><span class="line">      justify-content: center;</span><br><span class="line">      align-items: center;</span><br><span class="line">    &#125;</span><br><span class="line">    .son&#123;</span><br><span class="line">      border:3px solid red;</span><br><span class="line">      width: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;dad&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;</span><br><span class="line">      fdksfdlmks sdfefdsfdsfwef</span><br><span class="line">      fdfwdfsefrf</span><br><span class="line">      dfrefdreg</span><br><span class="line">      fefdsgrdsfs</span><br><span class="line">      fdefregr</span><br><span class="line">      dgersd</span><br><span class="line">      gre</span><br><span class="line">      dfwe</span><br><span class="line">      fd</span><br><span class="line">      fe</span><br><span class="line">      dfd</span><br><span class="line">      erfrgrgfdsrgf</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgpt4sz6gj30e80ozaai.jpg" alt=""></p>
-<ul>
-<li>新时代前端记住这种用flex 布局来垂直居中，就好了</li>
-</ul>
-<h2 id="margin合并"><a href="#margin合并" class="headerlink" title="margin合并"></a>margin合并</h2><h3 id="两个div之间的margin合并"><a href="#两个div之间的margin合并" class="headerlink" title="两个div之间的margin合并"></a>两个div之间的margin合并</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">      box-sizing:border-box;</span><br><span class="line">    &#125;</span><br><span class="line">   .div1&#123;</span><br><span class="line">     border: 1px solid red;</span><br><span class="line">     height:100px;</span><br><span class="line">     margin:10px 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .div2&#123;</span><br><span class="line">      height:100px;</span><br><span class="line">      border:1px solid green;</span><br><span class="line">      margin:10px 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=div1&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=div2&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgmolf25bj30k30bbmxn.jpg" alt=""></p>
-<ul>
-<li>两个div 分别给了10px的margin</li>
-<li>两个div之间的间距按照直觉应该是20px</li>
-<li>通过开发者工具我们可以看到它们之间只有10px</li>
-<li>这就说明他们的margin合并了</li>
-</ul>
-<h3 id="父子div的margin合并"><a href="#父子div的margin合并" class="headerlink" title="父子div的margin合并"></a>父子div的margin合并</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">      box-sizing:border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    body&#123;</span><br><span class="line">      border: 1px solid blue;</span><br><span class="line">    &#125;</span><br><span class="line">   .dad&#123;</span><br><span class="line">     outline: 1px solid red;</span><br><span class="line">     margin:10px 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .son&#123;</span><br><span class="line">      height:100px;</span><br><span class="line">      border:1px solid green;</span><br><span class="line">      margin:20px 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=dad&gt;</span><br><span class="line">    &lt;div class=son&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgmwwqo4ej30kt0btt98.jpg" alt=""></p>
-<ul>
-<li>父元素margin为10px 子元素margin为20px </li>
-<li>正常的想法应该是子元素在父元素中离父元素边框有20px的间距，而父元素离body的边框有10px的间距</li>
-<li>通过开发者工具我们可以看到子元素的margin超出了父元素边框并且离body间距是20px</li>
-<li>这就说明子元素与父元素的margin合并了</li>
-<li>注意这里父元素的边框线用的是outline</li>
-</ul>
-<h3 id="那么为什么呢？"><a href="#那么为什么呢？" class="headerlink" title="那么为什么呢？"></a>那么为什么呢？</h3><h4 id="将父元素的边框设置为border，或者给父元素加一padding"><a href="#将父元素的边框设置为border，或者给父元素加一padding" class="headerlink" title="将父元素的边框设置为border，或者给父元素加一padding"></a>将父元素的边框设置为border，或者给父元素加一padding</h4><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgn7hvoclj30ec05gmwy.jpg" alt=""></p>
-<ul>
-<li>就会发现神奇的好了</li>
-</ul>
-<h4 id="在两个div之间再加一个div-设置border或者padding"><a href="#在两个div之间再加一个div-设置border或者padding" class="headerlink" title="在两个div之间再加一个div 设置border或者padding"></a>在两个div之间再加一个div 设置border或者padding</h4><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frgndw6rl6j30eq074dfn.jpg" alt=""></p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
-<li>因此总结一下就是</li>
-<li>两个元素的margin合并是因为中间没有阻挡它们的属性就会合并在一起</li>
-<li>比如说border就是一堵墙，堵在两个margin之间就不会合并了</li>
-<li>或者说margin碰到关于border/padding这种元素，就是距离这个元素的margin有多少</li>
-</ul>
-
-          
+          文字溢出省略文本对齐垂直居中margin合并文本超出溢出以及如何添加省略号一行文本默认情况下12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;  &lt;meta charset
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/文字溢出省略文本对齐垂直居中/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1765,17 +1600,23 @@
       
         
           
-            <h1 id="Js插入排序"><a href="#Js插入排序" class="headerlink" title="Js插入排序"></a>Js插入排序</h1><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="插入排序原理"><a href="#插入排序原理" class="headerlink" title="插入排序原理"></a>插入排序原理</h3><ul>
-<li>用未参与排序的数与已经排好序的数从后往前做比较</li>
-<li>比较中找到自己的位置然后插入到该位置<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqz4z2kuuyg30b00f5n4e.jpg" alt=""><h3 id="插入排序步骤"><a href="#插入排序步骤" class="headerlink" title="插入排序步骤"></a>插入排序步骤</h3></li>
-<li>确定外层循环 index为已排好序的个数</li>
-<li>内层循环从已排好序的最后位置开始往前比较</li>
-<li>整个已排序部分搜索一遍保存最后的索引</li>
-<li>插入 splice函数</li>
-</ul>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var a = [10,38,45,50,48,13,27,20];</span><br><span class="line">var index = 0;</span><br><span class="line">for(var i = 1; i &lt; a.length; i ++)&#123;</span><br><span class="line">  index = i;</span><br><span class="line">    for(var j = i - 1; j &gt;= 0; j--)&#123;</span><br><span class="line">        if(a[i] &lt; a[j] )&#123;</span><br><span class="line">            index = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    a.splice(index,0,a[i]);  //插入a[i]</span><br><span class="line">    a.splice(i+1,1);  // 由于数组变了，所以原先a[i]的值到a[i+1]去了，删掉它</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
+          Js插入排序插入排序插入排序原理
+用未参与排序的数与已经排好序的数从后往前做比较
+比较中找到自己的位置然后插入到该位置插入排序步骤
+确定外层循环 index为已排好序的个数
+内层循环从已排好序的最后位置开始往前比较
+整个已排序部分搜索一遍保存最后的索引
+插入 splice函数
 
-          
+代码实现123456
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/排序-插入-计数-基数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1926,32 +1767,23 @@
       
         
           
-            <h1 id="Js冒泡排序-amp-选择排序"><a href="#Js冒泡排序-amp-选择排序" class="headerlink" title="Js冒泡排序&amp;选择排序"></a>Js冒泡排序&amp;选择排序</h1><h2 id="冒泡排序原理"><a href="#冒泡排序原理" class="headerlink" title="冒泡排序原理"></a>冒泡排序原理</h2><ul>
-<li>两相邻的数依次比较</li>
-<li>若从小到大排列两两比较时前一个数比后一个数大互换位置</li>
-<li>相互比较完一轮最大的数就会到最后面，并且不再参与比较</li>
-<li>循环比较 直到比较完成<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqy8ra7e3cg30d706vn7w.jpg" alt=""></li>
-</ul>
-<h2 id="冒泡排序步骤"><a href="#冒泡排序步骤" class="headerlink" title="冒泡排序步骤"></a>冒泡排序步骤</h2><ol>
-<li>确定外层循环次数   数组的长度</li>
-<li>确定内层循环的次数  每确定冒泡一个数内层循环减少一次 数组长度 减 外层循环的index </li>
-<li>相邻两数相比较  前一个数比后一个数大 互换两数位置</li>
-</ol>
-<h2 id="冒泡排序代码实现"><a href="#冒泡排序代码实现" class="headerlink" title="冒泡排序代码实现"></a>冒泡排序代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = [36,26,27,2,4,19,50,48];</span><br><span class="line">var temp;</span><br><span class="line"></span><br><span class="line">for(var i= 0; i &lt;  a.length; i++)</span><br><span class="line">for(var j = 0; j &lt; a.length-i; j++)&#123;</span><br><span class="line">    if(a[j] &gt;  a[j+1])&#123;</span><br><span class="line">        temp = a[j];</span><br><span class="line">        a[j] = a[j+1];</span><br><span class="line">        a[j+1] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
-<h2 id="选择排序原理"><a href="#选择排序原理" class="headerlink" title="选择排序原理"></a>选择排序原理</h2><ul>
-<li>找未排序的元素中最小的数</li>
-<li>将最小数与起始位置互换</li>
-<li>直到排序完成<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqy96u2mbgg30gg06n7aa.jpg" alt=""></li>
-</ul>
-<h2 id="选择排序步骤"><a href="#选择排序步骤" class="headerlink" title="选择排序步骤"></a>选择排序步骤</h2><ol>
-<li>确定外层循环次数 index为每一次寻找最小值的起始位置 直到数组长度</li>
-<li>内层循环每次都是由起始位置 +1 直到数组长度</li>
-<li>假设每一次的起始位置为最小数 碰到更小的用更小的和后面的数继续做比较</li>
-<li>保存最小数的索引</li>
-<li>内层循环结束后最小数与起始位置互换</li>
-</ol>
-<h2 id="选择排序代码实现"><a href="#选择排序代码实现" class="headerlink" title="选择排序代码实现"></a>选择排序代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var a = [4,12,13,4,3,42,33,4,43,44];</span><br><span class="line">var temp;</span><br><span class="line">var minIndex;</span><br><span class="line"></span><br><span class="line">for(var i = 0; i &lt; a.length; i ++)&#123;</span><br><span class="line">    minIndex = i;</span><br><span class="line">    for(var j = i + 1; j &lt; a.length; j++)&#123;</span><br><span class="line">        if(a[minIndex] &gt; a[j])&#123;</span><br><span class="line">            minIndex = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    temp = a[minIndex];</span><br><span class="line">    a[minIndex] = a[i];</span><br><span class="line">    a[i] = temp;</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
-          
+          Js冒泡排序&amp;选择排序冒泡排序原理
+两相邻的数依次比较
+若从小到大排列两两比较时前一个数比后一个数大互换位置
+相互比较完一轮最大的数就会到最后面，并且不再参与比较
+循环比较 直到比较完成
+
+冒泡排序步骤
+确定外层循环次数   数组的长度
+确定内层循环的次数  每确定冒泡一个数内层循环减少一次
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Js冒泡排序选择排序/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2102,30 +1934,20 @@
       
         
           
-            <h1 id="css的position值"><a href="#css的position值" class="headerlink" title="css的position值"></a>css的position值</h1><p>CSS position属性用于指定一个元素在文档中的定位方式。top，right，bottom 和 left 属性则决定了该元素的最终位置。</p>
-<h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><ul>
-<li>正常的文档流会根据元素的类型来流动</li>
-<li>内联元素会从左至右流动，显示不下去之后会换行继续从左向右</li>
-<li>块级元素从上往下流动</li>
-<li>脱离文档流的方法有浮动，绝对定位，固定定位</li>
-</ul>
-<h2 id="position5个取值"><a href="#position5个取值" class="headerlink" title="position5个取值"></a>position5个取值</h2><h3 id="static-相对定位"><a href="#static-相对定位" class="headerlink" title="static  相对定位"></a>static  相对定位</h3><blockquote>
-<p>该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 top, right, bottom, left 和 z-index 属性无效。</p>
-</blockquote>
-<h3 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h3><blockquote>
-<p>该关键字下，元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）。position:relative 对 table-*-group, table-row, table-column, table-cell, table-caption 元素无效。<br>相对定位的元素是在文档中的正常位置偏移给定的值，但是不影响其他元素的偏移。相对定位的元素并未脱离文档流</p>
-</blockquote>
-<h3 id="absolute-绝对定位"><a href="#absolute-绝对定位" class="headerlink" title="absolute  绝对定位"></a>absolute  绝对定位</h3><blockquote>
-<p>不为元素预留空间，通过指定元素相对于最近的非 static 定位祖先元素的偏移，来确定元素位置。绝对定位的元素可以设置外边距（margins），且不会与其他边距合并。<br>绝对定位元素相对于最近的非 static 祖先元素定位。当这样的祖先元素不存在时，则相对于ICB（inital container block, 初始包含块）,视窗。绝对定位的元素脱离了文档流</p>
-</blockquote>
-<h3 id="fixed-固定定位"><a href="#fixed-固定定位" class="headerlink" title="fixed 固定定位"></a>fixed 固定定位</h3><blockquote>
-<p>不为元素预留空间，而是通过指定元素相对于屏幕视口（viewport）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变。打印时，元素会出现在的每页的固定位置。fixed 属性会创建新的层叠上下文。当元素祖先的 transform  属性非 none 时，容器由视口改为该祖先。<br>固定定位会固定显示在设置的位置，脱离了文档流</p>
-</blockquote>
-<h3 id="sticky-粘性定位"><a href="#sticky-粘性定位" class="headerlink" title="sticky 粘性定位"></a>sticky 粘性定位</h3><blockquote>
-<p>盒位置根据正常流计算(这称为正常流动中的位置)，然后相对于该元素在流中的 flow root（BFC）和 containing block（最近的块级祖先元素）定位。在所有情况下（即便被定位元素为 table 时），该元素定位均不对后续元素造成影响。当元素 B 被粘性定位时，后续元素的位置仍按照 B 未定位时的位置来确定。position: sticky 对 table 元素的效果与 position: relative 相同。<br>粘性定位是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位。例如：</p>
-</blockquote>
-
-          
+          css的position值CSS position属性用于指定一个元素在文档中的定位方式。top，right，bottom 和 left 属性则决定了该元素的最终位置。
+文档流
+正常的文档流会根据元素的类型来流动
+内联元素会从左至右流动，显示不下去之后会换行继续从左向右
+块级元素从上往下流动
+脱离文
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/css的position值/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
