@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hongtao-huang.github.io/"/>
-  <updated>2019-04-15T07:04:52.946Z</updated>
+  <updated>2019-04-15T07:42:50.447Z</updated>
   <id>https://hongtao-huang.github.io/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>react-router4.0 路由传参跳转及获取参数</title>
-    <link href="https://hongtao-huang.github.io/react-router%204.0%20%E8%B7%AF%E7%94%B1%E4%BC%A0%E5%8F%82%E8%B7%B3%E8%BD%AC%E5%8F%8A%E8%8E%B7%E5%8F%96%E5%8F%82%E6%95%B0/"/>
-    <id>https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/</id>
+    <title>create-react-app 路由按需加载</title>
+    <link href="https://hongtao-huang.github.io/react-create-react-app%20%E8%B7%AF%E7%94%B1%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD/"/>
+    <id>https://hongtao-huang.github.io/react-create-react-app 路由按需加载/</id>
     <published>2019-04-15T15:00:00.000Z</published>
-    <updated>2019-04-15T07:04:52.946Z</updated>
+    <updated>2019-04-15T07:42:50.447Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="react-router4-0-路由传参跳转及获取参数"><a href="#react-router4-0-路由传参跳转及获取参数" class="headerlink" title="react-router4.0 路由传参跳转及获取参数"></a>react-router4.0 路由传参跳转及获取参数</h1><p>路由的跳转，传参分别是通过路由的三个属性<code>history</code>,<code>location</code>,<code>match</code>来进行的,可通过从最上层的路由props传至组件中，也可以通过以下形式获取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123;withRouter&#125; from &apos;react-router-dom&apos;</span><br><span class="line">export default withRouter(Index)</span><br></pre></td></tr></table></figure></p><p>这样<code>Index</code>组件的props就可以拿到这三个属性了</p><h2 id="传参跳转history"><a href="#传参跳转history" class="headerlink" title="传参跳转history"></a>传参跳转<code>history</code></h2><h3 id="params"><a href="#params" class="headerlink" title="params"></a>params</h3><ol><li>需要现在路由表中配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&quot;/:id&quot;&gt;</span><br><span class="line">```</span><br><span class="line">2. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></li></ol><p>history.push(‘/123’);  //或者<br>history.push({pathname: ‘/123’});</p><p><link path="/123"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3. history 属性中还有一些其他的方法，此处不提。其他文档中都可以查到</span><br><span class="line"></span><br><span class="line">### query</span><br><span class="line">1. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></p><p>history.push({pathname: ‘/‘, search=”?page=1”});</p><p><link path="/?page=123"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 获取参数 </span><br><span class="line">### params `match`</span><br><span class="line">- params 获取参数是通过`match` 获取参数</span><br><span class="line">- `match.params.xxx`</span><br><span class="line"></span><br><span class="line">### query `location`</span><br><span class="line">- query 获取参数是通过`location`获取参数</span><br><span class="line">- `location.search`获取到`?page=1`字符串</span><br><span class="line">- `yarn add query-string`</span><br><span class="line">- `queryString.parse(location.search);`</span><br><span class="line">- 就可以将参数转换成对象</span><br><span class="line"></span><br><span class="line">还有种跳转是 state</span><br><span class="line">1. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></p><p>history.push({pathname: ‘/‘, state={page:1}});<br><code>`</code></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="create-react-app-路由按需加载"><a href="#create-react-app-路由按需加载" class="headerlink" title="create-react-app 路由按需加载"></a>create-react-app 路由按需加载</h1><p>由<code>create-react-app</code>创建的react应用是将webpack的配置项隐藏的，可以让开发者在不需要做任何配置的情况下开发react，但有时候开发者也会需要有些特殊的需求</p><ol><li><code>npm run eject</code>将webpack抛出再自己添加配置以解决需求</li><li>通过<code>react-app-rewired</code>以及<code>customize-cra</code>来解决特殊需求</li><li>正常的antd 按需加载 以及<code>less</code> <code>sass</code> <code>alias</code>等配置在网上都有大佬写出教程。  </li><li>作为一个react 小白， 我就是很作。<br>我就是想在不抛出webpack配置的情况下来做到路由组件的按需加载，经过在网络的漫长搜索， 发现都是通过抛出webpack 的方式来做按需加载。</li></ol><p>通过一番努力， 发现抛出方式都是在<code>.babelrc</code>的<code>plugins</code>上添加一个<code>syntax-dynamic-import</code>插件。 于是借此解决了在不抛出配置的情况下按需加载问题。解决如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const &#123;override, addBabelPlugins, useBabelRc&#125; = require(&apos;customize-cra&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = override(</span><br><span class="line">    addBabelPlugins(</span><br><span class="line">        [&quot;syntax-dynamic-import&quot;,&#123;&quot;legacy&quot;: true&#125;],</span><br><span class="line">    ),useBabelRc());</span><br></pre></td></tr></table></figure></p><p>在组件中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import Loadable from &apos;react-loadable&apos;;</span><br><span class="line"></span><br><span class="line">const MyLoadingComponent = (&#123;isLoading, error&#125;) =&gt; &#123;</span><br><span class="line">  // Handle the loading state</span><br><span class="line">  if (isLoading) &#123;</span><br><span class="line">    return &lt;div&gt;没有&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  // Handle the error state</span><br><span class="line">  else if (error) &#123;</span><br><span class="line">    return &lt;div&gt;Sorry, there was a problem loading the page.&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  else &#123;</span><br><span class="line">    return null;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const LoadableComponent = Loadable(&#123;</span><br><span class="line">                  loader: () =&gt; import(&apos;/pages/index&apos;),</span><br><span class="line">                  loading: MyLoadingComponent</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure></p><p>至此按需加载算是完成了</p><ul><li>后来发现react更新后添加了两个新特性<code>Suspense, lazy</code>可以直接通过引入这两个特性做到按需加载， 根本不需要上面那么麻烦的配置</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;Component, Suspense, lazy&#125; from &apos;react&apos;;</span><br><span class="line">const DynamicComponent = lazy (() =&gt; import(&apos;/pages/index&apos;));</span><br><span class="line"> &lt;Suspense fallback=&#123;&lt;div&gt;loading...&lt;/div&gt;&#125;&gt;</span><br><span class="line"> &lt;DynamicComponent /&gt;</span><br><span class="line"> &lt;/Suspense&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;react-router4-0-路由传参跳转及获取参数&quot;&gt;&lt;a href=&quot;#react-router4-0-路由传参跳转及获取参数&quot; class=&quot;headerlink&quot; title=&quot;react-router4.0 路由传参跳转及获取参数&quot;&gt;&lt;/a&gt;react
+        &lt;h1 id=&quot;create-react-app-路由按需加载&quot;&gt;&lt;a href=&quot;#create-react-app-路由按需加载&quot; class=&quot;headerlink&quot; title=&quot;create-react-app 路由按需加载&quot;&gt;&lt;/a&gt;create-react-app 
       
     
     </summary>
@@ -37,7 +37,7 @@
       <category term="react" scheme="https://hongtao-huang.github.io/categories/react/"/>
     
     
-      <category term="react-router" scheme="https://hongtao-huang.github.io/tags/react-router/"/>
+      <category term="create-react-app,customize-cra,react-app-rewired" scheme="https://hongtao-huang.github.io/tags/create-react-app-customize-cra-react-app-rewired/"/>
     
   </entry>
   
@@ -55,6 +55,31 @@
       
       
         &lt;h1 id=&quot;react-router4-0-路由登录拦截&quot;&gt;&lt;a href=&quot;#react-router4-0-路由登录拦截&quot; class=&quot;headerlink&quot; title=&quot;react-router4.0 路由登录拦截&quot;&gt;&lt;/a&gt;react-router4.0 路由登录
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://hongtao-huang.github.io/categories/react/"/>
+    
+    
+      <category term="react-router" scheme="https://hongtao-huang.github.io/tags/react-router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-router4.0 路由传参跳转及获取参数</title>
+    <link href="https://hongtao-huang.github.io/react-router%204.0%20%E8%B7%AF%E7%94%B1%E4%BC%A0%E5%8F%82%E8%B7%B3%E8%BD%AC%E5%8F%8A%E8%8E%B7%E5%8F%96%E5%8F%82%E6%95%B0/"/>
+    <id>https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/</id>
+    <published>2019-04-15T15:00:00.000Z</published>
+    <updated>2019-04-15T07:04:52.946Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="react-router4-0-路由传参跳转及获取参数"><a href="#react-router4-0-路由传参跳转及获取参数" class="headerlink" title="react-router4.0 路由传参跳转及获取参数"></a>react-router4.0 路由传参跳转及获取参数</h1><p>路由的跳转，传参分别是通过路由的三个属性<code>history</code>,<code>location</code>,<code>match</code>来进行的,可通过从最上层的路由props传至组件中，也可以通过以下形式获取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123;withRouter&#125; from &apos;react-router-dom&apos;</span><br><span class="line">export default withRouter(Index)</span><br></pre></td></tr></table></figure></p><p>这样<code>Index</code>组件的props就可以拿到这三个属性了</p><h2 id="传参跳转history"><a href="#传参跳转history" class="headerlink" title="传参跳转history"></a>传参跳转<code>history</code></h2><h3 id="params"><a href="#params" class="headerlink" title="params"></a>params</h3><ol><li>需要现在路由表中配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&quot;/:id&quot;&gt;</span><br><span class="line">```</span><br><span class="line">2. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></li></ol><p>history.push(‘/123’);  //或者<br>history.push({pathname: ‘/123’});</p><p><link path="/123"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3. history 属性中还有一些其他的方法，此处不提。其他文档中都可以查到</span><br><span class="line"></span><br><span class="line">### query</span><br><span class="line">1. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></p><p>history.push({pathname: ‘/‘, search=”?page=1”});</p><p><link path="/?page=123"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 获取参数 </span><br><span class="line">### params `match`</span><br><span class="line">- params 获取参数是通过`match` 获取参数</span><br><span class="line">- `match.params.xxx`</span><br><span class="line"></span><br><span class="line">### query `location`</span><br><span class="line">- query 获取参数是通过`location`获取参数</span><br><span class="line">- `location.search`获取到`?page=1`字符串</span><br><span class="line">- `yarn add query-string`</span><br><span class="line">- `queryString.parse(location.search);`</span><br><span class="line">- 就可以将参数转换成对象</span><br><span class="line"></span><br><span class="line">还有种跳转是 state</span><br><span class="line">1. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></p><p>history.push({pathname: ‘/‘, state={page:1}});<br><code>`</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;react-router4-0-路由传参跳转及获取参数&quot;&gt;&lt;a href=&quot;#react-router4-0-路由传参跳转及获取参数&quot; class=&quot;headerlink&quot; title=&quot;react-router4.0 路由传参跳转及获取参数&quot;&gt;&lt;/a&gt;react
       
     
     </summary>
@@ -486,31 +511,6 @@
     </summary>
     
       <category term="Embedded" scheme="https://hongtao-huang.github.io/categories/Embedded/"/>
-    
-    
-      <category term="W3C MDN HTML Tag 空Tag 可替换Tag" scheme="https://hongtao-huang.github.io/tags/W3C-MDN-HTML-Tag-%E7%A9%BATag-%E5%8F%AF%E6%9B%BF%E6%8D%A2Tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML</title>
-    <link href="https://hongtao-huang.github.io/HTML/"/>
-    <id>https://hongtao-huang.github.io/HTML/</id>
-    <published>2018-03-14T15:00:00.000Z</published>
-    <updated>2018-10-22T09:15:07.529Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><blockquote><p>万维网联盟（W3C）由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。<br>该组织试图通过W3C制定的新标准来促进业界成员间的兼容性和协议。不兼容的HTML版本由不同的供应商提供，导致网页显示方式不一致。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件。</p></blockquote><h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><blockquote><p>为解决网络应用中不同平台、技术和开发者带来的不兼容问题，保障网络信息的顺利和完整流通，万维网联盟制定了一系列标准并督促网络应用开发者和内容提供者遵循这些标准。标准的内容包括使用语言的规范，开发中使用的导则和解释引擎的行为等等。W3C也制定了包括XML和CSS等的众多影响深远的标准规范。</p></blockquote><blockquote><p>但是，W3C制定的网络标准似乎并非强制而只是推荐标准。因此部分网站仍然不能完全实现这些标准。特别是使用早期所见即所得网页编辑软件设计的网页往往会包含大量非标准代码。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-  -W3C推荐标准</span><br><span class="line">CSS：层叠样式表</span><br><span class="line">DOM：文档对象模型</span><br><span class="line">HTML：超文本标记语言</span><br><span class="line">RDF：资源描述框架</span><br><span class="line">SMIL：同步多媒体集成语言</span><br><span class="line">SVG：可缩放向量图形</span><br><span class="line">WAI</span><br><span class="line">Widgets</span><br><span class="line">XHTML：可扩展超文本标记语言</span><br><span class="line">XML：可扩展标记语言</span><br></pre></td></tr></table></figure><h2 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h2><ul><li>MDN Web Docs 是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站</li><li>该项目始于2005年，最初由Mozilla公司员工Deb Richardson领导。自2006年以来，文档工作由Eric Shepherd领导</li><li><ul><li>关于前端的一些技术都可以先从MDN中搜索了解，比如一些HTML标签的使用，CSS属性的使用等</li></ul></li></ul><h2 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h2><h3 id="MDN链接"><a href="#MDN链接" class="headerlink" title="MDN链接"></a>MDN链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">HTML All Tags ,MDN</a></p><h2 id="空标签"><a href="#空标签" class="headerlink" title="空标签"></a>空标签</h2><h3 id="什么是空标签？"><a href="#什么是空标签？" class="headerlink" title="什么是空标签？"></a>什么是空标签？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTML，SVG 和 MathML 的规范都详细定义了每个元素能包含的具体内容（define very precisely what each element can contain）。许多组合是没有任何语义含义的，比如一个 &lt;audio&gt; 元素嵌套在一个 &lt;hr&gt; 元素里。</span><br><span class="line">在 HTML 中，通常在一个空元素上使用一个闭标签是无效的。例如， &lt;input type=&quot;text&quot;&gt;&lt;/input&gt; 的闭标签是无效的 HTML。</span><br></pre></td></tr></table></figure><ul><li>理解： 一个没有闭标签(或者说闭标签加了无效) 或者 HTML、SVG、MathML规范中没有定义标签能包含哪些内容的标签就是 空标签。</li></ul><h3 id="HTML中的空标签"><a href="#HTML中的空标签" class="headerlink" title="HTML中的空标签"></a>HTML中的空标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;area&gt;</span><br><span class="line">&lt;base&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;col&gt;</span><br><span class="line">&lt;colgroup&gt; when the span is present</span><br><span class="line">&lt;command&gt;</span><br><span class="line">&lt;embed&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;img&gt;</span><br><span class="line">&lt;input&gt;</span><br><span class="line">&lt;keygen&gt;</span><br><span class="line">&lt;link&gt;</span><br><span class="line">&lt;meta&gt;</span><br><span class="line">&lt;param&gt;</span><br><span class="line">&lt;source&gt;</span><br><span class="line">&lt;track&gt;</span><br><span class="line">&lt;wbr&gt;</span><br></pre></td></tr></table></figure><h2 id="可替换标签？"><a href="#可替换标签？" class="headerlink" title="可替换标签？"></a>可替换标签？</h2><h3 id="什么是可替换标签？"><a href="#什么是可替换标签？" class="headerlink" title="什么是可替换标签？"></a>什么是可替换标签？</h3><blockquote><p>可替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如浏览器会根据&lt;img&gt;标签的src属性的值来读取图片信息并显示出来，而如果查看(x)html代码，则看不到图片的实际内容；又例如根据&lt;input&gt;标签的type属性来决定是显示输入框，还是单选按钮等。</span><br></pre></td></tr></table></figure><h3 id="常见的几个可替换标签"><a href="#常见的几个可替换标签" class="headerlink" title="常见的几个可替换标签"></a>常见的几个可替换标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img&gt;、&lt;input&gt;、&lt;textarea&gt;、&lt;select&gt;、&lt;object&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;HTML&quot;&gt;&lt;a href=&quot;#HTML&quot; class=&quot;headerlink&quot; title=&quot;HTML&quot;&gt;&lt;/a&gt;HTML&lt;/h1&gt;&lt;h2 id=&quot;W3C&quot;&gt;&lt;a href=&quot;#W3C&quot; class=&quot;headerlink&quot; title=&quot;W3C&quot;&gt;&lt;/a&gt;W3
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://hongtao-huang.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="W3C MDN HTML Tag 空Tag 可替换Tag" scheme="https://hongtao-huang.github.io/tags/W3C-MDN-HTML-Tag-%E7%A9%BATag-%E5%8F%AF%E6%9B%BF%E6%8D%A2Tag/"/>
