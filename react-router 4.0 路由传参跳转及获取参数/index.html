@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="react-router4.0 路由登录拦截创建路由表12345678910const routers = [  &amp;#123;path: &amp;quot;/&amp;quot;, name: &amp;quot;Index&amp;quot;, component: &amp;apos;./pages/Index&amp;apos;&amp;#125;,  &amp;#123;path: &amp;quot;/login&amp;quot;, name: &amp;quot;Lo">
+<meta name="description" content="react-router4.0 路由传参跳转及获取参数路由的跳转，传参分别是通过路由的三个属性history,location,match来进行的,可通过从最上层的路由props传至组件中，也可以通过以下形式获取12import &amp;#123;withRouter&amp;#125; from &amp;apos;react-router-dom&amp;apos;export default withRouter(Ind">
 <meta name="keywords" content="react-router">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-router4.0 路由登录拦截">
-<meta property="og:url" content="https://hongtao-huang.github.io/react-react-router 4.0/index.html">
+<meta property="og:title" content="react-router4.0 路由传参跳转及获取参数">
+<meta property="og:url" content="https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/index.html">
 <meta property="og:site_name" content="不穿辣条吃秋裤">
-<meta property="og:description" content="react-router4.0 路由登录拦截创建路由表12345678910const routers = [  &amp;#123;path: &amp;quot;/&amp;quot;, name: &amp;quot;Index&amp;quot;, component: &amp;apos;./pages/Index&amp;apos;&amp;#125;,  &amp;#123;path: &amp;quot;/login&amp;quot;, name: &amp;quot;Lo">
+<meta property="og:description" content="react-router4.0 路由传参跳转及获取参数路由的跳转，传参分别是通过路由的三个属性history,location,match来进行的,可通过从最上层的路由props传至组件中，也可以通过以下形式获取12import &amp;#123;withRouter&amp;#125; from &amp;apos;react-router-dom&amp;apos;export default withRouter(Ind">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T03:36:58.544Z">
+<meta property="og:updated_time" content="2019-04-15T07:04:52.946Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-router4.0 路由登录拦截">
-<meta name="twitter:description" content="react-router4.0 路由登录拦截创建路由表12345678910const routers = [  &amp;#123;path: &amp;quot;/&amp;quot;, name: &amp;quot;Index&amp;quot;, component: &amp;apos;./pages/Index&amp;apos;&amp;#125;,  &amp;#123;path: &amp;quot;/login&amp;quot;, name: &amp;quot;Lo">
+<meta name="twitter:title" content="react-router4.0 路由传参跳转及获取参数">
+<meta name="twitter:description" content="react-router4.0 路由传参跳转及获取参数路由的跳转，传参分别是通过路由的三个属性history,location,match来进行的,可通过从最上层的路由props传至组件中，也可以通过以下形式获取12import &amp;#123;withRouter&amp;#125; from &amp;apos;react-router-dom&amp;apos;export default withRouter(Ind">
 
 
 
@@ -166,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="https://hongtao-huang.github.io/react-react-router 4.0/"/>
+  <link rel="canonical" href="https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/"/>
 
 
 
 
 
-  <title>react-router4.0 路由登录拦截 | 不穿辣条吃秋裤</title>
+  <title>react-router4.0 路由传参跳转及获取参数 | 不穿辣条吃秋裤</title>
   
 
 
@@ -366,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/react-react-router 4.0/">
+    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄洪涛">
@@ -383,7 +383,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">react-router4.0 路由登录拦截</h1>
+          <h1 class="post-title" itemprop="name headline">react-router4.0 路由传参跳转及获取参数</h1>
         
 
         <div class="post-meta">
@@ -435,7 +435,7 @@
 
           
           
-             <span id="/react-react-router 4.0/" class="leancloud_visitors" data-flag-title="react-router4.0 路由登录拦截">
+             <span id="/react-router 4.0 路由传参跳转及获取参数/" class="leancloud_visitors" data-flag-title="react-router4.0 路由传参跳转及获取参数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -466,14 +466,17 @@
       
 
       
-        <h1 id="react-router4-0-路由登录拦截"><a href="#react-router4-0-路由登录拦截" class="headerlink" title="react-router4.0 路由登录拦截"></a>react-router4.0 路由登录拦截</h1><h2 id="创建路由表"><a href="#创建路由表" class="headerlink" title="创建路由表"></a>创建路由表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const routers = [</span><br><span class="line">  &#123;path: &quot;/&quot;, name: &quot;Index&quot;, component: &apos;./pages/Index&apos;&#125;,</span><br><span class="line">  &#123;path: &quot;/login&quot;, name: &quot;Login&quot;, component: &apos;./pages/Login&apos;&#125;,</span><br><span class="line">  &#123;path: &quot;/register&quot;, name: &quot;Register&quot;, component: &apos;./pages/Register&apos;&#125;,</span><br><span class="line">  &#123;path: &quot;/my&quot;, name: &quot;My&quot;, component: &apos;./pages/My&apos;, auth: true&#125;,</span><br><span class="line">  &#123;path: &quot;/create&quot;, name: &quot;Create&quot;, component: &apos;./pages/Create&apos;, auth: true&#125;,</span><br><span class="line">  &#123;path: &quot;/detail/:blogId&quot;, name: &quot;Detail&quot;, component: &apos;./pages/Detail&apos;, auth: true&#125;,</span><br><span class="line">  &#123;path: &quot;/edit/:blogId&quot;, name: &quot;Edit&quot;, component: &apos;./pages/Edit&apos;, auth: true&#125;,</span><br><span class="line">  &#123;path: &quot;/user/:userId&quot;, name: &quot;User&quot;, component: &apos;./pages/User&apos;, auth: true&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h2 id="遍历路由表"><a href="#遍历路由表" class="headerlink" title="遍历路由表"></a>遍历路由表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;Component, Suspense, lazy&#125; from &apos;react&apos;;</span><br><span class="line">import &#123;BrowserRouter as Router, Route, Switch, Redirect&#125; from &apos;react-router-dom&apos;</span><br><span class="line">import routers from &apos;./router&apos;</span><br><span class="line">import &#123;NotFound&#125; from &apos;pages&apos;</span><br><span class="line">import &#123;Page&#125; from &apos;components&apos;</span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line">  async componentWillMount() &#123;</span><br><span class="line">    await this.props.dispatch(authActions.getAuthInfo());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;Router&gt;</span><br><span class="line">          &lt;Switch&gt;</span><br><span class="line">            &#123;</span><br><span class="line">              routers.map((item, index) =&gt; &#123;</span><br><span class="line">                const DynamicComponent = lazy (() =&gt; import(`$&#123;item.component&#125;/index`)); </span><br><span class="line">                return &lt;Route key=&#123;index&#125; path=&#123;item.path&#125; exact render=&#123;props =&gt; (</span><br><span class="line">                    &lt;Page &#123;...props&#125;&gt;</span><br><span class="line">                      &lt;Suspense fallback=&#123;&lt;div&gt;loading...&lt;/div&gt;&#125;&gt;</span><br><span class="line">                      &#123;</span><br><span class="line">                        !item.auth</span><br><span class="line">                            ? (&lt;DynamicComponent &#123;...props&#125; /&gt;)</span><br><span class="line">                            : (token</span><br><span class="line">                                ? (&lt;DynamicComponent &#123;...props&#125; /&gt;)</span><br><span class="line">                                : (&lt;Redirect to=&#123;&#123; pathname: &quot;/login&quot;, state: &#123;from: props.location&#125;</span><br><span class="line">                                &#125;&#125;/&gt;)</span><br><span class="line">                            )</span><br><span class="line">                      &#125;</span><br><span class="line">                      &lt;/Suspense&gt;</span><br><span class="line">                    &lt;/Page&gt;</span><br><span class="line">                )&#125;&gt;</span><br><span class="line">                &lt;/Route&gt;</span><br><span class="line">              &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">            &lt;Route component=&#123;NotFound&#125;/&gt;</span><br><span class="line">          &lt;/Switch&gt;</span><br><span class="line">        &lt;/Router&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>关于BrowserRouter Switch Route 等可直接查看<a href="https://react-router.docschina.org/" target="_blank" rel="noopener">官方文档</a></li>
-<li>该教程用到了Suspense, lazy来做页面的懒加载，这是react 的新特性， 所以不需要再引入外部的插件来做懒加载， 会在我的另一篇博客中讲到</li>
-<li>在遍历路由表的情况下， 会先将layout 组件 <code>Page</code> 放在最外层， 也就是只要不是404页面， layout布局都会渲染，然后再判断 <code>auth</code> ，这个字段是来判断当匹配到这个路由的时候你是否需要做拦截，然后再判断是否有token</li>
-<li>token的保存存储以及获取则是另外的解决方案</li>
-</ul>
+        <h1 id="react-router4-0-路由传参跳转及获取参数"><a href="#react-router4-0-路由传参跳转及获取参数" class="headerlink" title="react-router4.0 路由传参跳转及获取参数"></a>react-router4.0 路由传参跳转及获取参数</h1><p>路由的跳转，传参分别是通过路由的三个属性<code>history</code>,<code>location</code>,<code>match</code>来进行的,可通过从最上层的路由props传至组件中，也可以通过以下形式获取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123;withRouter&#125; from &apos;react-router-dom&apos;</span><br><span class="line">export default withRouter(Index)</span><br></pre></td></tr></table></figure></p>
+<p>这样<code>Index</code>组件的props就可以拿到这三个属性了</p>
+<h2 id="传参跳转history"><a href="#传参跳转history" class="headerlink" title="传参跳转history"></a>传参跳转<code>history</code></h2><h3 id="params"><a href="#params" class="headerlink" title="params"></a>params</h3><ol>
+<li>需要现在路由表中配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	&lt;Route path=&quot;/:id&quot;&gt;</span><br><span class="line">```	</span><br><span class="line">2. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>history.push(‘/123’);  //或者<br>history.push({pathname: ‘/123’});</p>
+<p><link path="/123"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3. history 属性中还有一些其他的方法，此处不提。其他文档中都可以查到</span><br><span class="line"></span><br><span class="line">### query</span><br><span class="line">1. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></p>
+<p>history.push({pathname: ‘/‘, search=”?page=1”});</p>
+<p><link path="/?page=123"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 获取参数 </span><br><span class="line">### params `match`</span><br><span class="line">- params 获取参数是通过`match` 获取参数</span><br><span class="line">- `match.params.xxx`</span><br><span class="line"></span><br><span class="line">### query `location`</span><br><span class="line">- query 获取参数是通过`location`获取参数</span><br><span class="line">- `location.search`获取到`?page=1`字符串</span><br><span class="line">- `yarn add query-string`</span><br><span class="line">- `queryString.parse(location.search);`</span><br><span class="line">- 就可以将参数转换成对象</span><br><span class="line"></span><br><span class="line">还有种跳转是 state</span><br><span class="line">1. 通过`history.push`进行跳转</span><br></pre></td></tr></table></figure></p>
+<p>history.push({pathname: ‘/‘, state={page:1}});<br><code>`</code></p>
 
       
     </div>
@@ -491,12 +494,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/react-react-router 4.0/">react-router4.0 路由登录拦截</a></p>
+  <p><span>本文标题:</span><a href="/react-router 4.0 路由传参跳转及获取参数/">react-router4.0 路由传参跳转及获取参数</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 黄洪涛 的个人博客">黄洪涛</a></p>
   <p><span>发布时间:</span>2019年04月15日 - 23:04</p>
-  <p><span>最后更新:</span>2019年04月15日 - 11:04</p>
-  <p><span>原始链接:</span><a href="/react-react-router 4.0/" title="react-router4.0 路由登录拦截">https://hongtao-huang.github.io/react-react-router 4.0/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hongtao-huang.github.io/react-react-router 4.0/"  aria-label="复制成功！"></i></span>
+  <p><span>最后更新:</span>2019年04月15日 - 15:04</p>
+  <p><span>原始链接:</span><a href="/react-router 4.0 路由传参跳转及获取参数/" title="react-router4.0 路由传参跳转及获取参数">https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
 </div>
@@ -569,8 +572,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/自我实现jQuery方法深入理解jQuery/" rel="next" title="深入理解jQuery">
-                <i class="fa fa-chevron-left"></i> 深入理解jQuery
+              <a href="/react-router 4.0 路由登录拦截/" rel="next" title="react-router4.0 路由登录拦截">
+                <i class="fa fa-chevron-left"></i> react-router4.0 路由登录拦截
               </a>
             
           </div>
@@ -687,7 +690,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -779,7 +782,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#react-router4-0-路由登录拦截"><span class="nav-number">1.</span> <span class="nav-text">react-router4.0 路由登录拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建路由表"><span class="nav-number">1.1.</span> <span class="nav-text">创建路由表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历路由表"><span class="nav-number">1.2.</span> <span class="nav-text">遍历路由表</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#react-router4-0-路由传参跳转及获取参数"><span class="nav-number">1.</span> <span class="nav-text">react-router4.0 路由传参跳转及获取参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传参跳转history"><span class="nav-number">1.1.</span> <span class="nav-text">传参跳转history</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#params"><span class="nav-number">1.1.1.</span> <span class="nav-text">params</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
