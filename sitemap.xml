@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/%E8%87%AA%E6%88%91%E5%AE%9E%E7%8E%B0jQuery%E6%96%B9%E6%B3%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3jQuery/</loc>
-    
-    <lastmod>2018-09-29T13:59:08.966Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hongtao-huang.github.io/%E8%84%9A%E6%9C%AC/</loc>
     
     <lastmod>2018-09-29T13:59:08.966Z</lastmod>
@@ -86,7 +79,14 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/%E6%8E%92%E5%BA%8F-%E6%8F%92%E5%85%A5-%E8%AE%A1%E6%95%B0-%E5%9F%BA%E6%95%B0/</loc>
+    <loc>https://hongtao-huang.github.io/%E8%87%AA%E6%88%91%E5%AE%9E%E7%8E%B0jQuery%E6%96%B9%E6%B3%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3jQuery/</loc>
+    
+    <lastmod>2018-09-29T13:59:08.966Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hongtao-huang.github.io/%E5%AE%9A%E6%97%B6%E5%88%87%E6%8D%A2%E7%AA%97%E5%8F%A3/</loc>
     
     <lastmod>2018-09-29T13:59:08.965Z</lastmod>
     
@@ -107,23 +107,9 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/%E5%AE%9A%E6%97%B6%E5%88%87%E6%8D%A2%E7%AA%97%E5%8F%A3/</loc>
+    <loc>https://hongtao-huang.github.io/%E6%8E%92%E5%BA%8F-%E6%8F%92%E5%85%A5-%E8%AE%A1%E6%95%B0-%E5%9F%BA%E6%95%B0/</loc>
     
     <lastmod>2018-09-29T13:59:08.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hongtao-huang.github.io/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2018-09-29T13:59:08.964Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hongtao-huang.github.io/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2018-09-29T13:59:08.964Z</lastmod>
     
   </url>
   
@@ -142,16 +128,16 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/flex/</loc>
+    <loc>https://hongtao-huang.github.io/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
     
-    <lastmod>2018-09-29T13:59:08.963Z</lastmod>
+    <lastmod>2018-09-29T13:59:08.964Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/http/</loc>
+    <loc>https://hongtao-huang.github.io/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%80%BB%E7%BB%93/</loc>
     
-    <lastmod>2018-09-29T13:59:08.963Z</lastmod>
+    <lastmod>2018-09-29T13:59:08.964Z</lastmod>
     
   </url>
   
@@ -170,7 +156,21 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/css%E5%AE%BD%E9%AB%98%E7%9A%84%E5%86%B3%E5%AE%9A/</loc>
+    <loc>https://hongtao-huang.github.io/flex/</loc>
+    
+    <lastmod>2018-09-29T13:59:08.963Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hongtao-huang.github.io/http/</loc>
+    
+    <lastmod>2018-09-29T13:59:08.963Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hongtao-huang.github.io/css-Learn1/</loc>
     
     <lastmod>2018-09-29T13:59:08.962Z</lastmod>
     
@@ -184,7 +184,7 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/css-Learn1/</loc>
+    <loc>https://hongtao-huang.github.io/css%E5%AE%BD%E9%AB%98%E7%9A%84%E5%86%B3%E5%AE%9A/</loc>
     
     <lastmod>2018-09-29T13:59:08.962Z</lastmod>
     
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/call,apply,bind%E7%94%A8%E6%B3%95/</loc>
+    <loc>https://hongtao-huang.github.io/HTTP%E8%A6%81%E7%B4%A0%EF%BC%9AIP%20%E4%B8%8E%20%E7%AB%AF%E5%8F%A3/</loc>
     
     <lastmod>2018-09-29T13:59:08.961Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://hongtao-huang.github.io/HTTP%E8%A6%81%E7%B4%A0%EF%BC%9AIP%20%E4%B8%8E%20%E7%AB%AF%E5%8F%A3/</loc>
+    <loc>https://hongtao-huang.github.io/call,apply,bind%E7%94%A8%E6%B3%95/</loc>
     
     <lastmod>2018-09-29T13:59:08.961Z</lastmod>
     
