@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hongtao-huang.github.io/"/>
-  <updated>2019-05-05T08:23:05.448Z</updated>
+  <updated>2020-09-23T01:05:18.431Z</updated>
   <id>https://hongtao-huang.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nodeJs概念</title>
+    <link href="https://hongtao-huang.github.io/nodeJs%E6%A6%82%E5%BF%B5/"/>
+    <id>https://hongtao-huang.github.io/nodeJs概念/</id>
+    <published>2020-09-23T01:02:41.000Z</published>
+    <updated>2020-09-23T01:05:18.431Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="node-js-概念"><a href="#node-js-概念" class="headerlink" title="node.js 概念"></a>node.js 概念</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol><li><p>node 不是web后端框架</p></li><li><p>node 不能用来跟spring 和flask作对比</p></li><li><p>node 不是后端的js</p></li><li><p>node 不能用来跟python和PHP作对比</p></li><li><p>node 是一个平台</p></li><li><p>node 是把多种技术结合在一起使用</p></li><li><p>node 是让js也能调用系统接口，开发后端应用</p></li></ol><h2 id="node-用到了哪些技术？"><a href="#node-用到了哪些技术？" class="headerlink" title="node 用到了哪些技术？"></a>node 用到了哪些技术？</h2><ul><li>v8引擎</li><li>libuv</li><li>c/c++ 实现的c-ares、http-parser、openSSL、zlib等库</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj0b4ukd40j30ws0843zw.jpg" alt="image-20200922200118311"></p><h3 id="什么是nodeJs-bindings？"><a href="#什么是nodeJs-bindings？" class="headerlink" title="什么是nodeJs  bindings？"></a>什么是nodeJs  bindings？</h3><p>背景</p><ul><li>c/c++ 实现了一个http_parser库，很高效</li><li>js不能调用它</li><li>这个时候需要一个桥梁</li></ul><p>实现</p><ul><li>node用c++对http_parser做封装，使它符合一些要求，封装的这个文件叫http_parser_bindings.cpp</li><li>Node提供的编译工具将其编译为.node文件</li><li>js代码可以直接require这个.node文件</li><li>这样js就能调用这个c++库，中间的桥梁就是bindings</li><li>由于binding提供很多所以叫bindings</li></ul><h3 id="什么是c-c-插件"><a href="#什么是c-c-插件" class="headerlink" title="什么是c/c++ 插件"></a>什么是c/c++ 插件</h3><p>当需要自己实现一个c++库的时候，没有提供的binding， 也需要自己写这个bindings</p><h3 id="什么是libuv"><a href="#什么是libuv" class="headerlink" title="什么是libuv"></a>什么是libuv</h3><p>所有平台上一个通用的异步I/O库，libuv会根据系统选择合适的方案</p><p>功能：用于UDP、TCP、DNS、文件等异步操作</p><h3 id="什么是v8"><a href="#什么是v8" class="headerlink" title="什么是v8"></a>什么是v8</h3><p>功能</p><ul><li>将js代码转换成机器码执行</li><li>维护调用栈，确保js函数按顺序执行</li><li>内存管理，为所有对象分配内存</li><li>垃圾回收，重复利用无用的内存</li><li>实现js的标准库</li></ul><p>注意</p><ul><li>v8不提供DOM API</li><li>v8本身是多线程的</li><li>v8执行js是单线程的</li><li>可以开启两个线程分别执行js</li><li>v8本身是包含多个线程的，如垃圾回收为一个线程</li><li>自带event loop ，但是node基于libuv自己做了一个</li></ul><h3 id="什么是event-loop"><a href="#什么是event-loop" class="headerlink" title="什么是event loop"></a>什么是event loop</h3><ol><li><p>什么是event？</p><ol><li>计时器到期了</li><li>读取到文件了</li><li>socket有信息了</li></ol></li><li><p>什么是loop？</p><ol><li>loop就是循环，比如while（true）循环</li><li>由于事件是分优先级的， 所以循环的时候先循环优先级高的</li><li>所以Node需要从高到低循环事件</li><li>1&gt;2&gt;3&gt;1&gt;2&gt;3</li></ol></li><li><p>什么是event loop</p><ol><li>操作系统可以触发事件，js可以处理事件</li><li>event loop就是对事件处理顺序的管理</li></ol></li><li><p>nodeJs的event loop 执行顺序</p><ol><li>检查是否有定时器 timers</li><li>输入输出的回调 I/O callbacks </li><li>空闲一会， 清理东西</li><li>轮询阶段  检查系统事件，  比如读文件， http请求。 poll阶段</li><li>check 阶段 检查setlmmediate回调</li><li>close callbacks</li></ol></li></ol><p>注意</p><p>Node大部分时间都是停留在poll阶段,一直轮询</p><p>大部分事件都在poll阶段被处理，比如读文件， http请求</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>用libuv进行异步I/O操作</li><li>用event loop 管理事件处理顺序</li><li>用c/c++库高效处理DNS/http</li><li>用bindings让js能和c/c++沟通</li><li>用v8运行js</li><li>用node提供的API简化js代码</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj0b4uzyuvj31gm0rk77x.jpg" alt="image-20200922214518898"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;node-js-概念&quot;&gt;&lt;a href=&quot;#node-js-概念&quot; class=&quot;headerlink&quot; title=&quot;node.js 概念&quot;&gt;&lt;/a&gt;node.js 概念&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://hongtao-huang.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="node" scheme="https://hongtao-huang.github.io/categories/%E5%89%8D%E7%AB%AF/node/"/>
+    
+    
+      <category term="node" scheme="https://hongtao-huang.github.io/tags/node/"/>
+    
+      <category term="js" scheme="https://hongtao-huang.github.io/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>函数防抖（debounce）与函数节流（throttle）</title>
@@ -38,31 +67,6 @@
     
     
       <category term="函数防抖, debounce, 函数节流, throttle" scheme="https://hongtao-huang.github.io/tags/%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96-debounce-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81-throttle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>create-react-app 路由按需加载</title>
-    <link href="https://hongtao-huang.github.io/react-create-react-app%20%E8%B7%AF%E7%94%B1%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD/"/>
-    <id>https://hongtao-huang.github.io/react-create-react-app 路由按需加载/</id>
-    <published>2019-04-15T15:00:00.000Z</published>
-    <updated>2019-04-15T07:42:50.447Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="create-react-app-路由按需加载"><a href="#create-react-app-路由按需加载" class="headerlink" title="create-react-app 路由按需加载"></a>create-react-app 路由按需加载</h1><p>由<code>create-react-app</code>创建的react应用是将webpack的配置项隐藏的，可以让开发者在不需要做任何配置的情况下开发react，但有时候开发者也会需要有些特殊的需求</p><ol><li><code>npm run eject</code>将webpack抛出再自己添加配置以解决需求</li><li>通过<code>react-app-rewired</code>以及<code>customize-cra</code>来解决特殊需求</li><li>正常的antd 按需加载 以及<code>less</code> <code>sass</code> <code>alias</code>等配置在网上都有大佬写出教程。  </li><li>作为一个react 小白， 我就是很作。<br>我就是想在不抛出webpack配置的情况下来做到路由组件的按需加载，经过在网络的漫长搜索， 发现都是通过抛出webpack 的方式来做按需加载。</li></ol><p>通过一番努力， 发现抛出方式都是在<code>.babelrc</code>的<code>plugins</code>上添加一个<code>syntax-dynamic-import</code>插件。 于是借此解决了在不抛出配置的情况下按需加载问题。解决如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const &#123;override, addBabelPlugins, useBabelRc&#125; = require(&apos;customize-cra&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = override(</span><br><span class="line">    addBabelPlugins(</span><br><span class="line">        [&quot;syntax-dynamic-import&quot;,&#123;&quot;legacy&quot;: true&#125;],</span><br><span class="line">    ),useBabelRc());</span><br></pre></td></tr></table></figure></p><p>在组件中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import Loadable from &apos;react-loadable&apos;;</span><br><span class="line"></span><br><span class="line">const MyLoadingComponent = (&#123;isLoading, error&#125;) =&gt; &#123;</span><br><span class="line">  // Handle the loading state</span><br><span class="line">  if (isLoading) &#123;</span><br><span class="line">    return &lt;div&gt;没有&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  // Handle the error state</span><br><span class="line">  else if (error) &#123;</span><br><span class="line">    return &lt;div&gt;Sorry, there was a problem loading the page.&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  else &#123;</span><br><span class="line">    return null;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const LoadableComponent = Loadable(&#123;</span><br><span class="line">                  loader: () =&gt; import(&apos;/pages/index&apos;),</span><br><span class="line">                  loading: MyLoadingComponent</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure></p><p>至此按需加载算是完成了</p><ul><li>后来发现react更新后添加了两个新特性<code>Suspense, lazy</code>可以直接通过引入这两个特性做到按需加载， 根本不需要上面那么麻烦的配置</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;Component, Suspense, lazy&#125; from &apos;react&apos;;</span><br><span class="line">const DynamicComponent = lazy (() =&gt; import(&apos;/pages/index&apos;));</span><br><span class="line"> &lt;Suspense fallback=&#123;&lt;div&gt;loading...&lt;/div&gt;&#125;&gt;</span><br><span class="line"> &lt;DynamicComponent /&gt;</span><br><span class="line"> &lt;/Suspense&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;create-react-app-路由按需加载&quot;&gt;&lt;a href=&quot;#create-react-app-路由按需加载&quot; class=&quot;headerlink&quot; title=&quot;create-react-app 路由按需加载&quot;&gt;&lt;/a&gt;create-react-app 
-      
-    
-    </summary>
-    
-      <category term="react" scheme="https://hongtao-huang.github.io/categories/react/"/>
-    
-    
-      <category term="create-react-app,customize-cra,react-app-rewired" scheme="https://hongtao-huang.github.io/tags/create-react-app-customize-cra-react-app-rewired/"/>
     
   </entry>
   
@@ -113,6 +117,31 @@
     
     
       <category term="react-router" scheme="https://hongtao-huang.github.io/tags/react-router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>create-react-app 路由按需加载</title>
+    <link href="https://hongtao-huang.github.io/react-create-react-app%20%E8%B7%AF%E7%94%B1%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD/"/>
+    <id>https://hongtao-huang.github.io/react-create-react-app 路由按需加载/</id>
+    <published>2019-04-15T15:00:00.000Z</published>
+    <updated>2019-04-15T07:42:50.447Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="create-react-app-路由按需加载"><a href="#create-react-app-路由按需加载" class="headerlink" title="create-react-app 路由按需加载"></a>create-react-app 路由按需加载</h1><p>由<code>create-react-app</code>创建的react应用是将webpack的配置项隐藏的，可以让开发者在不需要做任何配置的情况下开发react，但有时候开发者也会需要有些特殊的需求</p><ol><li><code>npm run eject</code>将webpack抛出再自己添加配置以解决需求</li><li>通过<code>react-app-rewired</code>以及<code>customize-cra</code>来解决特殊需求</li><li>正常的antd 按需加载 以及<code>less</code> <code>sass</code> <code>alias</code>等配置在网上都有大佬写出教程。  </li><li>作为一个react 小白， 我就是很作。<br>我就是想在不抛出webpack配置的情况下来做到路由组件的按需加载，经过在网络的漫长搜索， 发现都是通过抛出webpack 的方式来做按需加载。</li></ol><p>通过一番努力， 发现抛出方式都是在<code>.babelrc</code>的<code>plugins</code>上添加一个<code>syntax-dynamic-import</code>插件。 于是借此解决了在不抛出配置的情况下按需加载问题。解决如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const &#123;override, addBabelPlugins, useBabelRc&#125; = require(&apos;customize-cra&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = override(</span><br><span class="line">    addBabelPlugins(</span><br><span class="line">        [&quot;syntax-dynamic-import&quot;,&#123;&quot;legacy&quot;: true&#125;],</span><br><span class="line">    ),useBabelRc());</span><br></pre></td></tr></table></figure></p><p>在组件中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import Loadable from &apos;react-loadable&apos;;</span><br><span class="line"></span><br><span class="line">const MyLoadingComponent = (&#123;isLoading, error&#125;) =&gt; &#123;</span><br><span class="line">  // Handle the loading state</span><br><span class="line">  if (isLoading) &#123;</span><br><span class="line">    return &lt;div&gt;没有&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  // Handle the error state</span><br><span class="line">  else if (error) &#123;</span><br><span class="line">    return &lt;div&gt;Sorry, there was a problem loading the page.&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  else &#123;</span><br><span class="line">    return null;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const LoadableComponent = Loadable(&#123;</span><br><span class="line">                  loader: () =&gt; import(&apos;/pages/index&apos;),</span><br><span class="line">                  loading: MyLoadingComponent</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure></p><p>至此按需加载算是完成了</p><ul><li>后来发现react更新后添加了两个新特性<code>Suspense, lazy</code>可以直接通过引入这两个特性做到按需加载， 根本不需要上面那么麻烦的配置</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;Component, Suspense, lazy&#125; from &apos;react&apos;;</span><br><span class="line">const DynamicComponent = lazy (() =&gt; import(&apos;/pages/index&apos;));</span><br><span class="line"> &lt;Suspense fallback=&#123;&lt;div&gt;loading...&lt;/div&gt;&#125;&gt;</span><br><span class="line"> &lt;DynamicComponent /&gt;</span><br><span class="line"> &lt;/Suspense&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;create-react-app-路由按需加载&quot;&gt;&lt;a href=&quot;#create-react-app-路由按需加载&quot; class=&quot;headerlink&quot; title=&quot;create-react-app 路由按需加载&quot;&gt;&lt;/a&gt;create-react-app 
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://hongtao-huang.github.io/categories/react/"/>
+    
+    
+      <category term="create-react-app,customize-cra,react-app-rewired" scheme="https://hongtao-huang.github.io/tags/create-react-app-customize-cra-react-app-rewired/"/>
     
   </entry>
   
@@ -489,31 +518,6 @@
     
     
       <category term="串口" scheme="https://hongtao-huang.github.io/tags/%E4%B8%B2%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML语义化</title>
-    <link href="https://hongtao-huang.github.io/html-%E8%AF%AD%E4%B9%89%E5%8C%96/"/>
-    <id>https://hongtao-huang.github.io/html-语义化/</id>
-    <published>2018-03-18T07:20:00.000Z</published>
-    <updated>2018-09-29T13:59:08.963Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-语义化-iframe-a-form的使用"><a href="#HTML-语义化-iframe-a-form的使用" class="headerlink" title="HTML-语义化-(iframe-a-form的使用)"></a>HTML-语义化-(iframe-a-form的使用)</h1><h2 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h2><p>参考资料：<br><a href="http://justineo.github.io/slideshows/semantic-html/" target="_blank" rel="noopener">semantic-html</a><br><a href="http://www.oschina.net/translate/about-html-semantics-front-end-architecture" target="_blank" rel="noopener">关于语义化 HTML 以及前端架构的一点思考</a><br><a href="http://www.zhihu.com/question/20455165" target="_blank" rel="noopener">如何理解 web 语义化</a></p><blockquote><p>语义化的含义就是用正确的标签做正确的事情，html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p></blockquote><p>列举几个常见的标签：<br>标题从大到小： h1 , h2 , h3 , h4 , h5 , h6<br>超链接： a<br>段落： p<br>无序列表： ul&gt;li<br>有序列表： ol&gt;li<br>自定义列表： dl&gt;{dt , dd}<br><a href="http://www.runoob.com/tags/tag-header.html" target="_blank" rel="noopener"><code>&lt;header&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main" target="_blank" rel="noopener"><code>&lt;main&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section" target="_blank" rel="noopener"><code>&lt;section&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer" target="_blank" rel="noopener"><code>&lt;footer&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article" target="_blank" rel="noopener"><code>&lt;article&gt;</code></a></p><h2 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>跳转页面。 发起 HTTP GET 请求</p><h3 id="target-属性"><a href="#target-属性" class="headerlink" title="target 属性"></a>target 属性</h3><ul><li>_blank 在新页面打开网页</li><li>_self 在当前页面打开网页  </li><li>_parent 在父页面打开网页  ， 这种要在当前页面被嵌套在一个iframe网页中容易体现出来</li><li>_top 在最外围页面打开网页 ， 这种要在当前页面被嵌套在多个iframe网页中容易体现出来</li></ul><h3 id="download"><a href="#download" class="headerlink" title="download"></a>download</h3><ul><li>表示下载href所对应的网页</li></ul><h2 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h2><p>默认宽高为300 * 150大小</p><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><ul><li>可以在一个网页嵌套一个网页<br>例如：<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpg8heal7qj309508sdfv.jpg" alt=""></li></ul><h3 id="与-a标签"><a href="#与-a标签" class="headerlink" title="与 a标签"></a>与 a标签</h3><p>看图：<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpgqn7mfjuj309i084gm1.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe name=xxx src=&quot;http://baidu.com&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">    &lt;a href=&quot;http://qq.com&quot; target=&quot;xxx&quot;&gt;QQ&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;我是iframe外面的P标签&lt;/p&gt;</span><br></pre></td></tr></table></figure></p><p>QQ为 a 标签链接  ，它的target 属性等于 <code>xxx</code>,点击QQ 就会在iframe 中打开<code>qq.com</code>的网页<br>iframe 标签中本来打开的网页时<code>baidu.com</code> ，iframe 有一个属性时<code>name</code> ，<code>name</code>属性等于 a标签的target属性的值，所以点击a标签的时候就会在iframe中打开a标签中的URL。</p><h2 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h2><p>跳转页面。 发起 HTTP POST 请求<br>常用属性</p><ul><li>action ：  规定当提交表单时向何处发送表单数据。值为：URL</li><li>method ：  规定用于发送表单数据的 HTTP 方法。值只能是： GET 或 POST请求</li><li>target ：  规定在何处打开 action URL。值为：<br>i. _blank<br>ii. _self<br>iii. _parent<br>iv. _top<br>和 标签是一样的。  </li><li><code>&lt;form&gt;</code> 元素包含一个或多个如下的表单元素：   <code>&lt;input&gt;&lt;textarea&gt;&lt;button&gt;&lt;select&gt;&lt;option&gt;&lt;optgroup&gt;&lt;fieldset&gt;&lt;label&gt;</code>  </li></ul><h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p>type属性:</p><ol><li>text： 简单文本输入</li><li>password： 加密文本输入</li><li>radio： 单选框 ，相同的name ，为一组单选框</li><li>chekbox： 复选框 ， 相同的name ，为一组复选框</li><li>reset： 重置按钮 ，value为按钮名字，重置之前所有的输入</li><li>submit：提交按钮 ，value为按钮名字 ，将输入的内容提交至 form 标签的 action属性对应的URL中</li><li>button： 普通按钮 ，value为按钮名字<ul><li>注意： 要想输入的内容能提交 ， 需要加一个name属性</li></ul></li></ol><p>require属性： 加了这个属性就表示，输入框中必须有输入</p><p>lable : lable for id , lable标签for 中值  ，对应lable想关联的标签的id 值。</p><p>textarea: 文本输入框</p><p>select ： 下拉菜单 ， option为选项</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;HTML-语义化-iframe-a-form的使用&quot;&gt;&lt;a href=&quot;#HTML-语义化-iframe-a-form的使用&quot; class=&quot;headerlink&quot; title=&quot;HTML-语义化-(iframe-a-form的使用)&quot;&gt;&lt;/a&gt;HTML-语义化-
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://hongtao-huang.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="W3C MDN HTML Tag 空Tag 可替换Tag" scheme="https://hongtao-huang.github.io/tags/W3C-MDN-HTML-Tag-%E7%A9%BATag-%E5%8F%AF%E6%9B%BF%E6%8D%A2Tag/"/>
     
   </entry>
   
