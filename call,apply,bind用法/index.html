@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="call apply bind," />
+  <meta name="keywords" content="call,apply,bind," />
 
 
 
@@ -125,21 +125,21 @@
 
 
 
-<meta name="description" content="call,apply,bind用法call12345678910111213var obj = &amp;#123;   name: &amp;apos;hht&amp;apos;,   age : 1&amp;#125;function f(name,age)&amp;#123;  this.name = name;  this.age = age;  console.log(this.name);  console.log(this">
-<meta name="keywords" content="call apply bind">
+<meta name="description" content="call,apply,bind用法call12345678910111213var obj = &amp;#123;   name: &apos;hht&apos;,   age : 1&amp;#125;function f(name,age)&amp;#123;  this.name = name;  this.age = age;  console.log(this.name);  console.log(this.age);&amp;#12">
+<meta name="keywords" content="call,apply,bind">
 <meta property="og:type" content="article">
 <meta property="og:title" content="call,apply,bind用法">
 <meta property="og:url" content="https://hongtao-huang.github.io/call,apply,bind用法/index.html">
 <meta property="og:site_name" content="不穿辣条吃秋裤">
-<meta property="og:description" content="call,apply,bind用法call12345678910111213var obj = &amp;#123;   name: &amp;apos;hht&amp;apos;,   age : 1&amp;#125;function f(name,age)&amp;#123;  this.name = name;  this.age = age;  console.log(this.name);  console.log(this">
+<meta property="og:description" content="call,apply,bind用法call12345678910111213var obj = &amp;#123;   name: &apos;hht&apos;,   age : 1&amp;#125;function f(name,age)&amp;#123;  this.name = name;  this.age = age;  console.log(this.name);  console.log(this.age);&amp;#12">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1fromntpn9mj305i02za9v.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1frompayhl9j304s03u3yb.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1fromlqepfyj30au078mx7.jpg">
-<meta property="og:updated_time" content="2018-09-29T13:59:08.961Z">
+<meta property="og:updated_time" content="2020-09-23T12:23:42.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="call,apply,bind用法">
-<meta name="twitter:description" content="call,apply,bind用法call12345678910111213var obj = &amp;#123;   name: &amp;apos;hht&amp;apos;,   age : 1&amp;#125;function f(name,age)&amp;#123;  this.name = name;  this.age = age;  console.log(this.name);  console.log(this">
+<meta name="twitter:description" content="call,apply,bind用法call12345678910111213var obj = &amp;#123;   name: &apos;hht&apos;,   age : 1&amp;#125;function f(name,age)&amp;#123;  this.name = name;  this.age = age;  console.log(this.name);  console.log(this.age);&amp;#12">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006WOZytgy1fromntpn9mj305i02za9v.jpg">
 
 
@@ -422,8 +422,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -470,19 +470,19 @@
       
 
       
-        <h1 id="call-apply-bind用法"><a href="#call-apply-bind用法" class="headerlink" title="call,apply,bind用法"></a>call,apply,bind用法</h1><h2 id="call"><a href="#call" class="headerlink" title="call"></a>call</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">   name: &apos;hht&apos;,</span><br><span class="line">   age : 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f(name,age)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  console.log(this.name);</span><br><span class="line">  console.log(this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.call(obj,&apos;mmd&apos;,18);</span><br></pre></td></tr></table></figure>
+        <h1 id="call-apply-bind用法"><a href="#call-apply-bind用法" class="headerlink" title="call,apply,bind用法"></a>call,apply,bind用法</h1><h2 id="call"><a href="#call" class="headerlink" title="call"></a>call</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   name: <span class="string">'hht'</span>,</span><br><span class="line">   age : <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.call(obj,<span class="string">'mmd'</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fromntpn9mj305i02za9v.jpg" alt=""></p>
 <ul>
 <li>call()方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表).</li>
 <li>call 的第一个参数是指定调用的这个函数的this ，非严格模式下this的值如果是null或者undefine ，那么这个this指向window</li>
 <li>call 第二个以及之后的参数就是我们的arguments的值</li>
 </ul>
-<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">   name: &apos;hht&apos;,</span><br><span class="line">   age : 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f(name,age)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  console.log(this.name);</span><br><span class="line">  console.log(this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.apply(obj,[&apos;mmd&apos;,18]);</span><br><span class="line">f.apply(obj,&#123;0: &apos;mmd&apos;, 1: 18, length: 2&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   name: <span class="string">'hht'</span>,</span><br><span class="line">   age : <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.apply(obj,[<span class="string">'mmd'</span>,<span class="number">18</span>]);</span><br><span class="line">f.apply(obj,&#123;<span class="number">0</span>: <span class="string">'mmd'</span>, <span class="number">1</span>: <span class="number">18</span>, <span class="attr">length</span>: <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1frompayhl9j304s03u3yb.jpg" alt=""></p>
 <ul>
 <li>call()方法的作用和 apply() 方法类似，只有一个区别，就是 call()方法接受的是若干个参数的列表，而apply()方法接受的是一个包含多个参数的数组, 或伪数组。</li>
 </ul>
-<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">   name: &apos;hht&apos;,</span><br><span class="line">   age : 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f()&#123;</span><br><span class="line">  for(let i = 0; i &lt; 4; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    console.log(arguments[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(this);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var f1Bind = f.bind(obj,&apos;hht&apos;,18);</span><br><span class="line">f1Bind();</span><br><span class="line">f1Bind(1,2);</span><br></pre></td></tr></table></figure>
+<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   name: <span class="string">'hht'</span>,</span><br><span class="line">   age : <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f1Bind = f.bind(obj,<span class="string">'hht'</span>,<span class="number">18</span>);</span><br><span class="line">f1Bind();</span><br><span class="line">f1Bind(<span class="number">1</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fromlqepfyj30au078mx7.jpg" alt=""></p>
 <ul>
 <li>bind 绑定时接受的参数跟 call 一致.</li>
@@ -541,7 +541,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/call-apply-bind/" rel="tag"># call apply bind</a>
+            <a href="/tags/call/" rel="tag"># call</a>
+          
+            <a href="/tags/apply/" rel="tag"># apply</a>
+          
+            <a href="/tags/bind/" rel="tag"># bind</a>
           
         </div>
       
@@ -687,7 +691,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -698,7 +702,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

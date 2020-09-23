@@ -421,8 +421,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
                   </a>
                 </span>
 
@@ -432,8 +432,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
+                  <a href="/categories/node/1/" itemprop="url" rel="index">
+                    <span itemprop="name">1</span>
                   </a>
                 </span>
 
@@ -607,8 +607,30 @@ node 是让js也能调用系统接口，开发后端
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/debounce/" itemprop="url" rel="index">
+                    <span itemprop="name">debounce</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/debounce/throttle/" itemprop="url" rel="index">
+                    <span itemprop="name">throttle</span>
                   </a>
                 </span>
 
@@ -665,6 +687,187 @@ node 是让js也能调用系统接口，开发后端
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/函数防抖与函数节流/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/react-router传参和区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄洪涛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不穿辣条吃秋裤">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/react-router传参和区别/" itemprop="url">react-router4.0 路由传参跳转及获取参数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T23:00:00+08:00">
+                2019-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/react-router/" itemprop="url" rel="index">
+                    <span itemprop="name">react-router</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/react-router传参和区别/" class="leancloud_visitors" data-flag-title="react-router4.0 路由传参跳转及获取参数">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Router相关的属性有哪些？
+history
+location
+match
+
+react-router-dom 提供一个withRouter高阶组件，可以将这三个属性当成props传入组件中使用
+##Router 如何跳转？
+
+react-router-dom中提供一个Link组件可以当成a链接使
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/react-router传参和区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -779,6 +982,17 @@ node 是让js也能调用系统接口，开发后端
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/react-router/" itemprop="url" rel="index">
+                    <span itemprop="name">react-router</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -880,7 +1094,7 @@ node 是让js也能调用系统接口，开发后端
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/react-router 4.0 路由传参跳转及获取参数/">
+    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/cra中路由按需加载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄洪涛">
@@ -899,7 +1113,7 @@ node 是让js也能调用系统接口，开发后端
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/react-router 4.0 路由传参跳转及获取参数/" itemprop="url">react-router4.0 路由传参跳转及获取参数</a></h1>
+                <a class="post-title-link" href="/cra中路由按需加载/" itemprop="url">create-react-app 路由按需加载</a></h1>
         
 
         <div class="post-meta">
@@ -941,163 +1155,12 @@ node 是让js也能调用系统接口，开发后端
 
                 
                 
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/react-router 4.0 路由传参跳转及获取参数/" class="leancloud_visitors" data-flag-title="react-router4.0 路由传参跳转及获取参数">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          react-router4.0 路由传参跳转及获取参数路由的跳转，传参分别是通过路由的三个属性history,location,match来进行的,可通过从最上层的路由props传至组件中，也可以通过以下形式获取12import &#123;withRouter&#125; from &apos;r
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/react-router 4.0 路由传参跳转及获取参数/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hongtao-huang.github.io/react-create-react-app 路由按需加载/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄洪涛">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不穿辣条吃秋裤">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+                  ， 
                 
-                <a class="post-title-link" href="/react-create-react-app 路由按需加载/" itemprop="url">create-react-app 路由按需加载</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T23:00:00+08:00">
-                2019-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/react/CRA/" itemprop="url" rel="index">
+                    <span itemprop="name">CRA</span>
                   </a>
                 </span>
 
@@ -1113,7 +1176,7 @@ node 是让js也能调用系统接口，开发后端
 
           
           
-             <span id="/react-create-react-app 路由按需加载/" class="leancloud_visitors" data-flag-title="create-react-app 路由按需加载">
+             <span id="/cra中路由按需加载/" class="leancloud_visitors" data-flag-title="create-react-app 路由按需加载">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1153,7 +1216,7 @@ npm run eject将webpack抛出再自己添加配置以解决需求
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/react-create-react-app 路由按需加载/#more" rel="contents">
+            <a class="btn" href="/cra中路由按需加载/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1261,8 +1324,19 @@ npm run eject将webpack抛出再自己添加配置以解决需求
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/jq/" itemprop="url" rel="index">
+                    <span itemprop="name">jq</span>
                   </a>
                 </span>
 
@@ -1423,8 +1497,19 @@ npm run eject将webpack抛出再自己添加配置以解决需求
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/cookie/" itemprop="url" rel="index">
+                    <span itemprop="name">cookie</span>
                   </a>
                 </span>
 
@@ -1595,8 +1680,19 @@ npm run eject将webpack抛出再自己添加配置以解决需求
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/prototype/" itemprop="url" rel="index">
+                    <span itemprop="name">prototype</span>
                   </a>
                 </span>
 
@@ -1757,8 +1853,8 @@ npm run eject将webpack抛出再自己添加配置以解决需求
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -1807,7 +1903,7 @@ npm run eject将webpack抛出再自己添加配置以解决需求
       
         
           
-          call,apply,bind用法call12345678910111213var obj = &#123;   name: &apos;hht&apos;,   age : 1&#125;function f(name,age)&#123;  this.name = name;  this.age
+          call,apply,bind用法call12345678910111213var obj = &#123;   name: 'hht',   age : 1&#125;function f(name,age)&#123;  this.name = name;  this.age = age;  c
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1919,8 +2015,19 @@ npm run eject将webpack抛出再自己添加配置以解决需求
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/闭包/" itemprop="url" rel="index">
+                    <span itemprop="name">闭包</span>
                   </a>
                 </span>
 
@@ -2082,7 +2189,7 @@ npm run eject将webpack抛出再自己添加配置以解决需求
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2093,7 +2200,7 @@ npm run eject将webpack抛出再自己添加配置以解决需求
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

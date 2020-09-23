@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="react-router," />
+  <meta name="keywords" content="react,react-router," />
 
 
 
@@ -126,14 +126,14 @@
 
 
 <meta name="description" content="react-router4.0 路由登录拦截创建路由表12345678910const routers = [  &amp;#123;path: &amp;quot;/&amp;quot;, name: &amp;quot;Index&amp;quot;, component: &amp;apos;./pages/Index&amp;apos;&amp;#125;,  &amp;#123;path: &amp;quot;/login&amp;quot;, name: &amp;quot;Lo">
-<meta name="keywords" content="react-router">
+<meta name="keywords" content="react,react-router">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-router4.0 路由登录拦截">
 <meta property="og:url" content="https://hongtao-huang.github.io/react-router 4.0 路由登录拦截/index.html">
 <meta property="og:site_name" content="不穿辣条吃秋裤">
 <meta property="og:description" content="react-router4.0 路由登录拦截创建路由表12345678910const routers = [  &amp;#123;path: &amp;quot;/&amp;quot;, name: &amp;quot;Index&amp;quot;, component: &amp;apos;./pages/Index&amp;apos;&amp;#125;,  &amp;#123;path: &amp;quot;/login&amp;quot;, name: &amp;quot;Lo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T03:36:58.544Z">
+<meta property="og:updated_time" content="2020-09-23T12:15:58.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-router4.0 路由登录拦截">
 <meta name="twitter:description" content="react-router4.0 路由登录拦截创建路由表12345678910const routers = [  &amp;#123;path: &amp;quot;/&amp;quot;, name: &amp;quot;Index&amp;quot;, component: &amp;apos;./pages/Index&amp;apos;&amp;#125;,  &amp;#123;path: &amp;quot;/login&amp;quot;, name: &amp;quot;Lo">
@@ -425,6 +425,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/react-router/" itemprop="url" rel="index">
+                    <span itemprop="name">react-router</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -470,7 +481,7 @@
 <h2 id="遍历路由表"><a href="#遍历路由表" class="headerlink" title="遍历路由表"></a>遍历路由表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;Component, Suspense, lazy&#125; from &apos;react&apos;;</span><br><span class="line">import &#123;BrowserRouter as Router, Route, Switch, Redirect&#125; from &apos;react-router-dom&apos;</span><br><span class="line">import routers from &apos;./router&apos;</span><br><span class="line">import &#123;NotFound&#125; from &apos;pages&apos;</span><br><span class="line">import &#123;Page&#125; from &apos;components&apos;</span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line">  async componentWillMount() &#123;</span><br><span class="line">    await this.props.dispatch(authActions.getAuthInfo());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;Router&gt;</span><br><span class="line">          &lt;Switch&gt;</span><br><span class="line">            &#123;</span><br><span class="line">              routers.map((item, index) =&gt; &#123;</span><br><span class="line">                const DynamicComponent = lazy (() =&gt; import(`$&#123;item.component&#125;/index`)); </span><br><span class="line">                return &lt;Route key=&#123;index&#125; path=&#123;item.path&#125; exact render=&#123;props =&gt; (</span><br><span class="line">                    &lt;Page &#123;...props&#125;&gt;</span><br><span class="line">                      &lt;Suspense fallback=&#123;&lt;div&gt;loading...&lt;/div&gt;&#125;&gt;</span><br><span class="line">                      &#123;</span><br><span class="line">                        !item.auth</span><br><span class="line">                            ? (&lt;DynamicComponent &#123;...props&#125; /&gt;)</span><br><span class="line">                            : (token</span><br><span class="line">                                ? (&lt;DynamicComponent &#123;...props&#125; /&gt;)</span><br><span class="line">                                : (&lt;Redirect to=&#123;&#123; pathname: &quot;/login&quot;, state: &#123;from: props.location&#125;</span><br><span class="line">                                &#125;&#125;/&gt;)</span><br><span class="line">                            )</span><br><span class="line">                      &#125;</span><br><span class="line">                      &lt;/Suspense&gt;</span><br><span class="line">                    &lt;/Page&gt;</span><br><span class="line">                )&#125;&gt;</span><br><span class="line">                &lt;/Route&gt;</span><br><span class="line">              &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">            &lt;Route component=&#123;NotFound&#125;/&gt;</span><br><span class="line">          &lt;/Switch&gt;</span><br><span class="line">        &lt;/Router&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>关于BrowserRouter Switch Route 等可直接查看<a href="https://react-router.docschina.org/" target="_blank" rel="noopener">官方文档</a></li>
-<li>该教程用到了Suspense, lazy来做页面的懒加载，这是react 的新特性， 所以不需要再引入外部的插件来做懒加载， 会在我的另一篇博客中讲到</li>
+<li>该教程用到了Suspense, lazy来做页面的懒加载，这是react 的新特性， 所以不需要再引入外部的插件来做懒加载</li>
 <li>在遍历路由表的情况下， 会先将layout 组件 <code>Page</code> 放在最外层， 也就是只要不是404页面， layout布局都会渲染，然后再判断 <code>auth</code> ，这个字段是来判断当匹配到这个路由的时候你是否需要做拦截，然后再判断是否有token</li>
 <li>token的保存存储以及获取则是另外的解决方案</li>
 </ul>
@@ -494,7 +505,7 @@
   <p><span>本文标题:</span><a href="/react-router 4.0 路由登录拦截/">react-router4.0 路由登录拦截</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 黄洪涛 的个人博客">黄洪涛</a></p>
   <p><span>发布时间:</span>2019年04月15日 - 23:04</p>
-  <p><span>最后更新:</span>2019年04月15日 - 11:04</p>
+  <p><span>最后更新:</span>2020年09月23日 - 20:09</p>
   <p><span>原始链接:</span><a href="/react-router 4.0 路由登录拦截/" title="react-router4.0 路由登录拦截">https://hongtao-huang.github.io/react-router 4.0 路由登录拦截/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hongtao-huang.github.io/react-router 4.0 路由登录拦截/"  aria-label="复制成功！"></i></span>
   </p>
@@ -556,6 +567,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/react/" rel="tag"># react</a>
+          
             <a href="/tags/react-router/" rel="tag"># react-router</a>
           
         </div>
@@ -569,8 +582,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/react-router 4.0 路由传参跳转及获取参数/" rel="next" title="react-router4.0 路由传参跳转及获取参数">
-                <i class="fa fa-chevron-left"></i> react-router4.0 路由传参跳转及获取参数
+              <a href="/cra中路由按需加载/" rel="next" title="create-react-app 路由按需加载">
+                <i class="fa fa-chevron-left"></i> create-react-app 路由按需加载
               </a>
             
           </div>
@@ -579,8 +592,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/函数防抖与函数节流/" rel="prev" title="函数防抖（debounce）与函数节流（throttle）">
-                函数防抖（debounce）与函数节流（throttle） <i class="fa fa-chevron-right"></i>
+              <a href="/react-router传参和区别/" rel="prev" title="react-router4.0 路由传参跳转及获取参数">
+                react-router4.0 路由传参跳转及获取参数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -702,7 +715,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -713,7 +726,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
